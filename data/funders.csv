@@ -1,0 +1,1649 @@
+funder,abbr,naics,industry,ff,corp
+Aker BP,BPSM,211111,Fossil Fuel Production,TRUE,TRUE
+Equinor,BPSM,324110,Fossil Fuel Production,TRUE,TRUE
+ExxonMobil,BPSM,324110,Fossil Fuel Production,TRUE,TRUE
+Hess Corporation,BPSM,2111,Fossil Fuel Production,TRUE,TRUE
+Chevron,SFC,324110,Fossil Fuel Production,TRUE,TRUE
+Inpex,SFC,2111,Fossil Fuel Production,TRUE,TRUE
+Occidental Petroleum Corporation,SFC,2111,Fossil Fuel Production,TRUE,TRUE
+Schlumberger,SFC,213112,Fossil Fuel Production,TRUE,TRUE
+Tracy Energy,SFC,541511,Consulting,FALSE,TRUE
+Chevron,SCITS,324110,Fossil Fuel Production,TRUE,TRUE
+ConocoPhillips,SCITS,2111,Fossil Fuel Production,TRUE,TRUE
+Devon Energy,SCITS,2111,Fossil Fuel Production,TRUE,TRUE
+ExxonMobil,SCITS,324110,Fossil Fuel Production,TRUE,TRUE
+MRC Energy Company,SCITS,324110,Fossil Fuel Production,TRUE,TRUE
+Occidental Petroleum Corporation,SCITS,2111,Fossil Fuel Production,TRUE,TRUE
+Ovintiv,SCITS,2111,Fossil Fuel Production,TRUE,TRUE
+Pioneer Natural Resources,SCITS,2111,Fossil Fuel Production,TRUE,TRUE
+Aramco Services,SUETRI-A,324110,Fossil Fuel Production,TRUE,TRUE
+Chevron,SUETRI-A,324110,Fossil Fuel Production,TRUE,TRUE
+CNPC USA,SUETRI-A,213112,Fossil Fuel Production,TRUE,TRUE
+OMV,SUETRI-A,2111,Fossil Fuel Production,TRUE,TRUE
+Tracy Energy,SUETRI-A,541511,Consulting,FALSE,TRUE
+Aramco Services,SUETRI-B,324110,Fossil Fuel Production,TRUE,TRUE
+Chevron,SUETRI-B,324110,Fossil Fuel Production,TRUE,TRUE
+Kappa Engineering,SUETRI-B,541511,Consulting,FALSE,TRUE
+Schlumberger,SUETRI-B,213112,Fossil Fuel Production,TRUE,TRUE
+Shell,SUETRI-B,211112,Fossil Fuel Production,TRUE,TRUE
+Total,SUETRI-B,324110,Fossil Fuel Production,TRUE,TRUE
+BHP,SUETRI-D,212,Mining,FALSE,TRUE
+Chevron,SUETRI-D,324110,Fossil Fuel Production,TRUE,TRUE
+ExxonMobil,SUETRI-D,324110,Fossil Fuel Production,TRUE,TRUE
+GERD,SUETRI-D,541330,Consulting,FALSE,TRUE
+Kappa Engineering,SUETRI-D,541511,Consulting,FALSE,TRUE
+11th Hour Project of the Eric and Wendy Schmidt Family Foundation,BFI,8132,NGOs/Foundations,FALSE,FALSE
+Aaron Diaz,BFI,814,Individuals,FALSE,FALSE
+Abbey Myszka,BFI,814,Individuals,FALSE,FALSE
+"Agland Investment Services, Inc.",BFI,523999,Finance,FALSE,TRUE
+Alastair Isles,BFI,814,Individuals,FALSE,FALSE
+Ali Partovi,BFI,814,Individuals,FALSE,FALSE
+Amanda Hart,BFI,814,Individuals,FALSE,FALSE
+Amy Regan,BFI,814,Individuals,FALSE,FALSE
+Andrew Judd,BFI,814,Individuals,FALSE,FALSE
+Angela Little,BFI,814,Individuals,FALSE,FALSE
+Angela Noland,BFI,814,Individuals,FALSE,FALSE
+Ann FitzSimmons,BFI,814,Individuals,FALSE,FALSE
+Beverly Ingram,BFI,814,Individuals,FALSE,FALSE
+Beverly Lorens,BFI,814,Individuals,FALSE,FALSE
+Bryna and Daryl Ross,BFI,814,Individuals,FALSE,FALSE
+CCOF Transition to Organic Partnership Program,BFI,813,NGOs/Foundations,FALSE,FALSE
+CDFA Farm to School Evaluation**,BFI,92,Government/National Lab,FALSE,FALSE
+CS Fund,BFI,8132,NGOs/Foundations,FALSE,FALSE
+California Initiative for Health Equity & Action,BFI,61,Universities,FALSE,FALSE
+Cathy and Paul Riccetti,BFI,814,Individuals,FALSE,FALSE
+Charlie James,BFI,814,Individuals,FALSE,FALSE
+Christina Laird,BFI,814,Individuals,FALSE,FALSE
+Christine Blaine,BFI,814,Individuals,FALSE,FALSE
+Christopher Gardner,BFI,814,Individuals,FALSE,FALSE
+Cindy Daniel and Douglas Lipton,BFI,814,Individuals,FALSE,FALSE
+Claire Kremen and Charles Fineman,BFI,814,Individuals,FALSE,FALSE
+Clarence E. Heller Charitable Foundation,BFI,8132,NGOs/Foundations,FALSE,FALSE
+Coit Family Foundation,BFI,8132,NGOs/Foundations,FALSE,FALSE
+Colin Lacon,BFI,814,Individuals,FALSE,FALSE
+Dale Baum and Seonghee Lim,BFI,814,Individuals,FALSE,FALSE
+Dana Slatkin,BFI,814,Individuals,FALSE,FALSE
+Dana and Edward Slatkin,BFI,814,Individuals,FALSE,FALSE
+Danielle Hoague,BFI,814,Individuals,FALSE,FALSE
+Danielle Lee,BFI,814,Individuals,FALSE,FALSE
+Daryl Ansel Steve and Carolyn Balling,BFI,814,Individuals,FALSE,FALSE
+Deborah Calhoun,BFI,814,Individuals,FALSE,FALSE
+Diana Chen,BFI,814,Individuals,FALSE,FALSE
+Dimyana Abdelmalik,BFI,814,Individuals,FALSE,FALSE
+Dolores and John Casazza,BFI,814,Individuals,FALSE,FALSE
+Doug Lipton and Cindy Daniel,BFI,814,Individuals,FALSE,FALSE
+Elaine Leitner and Steven Zieff,BFI,814,Individuals,FALSE,FALSE
+Elizabeth Oyler,BFI,814,Individuals,FALSE,FALSE
+Epstein/Roth Foundation,BFI,8132,NGOs/Foundations,FALSE,FALSE
+Eric and Wendy Schmidt Family Foundation,BFI,8132,NGOs/Foundations,FALSE,FALSE
+General Mills,BFI,311230,Food and Beverages,FALSE,TRUE
+Gregory Johnson,BFI,814,Individuals,FALSE,FALSE
+Haas Institute for a Fair and Inclusive Society,BFI,61,Universities,FALSE,FALSE
+Hellman Foundation Fund,BFI,8132,NGOs/Foundations,FALSE,FALSE
+Henry Ralston III,BFI,814,Individuals,FALSE,FALSE
+Higher Ed Committee of State of California**,BFI,92,Government/National Lab,FALSE,FALSE
+Hinkle Charitable Foundation,BFI,8132,NGOs/Foundations,FALSE,FALSE
+Jacqueline and Bruce Kubicka,BFI,814,Individuals,FALSE,FALSE
+Jeanine and Guy Saperstein,BFI,814,Individuals,FALSE,FALSE
+Jennifer Solow and Tom Jacoby,BFI,814,Individuals,FALSE,FALSE
+Jessica Siegel and Stephen Tsoneff,BFI,814,Individuals,FALSE,FALSE
+Jin H. Park,BFI,814,Individuals,FALSE,FALSE
+John Swift,BFI,814,Individuals,FALSE,FALSE
+John Teixeira,BFI,814,Individuals,FALSE,FALSE
+John and Lolita Casazza,BFI,814,Individuals,FALSE,FALSE
+Joshua Blatt,BFI,814,Individuals,FALSE,FALSE
+Joshua Blatt Ellis and Julie Brenner,BFI,814,Individuals,FALSE,FALSE
+Judith Tuller,BFI,814,Individuals,FALSE,FALSE
+Judy Fried and Bob Scowcroft,BFI,814,Individuals,FALSE,FALSE
+Julie Hooper,BFI,814,Individuals,FALSE,FALSE
+Kalmanovitz Charitable Foundation,BFI,8132,NGOs/Foundations,FALSE,FALSE
+Karen Carlson and Stephen Sugarman,BFI,814,Individuals,FALSE,FALSE
+Karen Sokal-Gutierrez,BFI,814,Individuals,FALSE,FALSE
+Kathryn Moriarty Baldwin and Gregory Baldwin,BFI,814,Individuals,FALSE,FALSE
+Kathy and Michael Noland,BFI,814,Individuals,FALSE,FALSE
+Kendra Gray,BFI,814,Individuals,FALSE,FALSE
+Kimberly Shollenberger,BFI,814,Individuals,FALSE,FALSE
+Konrad Herman,BFI,814,Individuals,FALSE,FALSE
+Kristen and Tom Stoever,BFI,814,Individuals,FALSE,FALSE
+L. Ann Thrupp,BFI,814,Individuals,FALSE,FALSE
+Lauri Thrupp,BFI,814,Individuals,FALSE,FALSE
+Linda Rafferty,BFI,814,Individuals,FALSE,FALSE
+Lisa Holmes,BFI,814,Individuals,FALSE,FALSE
+Louise Fortmann and Emery Roe,BFI,814,Individuals,FALSE,FALSE
+Marguerite Matthews,BFI,814,Individuals,FALSE,FALSE
+Mark Schapiro,BFI,814,Individuals,FALSE,FALSE
+Meghan Adelman,BFI,814,Individuals,FALSE,FALSE
+Melody Meyer,BFI,814,Individuals,FALSE,FALSE
+Natasha Granoff,BFI,814,Individuals,FALSE,FALSE
+National Science Foundation,BFI,92,Government/National Lab,FALSE,FALSE
+National Women's Law Center,BFI,813,NGOs/Foundations,FALSE,FALSE
+Nina F. Ichikawa,BFI,814,Individuals,FALSE,FALSE
+Noelle Leca,BFI,814,Individuals,FALSE,FALSE
+Noelle Leca and Michael Moradzadeh,BFI,814,Individuals,FALSE,FALSE
+Nora Norback and Darrel Hess,BFI,814,Individuals,FALSE,FALSE
+Nutrition Policy Institute,BFI,61,Universities,FALSE,FALSE
+Pamela and Jan Behrsin,BFI,814,Individuals,FALSE,FALSE
+Patagonia,BFI,448140,Retail,FALSE,TRUE
+Peter Feibleman,BFI,814,Individuals,FALSE,FALSE
+Philanthropic Ventures Foundation,BFI,813,NGOs/Foundations,FALSE,FALSE
+Phyllis & Davis Rothman,BFI,814,Individuals,FALSE,FALSE
+Priya Mehta,BFI,814,Individuals,FALSE,FALSE
+Rachel and Daniel Winheld,BFI,814,Individuals,FALSE,FALSE
+Randall Goldstein,BFI,814,Individuals,FALSE,FALSE
+Renaissance Charitable Foundation Inc.,BFI,813,NGOs/Foundations,FALSE,FALSE
+Robert Goodwin,BFI,814,Individuals,FALSE,FALSE
+Robert Huston,BFI,814,Individuals,FALSE,FALSE
+Robert Meadows,BFI,814,Individuals,FALSE,FALSE
+Robyn Wardell,BFI,814,Individuals,FALSE,FALSE
+Sara Webber,BFI,814,Individuals,FALSE,FALSE
+Sheila Duignan and Mike Wilkins,BFI,814,Individuals,FALSE,FALSE
+Sheryl Lee,BFI,814,Individuals,FALSE,FALSE
+Stacie Hess,BFI,814,Individuals,FALSE,FALSE
+Stacy R. Jacobs Foundation,BFI,8132,NGOs/Foundations,FALSE,FALSE
+Stephen M. Silberstein Foundation,BFI,8132,NGOs/Foundations,FALSE,FALSE
+Stupski Foundation,BFI,8132,NGOs/Foundations,FALSE,FALSE
+Susan and James Colletta,BFI,814,Individuals,FALSE,FALSE
+Tama Becker-Varano and Marshall Varano Jr.,BFI,814,Individuals,FALSE,FALSE
+Tathya Abe,BFI,814,Individuals,FALSE,FALSE
+The California Endowment,BFI,8132,NGOs/Foundations,FALSE,FALSE
+The Delloakes Foundation,BFI,813,NGOs/Foundations,FALSE,FALSE
+The Green Initiative Fund,BFI,61,Universities,FALSE,FALSE
+Thomas and Edith Johnson,BFI,814,Individuals,FALSE,FALSE
+U.S. Army Research Laboratory,BFI,92,Government/National Lab,FALSE,FALSE
+UC Berkeley Basic Needs Security Committee,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Center for Responsible Business,BFI,61,Universities,FALSE,FALSE
+UC Berkeley College of Environmental Design,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Crowd Funding,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Goldman School of Public Policy,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Graduate School of Journalism,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Green Initiative Fund,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Haas School of Business,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Labor Center,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Law,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Othering and Belonging Institute,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Rausser College of Natural Resources,BFI,61,Universities,FALSE,FALSE
+UC Berkeley School of Public Health,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Student Environmental Resource Center,BFI,61,Universities,FALSE,FALSE
+UC Berkeley Student Technology Fund,BFI,61,Universities,FALSE,FALSE
+UC Global Food Initiative,BFI,61,Universities,FALSE,FALSE
+UNFI Foundation,BFI,424490,Wholesalers,FALSE,TRUE
+USDA OREI,BFI,92,Government/National Lab,FALSE,FALSE
+USDA-NIFA,BFI,92,Government/National Lab,FALSE,FALSE
+"USDA-NIFA Renewable Energy, Natural Resources, and Environment Program",BFI,92,Government/National Lab,FALSE,FALSE
+Vice Chancellor's Office for Research,BFI,61,Universities,FALSE,FALSE
+Virginia Winn,BFI,814,Individuals,FALSE,FALSE
+Wendi Gosliner,BFI,814,Individuals,FALSE,FALSE
+Wendy Adachi,BFI,814,Individuals,FALSE,FALSE
+Kalnin Ventures,BNNI,213112,Fossil Fuel Production,TRUE,TRUE
+Nanomix,BNNI,339112,Miscellaneous Manufacturing,FALSE,TRUE
+Nanosys,BNNI,334413,Electronics,FALSE,TRUE
+Quantum Dot,BNNI,325414,Chemicals,FALSE,TRUE
+3M,BSAC,322220,Paper,FALSE,TRUE
+AMRDEC,BSAC,92,Government/National Lab,FALSE,FALSE
+Aisin,BSAC,336390,Fossil Fuel Vehicles,TRUE,TRUE
+Analog Devices,BSAC,334413,Electronics,FALSE,TRUE
+Applied Materials,BSAC,333242,Machineries and Metal,FALSE,TRUE
+BASF,BSAC,325,Chemicals,FALSE,TRUE
+Bosch,BSAC,336390,Miscellaneous Manufacturing,FALSE,TRUE
+Brembo,BSAC,336340,Fossil Fuel Vehicles,TRUE,TRUE
+Chevron,BSAC,324110,Fossil Fuel Production,TRUE,TRUE
+Continental,BSAC,3363,Fossil Fuel Vehicles,TRUE,TRUE
+Coravie Medical,BSAC,339112,Miscellaneous Manufacturing,FALSE,TRUE
+Delta,BSAC,332312,Machineries and Metal,FALSE,TRUE
+Eli Lilly and Company,BSAC,325412,Chemicals,FALSE,TRUE
+Faurecia,BSAC,336390,Fossil Fuel Vehicles,TRUE,TRUE
+FormFactor,BSAC,334515,Electronics,FALSE,TRUE
+FutureWei,BSAC,541690,Consulting,FALSE,TRUE
+Hewlett Packard Enterprise,BSAC,334111,Electronics,FALSE,TRUE
+Hitachi,BSAC,541519,Consulting,FALSE,TRUE
+Institute for Market Transformation,BSAC,8133,NGOs/Foundations,FALSE,FALSE
+Intel Corporation,BSAC,334413,Electronics,FALSE,TRUE
+InvenSense,BSAC,334413,Electronics,FALSE,TRUE
+Knowles Corporation,BSAC,334419,Electronics,FALSE,TRUE
+LG TCA,BSAC,334412,Electronics,FALSE,TRUE
+Midea,BSAC,3352,Electronics,FALSE,TRUE
+Mirise Technologies,BSAC,334413,Electronics,FALSE,TRUE
+"Murata Manufacturing Co., Ltd.",BSAC,3344,Electronics,FALSE,TRUE
+"NGK Spark Plug Co., Ltd.",BSAC,332510,Machineries and Metal,FALSE,TRUE
+NewVision,BSAC,334413,Electronics,FALSE,TRUE
+Novo Nordisk,BSAC,325412,Chemicals,FALSE,TRUE
+OSRAM,BSAC,335129,Electronics,FALSE,TRUE
+Qorvo,BSAC,334413,Electronics,FALSE,TRUE
+Qualcomm,BSAC,334413,Electronics,FALSE,TRUE
+Raytheon Company,BSAC,334511,Electronics,FALSE,TRUE
+Rosemount,BSAC,334511,Electronics,FALSE,TRUE
+STMicroelectronics,BSAC,334413,Electronics,FALSE,TRUE
+Samsung,BSAC,334419,Electronics,FALSE,TRUE
+Semiconductor Manufacturing International Corporation,BSAC,334413,Electronics,FALSE,TRUE
+Sensata Technologies,BSAC,334513,Electronics,FALSE,TRUE
+Starkey Laboratories,BSAC,334510,Electronics,FALSE,TRUE
+Synergy Group,BSAC,488390,Transportation,FALSE,TRUE
+TDK Corporation,BSAC,3344,Electronics,FALSE,TRUE
+"Taiwan Semiconductor Manufacturing Co., Ltd.",BSAC,334413,Electronics,FALSE,TRUE
+Texas Instruments Incorporated,BSAC,334413,Electronics,FALSE,TRUE
+Toshiba Corporation,BSAC,335,Electronics,FALSE,TRUE
+Tyco International,BSAC,334290,Electronics,FALSE,TRUE
+Valeo,BSAC,336390,Miscellaneous Manufacturing,FALSE,TRUE
+azbil,BSAC,332911,Machineries and Metal,FALSE,TRUE
+Berkeley Changemakers Program,BCGC,61,Universities,FALSE,FALSE
+Curtis Wray,BCGC,814,Individuals,FALSE,FALSE
+Environmental Protection Agency P2 Program,BCGC,92,Government/National Lab,FALSE,FALSE
+Michel Dedeo,BCGC,814,Individuals,FALSE,FALSE
+The Nancy P. and Richard K. Robbins Family Foundation,BCGC,813,NGOs/Foundations,FALSE,FALSE
+Berkeley/China-CDC Program for Water & Health.,BWC,61,Universities,FALSE,FALSE
+Blum Center for Developing Economies,BWC,61,Universities,FALSE,FALSE
+Center for Information Technology Research in the Interest of Society (CITRIS),BWC,61,Universities,FALSE,FALSE
+"Consortium of Universities for the Advancement of Hydrologic Science, Inc. (CUAHSI)",BWC,813,NGOs/Foundations,FALSE,FALSE
+Lawrence Berkeley National Laboratory,BWC,92,Government/National Lab,FALSE,FALSE
+Re-inventing the Nation's Urban Water Infrasturcture ReNWUIt,BWC,61,Universities,FALSE,FALSE
+U.S.-China Clean Energy Research Center for Energy and Water (CERC WET),BWC,92,Government/National Lab,FALSE,FALSE
+UC Berkeley College of Engineering,BWC,61,Universities,FALSE,FALSE
+UC Berkeley College of Natural Resources,BWC,61,Universities,FALSE,FALSE
+California Energy Commission,CIEE,92,Government/National Lab,FALSE,FALSE
+California Public Utilities Commission,CIEE,92,Government/National Lab,FALSE,FALSE
+Los Angeles Department of Water and Power,CIEE,221,Fossil Fuel Utilities,TRUE,TRUE
+New York State Energy Research and Development Authority,CIEE,92,Government/National Lab,FALSE,FALSE
+Pacific Gas and Electric Company,CIEE,2211,Fossil Fuel Utilities,TRUE,TRUE
+Sacramento Municipal Utility District,CIEE,221,Other Utilities,FALSE,TRUE
+San Diego Gas & Electric,CIEE,2211,Fossil Fuel Utilities,TRUE,TRUE
+Southern California Edison,CIEE,221111,Other Utilities,FALSE,TRUE
+Southern California Gas Company,CIEE,221210,Fossil Fuel Utilities,TRUE,TRUE
+U.S. Department of Energy,CIEE,92,Government/National Lab,FALSE,FALSE
+State of California,QB3,92,Government/National Lab,FALSE,FALSE
+U.S. Department of Energy,QB3,92,Government/National Lab,FALSE,FALSE
+Allstate,PATH,524126,Finance,FALSE,TRUE
+AutoBrain,PATH,423140,Wholesalers,FALSE,TRUE
+Baidu,PATH,519130,Information Technology,FALSE,TRUE
+Berkeley DeepDrive,PATH,61,Universities,FALSE,FALSE
+California Department of Transportation,PATH,92,Government/National Lab,FALSE,FALSE
+Caltrans,PATH,92,Government/National Lab,FALSE,FALSE
+Continental,PATH,3363,Fossil Fuel Vehicles,TRUE,TRUE
+Didi Chuxing,PATH,541511,Consulting,FALSE,TRUE
+Ford Motor Company,PATH,33611,Fossil Fuel Vehicles,TRUE,TRUE
+FutureWei,PATH,541690,Consulting,FALSE,TRUE
+General Motors,PATH,336110,Fossil Fuel Vehicles,TRUE,TRUE
+HoloMatic,PATH,541512,Consulting,FALSE,TRUE
+Honda,PATH,336110,Fossil Fuel Vehicles,TRUE,TRUE
+Huawei,PATH,334290,Electronics,FALSE,TRUE
+Hyundai Motors,PATH,336110,Fossil Fuel Vehicles,TRUE,TRUE
+Jacobs Engineering Group Inc.,PATH,541330,Consulting,FALSE,TRUE
+Luminar,PATH,336320,Miscellaneous Manufacturing,FALSE,TRUE
+Mapillary,PATH,541511,Consulting,FALSE,TRUE
+MeituanDianping,PATH,454110,Retail,FALSE,TRUE
+NXP,PATH,334413,Electronics,FALSE,TRUE
+National Science Foundation,PATH,92,Government/National Lab,FALSE,FALSE
+Nexar,PATH,334111,Electronics,FALSE,TRUE
+Nvidia,PATH,334413,Electronics,FALSE,TRUE
+Panasonic,PATH,335,Electronics,FALSE,TRUE
+Qisda,PATH,334510,Electronics,FALSE,TRUE
+SF Motors,PATH,336110,Miscellaneous Manufacturing,FALSE,TRUE
+Samsung,PATH,334419,Electronics,FALSE,TRUE
+Sony,PATH,335,Electronics,FALSE,TRUE
+Toyota,PATH,336110,Fossil Fuel Vehicles,TRUE,TRUE
+U.S. Department of Energy,PATH,92,Government/National Lab,FALSE,FALSE
+U.S. Department of Transportation,PATH,92,Government/National Lab,FALSE,FALSE
+ZF,PATH,336390,Fossil Fuel Vehicles,TRUE,TRUE
+Zenuity,PATH,518210,Information Technology,FALSE,TRUE
+ARPA-E,CEDR,92,Government/National Lab,FALSE,FALSE
+ASHRAE,CEDR,335,Electronics,FALSE,TRUE
+CBE,CEDR,61,Universities,FALSE,FALSE
+California Electric Program Investment Charge (EPIC) Grant Program,CEDR,92,Government/National Lab,FALSE,FALSE
+California Energy Commission,CEDR,92,Government/National Lab,FALSE,FALSE
+California Energy Commission (CEC) Public Interest Energy Research (PIER) Program,CEDR,92,Government/National Lab,FALSE,FALSE
+Global Innovation Initiative,CEDR,813,NGOs/Foundations,FALSE,FALSE
+National Research Foundation of Korea,CEDR,92,Government/National Lab,FALSE,FALSE
+U.S. Department of Energy,CEDR,92,Government/National Lab,FALSE,FALSE
+Bay Area Air Quality Management District,CEPP (B),92,Government/National Lab,FALSE,FALSE
+CalSPEC,CEPP (B),61,Universities,FALSE,FALSE
+ClimateWorks Foundation,CEPP (B),813,NGOs/Foundations,FALSE,FALSE
+West Oakland Environmental Indicators Project,CEPP (B),813,NGOs/Foundations,FALSE,FALSE
+William and Flora Hewlett Foundation,CEPP (B),8132,NGOs/Foundations,FALSE,FALSE
+Alfred P. Sloan Foundation,CLEE,8132,NGOs/Foundations,FALSE,FALSE
+Bank of America,CLEE,522110,Finance,FALSE,TRUE
+Bingham Osborn Scarborough Foundation,CLEE,813,NGOs/Foundations,FALSE,FALSE
+California Air Resources Board,CLEE,92,Government/National Lab,FALSE,FALSE
+California Department of Insurance,CLEE,92,Government/National Lab,FALSE,FALSE
+California Department of Transportation,CLEE,92,Government/National Lab,FALSE,FALSE
+California Institute for Energy and Environment,CLEE,61,Universities,FALSE,FALSE
+California Public Utilities Commission,CLEE,92,Government/National Lab,FALSE,FALSE
+City and County of San Francisco,CLEE,92,Government/National Lab,FALSE,FALSE
+Climate and Wildfire Institute Inc.,CLEE,813,NGOs/Foundations,FALSE,FALSE
+ClimateWorks Foundation,CLEE,813,NGOs/Foundations,FALSE,FALSE
+"Cox, Castle & Nicholson LLP",CLEE,541110,Consulting,FALSE,TRUE
+DTE Energy,CLEE,2211,Fossil Fuel Utilities,TRUE,TRUE
+Deanna R. Rutter,CLEE,814,Individuals,FALSE,FALSE
+Energy Foundation,CLEE,813,NGOs/Foundations,FALSE,FALSE
+Epstein/Roth Foundation,CLEE,8132,NGOs/Foundations,FALSE,FALSE
+Gordon and Betty Moore Foundation,CLEE,8132,NGOs/Foundations,FALSE,FALSE
+"Grist Magazine, Inc.",CLEE,8133,NGOs/Foundations,FALSE,FALSE
+Heising-Simons Foundation,CLEE,8132,NGOs/Foundations,FALSE,FALSE
+High Tide Foundation,CLEE,8132,NGOs/Foundations,FALSE,FALSE
+Institute for Governance & Sustainable Development,CLEE,813,NGOs/Foundations,FALSE,FALSE
+Joseph C. Bell & Ruth Greenspan Bell,CLEE,814,Individuals,FALSE,FALSE
+Kissinger Family Foundation,CLEE,8132,NGOs/Foundations,FALSE,FALSE
+Laural Foundation,CLEE,8132,NGOs/Foundations,FALSE,FALSE
+Next 10,CLEE,334290,Electronics,FALSE,TRUE
+Paul Brody & Daniel K. Yost,CLEE,814,Individuals,FALSE,FALSE
+Peninsula Open Space Trust,CLEE,813,NGOs/Foundations,FALSE,FALSE
+Raymond James Charitable Endowment Fund,CLEE,813,NGOs/Foundations,FALSE,FALSE
+Remy Moose Manley LLP,CLEE,541110,Consulting,FALSE,TRUE
+Resources Legacy Fund,CLEE,813,NGOs/Foundations,FALSE,FALSE
+Robert Amsy Ewing,CLEE,814,Individuals,FALSE,FALSE
+Rockefeller Brothers Fund,CLEE,8132,NGOs/Foundations,FALSE,FALSE
+Santa Clara Valley Water District,CLEE,92,Government/National Lab,FALSE,FALSE
+Stuart K. Gardiner,CLEE,814,Individuals,FALSE,FALSE
+The Green Initiative Fund,CLEE,61,Universities,FALSE,FALSE
+The Nature Conservancy,CLEE,813,NGOs/Foundations,FALSE,FALSE
+U.S. Department of Agriculture,CLEE,92,Government/National Lab,FALSE,FALSE
+U.S. Environmental Protection Agency,CLEE,92,Government/National Lab,FALSE,FALSE
+Vanguard Charitable Endowment Program,CLEE,525910,Finance,FALSE,TRUE
+Water Foundation,CLEE,813,NGOs/Foundations,FALSE,FALSE
+William and Flora Hewlett Foundation,CLEE,8132,NGOs/Foundations,FALSE,FALSE
+Wilson Sonsini Goodrich & Rosati,CLEE,541110,Consulting,FALSE,TRUE
+Armstrong World Industries,CBE,327993,Mineral Manufacturing (incl. Concrete),FALSE,TRUE
+Big Ass Fans,CBE,335122,Electronics,FALSE,TRUE
+California Energy Commission,CBE,92,Government/National Lab,FALSE,FALSE
+ClimateWorks Foundation,CBE,813,NGOs/Foundations,FALSE,FALSE
+Daikin,CBE,333415,Machineries and Metal,FALSE,TRUE
+Department of Defense (DOD),CBE,92,Government/National Lab,FALSE,FALSE
+Ford Motor Company,CBE,33611,Fossil Fuel Vehicles,TRUE,TRUE
+Genentech,CBE,325412,Chemicals,FALSE,TRUE
+Google,CBE,518210,Information Technology,FALSE,TRUE
+Ingersoll Rand,CBE,333912,Machineries and Metal,FALSE,TRUE
+Lear Corporation,CBE,336360,Fossil Fuel Vehicles,TRUE,TRUE
+Midea,CBE,3352,Electronics,FALSE,TRUE
+Pacific Gas and Electric Company,CBE,2211,Fossil Fuel Utilities,TRUE,TRUE
+Price Industries,CBE,332322,Machineries and Metal,FALSE,TRUE
+REHAU,CBE,333120,Machineries and Metal,FALSE,TRUE
+Saint-Gobain,CBE,334419,Electronics,FALSE,TRUE
+Southern California Edison,CBE,221111,Other Utilities,FALSE,TRUE
+Trane Technologies,CBE,333415,Machineries and Metal,FALSE,TRUE
+Viega,CBE,332913,Machineries and Metal,FALSE,TRUE
+View,CBE,327211,Mineral Manufacturing (incl. Concrete),FALSE,TRUE
+Wells Fargo,CBE,522110,Finance,FALSE,TRUE
+azbil,CBE,332911,Machineries and Metal,FALSE,TRUE
+American Pacific (AMPAC),EBI,325180,Chemicals,FALSE,TRUE
+Shell,EBI,211112,Fossil Fuel Production,TRUE,TRUE
+Abdul Latif Jameel Poverty Action Lab,EI@Haas,61,Universities,FALSE,FALSE
+Alameda Municipal Power,EI@Haas,221,Other Utilities,FALSE,TRUE
+Alfred P. Sloan Foundation,EI@Haas,8132,NGOs/Foundations,FALSE,FALSE
+Avangrid Renewables,EI@Haas,2211,Fossil Fuel Utilities,TRUE,TRUE
+Brenda LeMay,EI@Haas,814,Individuals,FALSE,FALSE
+California Air Resources Board,EI@Haas,92,Government/National Lab,FALSE,FALSE
+California Energy Commission,EI@Haas,92,Government/National Lab,FALSE,FALSE
+California Independent System Operator,EI@Haas,221,Other Utilities,FALSE,TRUE
+California Public Utilities Commission,EI@Haas,92,Government/National Lab,FALSE,FALSE
+Calpine,EI@Haas,22111,Other Utilities,FALSE,TRUE
+Carl Shapiro,EI@Haas,814,Individuals,FALSE,FALSE
+City of Palo Alto Utilities,EI@Haas,221,Fossil Fuel Utilities,TRUE,TRUE
+Consulate General of Canada,EI@Haas,92,Government/National Lab,FALSE,FALSE
+East Bay Community Energy,EI@Haas,221,Other Utilities,FALSE,TRUE
+Economic Research Service - USDA,EI@Haas,92,Government/National Lab,FALSE,FALSE
+Edison International,EI@Haas,22111,Other Utilities,FALSE,TRUE
+Electric Reliability Council of Texas (ERCOT),EI@Haas,221122,Other Utilities,FALSE,TRUE
+Gregory Hamm,EI@Haas,814,Individuals,FALSE,FALSE
+Helen Uhrig,EI@Haas,814,Individuals,FALSE,FALSE
+International Growth Centre,EI@Haas,813,NGOs/Foundations,FALSE,FALSE
+Intersect Power,EI@Haas,238220,Construction,FALSE,TRUE
+James Dodenhoff,EI@Haas,814,Individuals,FALSE,FALSE
+John Woolard,EI@Haas,814,Individuals,FALSE,FALSE
+Katie Pickrell and Nick Orton,EI@Haas,814,Individuals,FALSE,FALSE
+LEAP at Berkeley Law,EI@Haas,61,Universities,FALSE,FALSE
+"Law, Economics and Policy Center (LEAP) at Berkeley Law",EI@Haas,61,Universities,FALSE,FALSE
+Los Angeles Department of Water and Power,EI@Haas,221,Fossil Fuel Utilities,TRUE,TRUE
+Matt Rogers,EI@Haas,814,Individuals,FALSE,FALSE
+Millennium Challenge Corporation,EI@Haas,92,Government/National Lab,FALSE,FALSE
+Millennium Development Authority,EI@Haas,92,Government/National Lab,FALSE,FALSE
+National Science Foundation,EI@Haas,92,Government/National Lab,FALSE,FALSE
+Next 10,EI@Haas,334290,Electronics,FALSE,TRUE
+Pacific Gas and Electric Company,EI@Haas,2211,Fossil Fuel Utilities,TRUE,TRUE
+Peninsula Clean Energy,EI@Haas,221,Other Utilities,FALSE,TRUE
+"Pickrell, Katie and Orton, Nick",EI@Haas,814,Individuals,FALSE,FALSE
+Recurrent Energy,EI@Haas,221118,Other Utilities,FALSE,TRUE
+Resources for the Future,EI@Haas,813,NGOs/Foundations,FALSE,FALSE
+Sacramento Municipal Utility District,EI@Haas,221,Other Utilities,FALSE,TRUE
+San Diego Gas & Electric,EI@Haas,2211,Fossil Fuel Utilities,TRUE,TRUE
+Severin Borenstein and Margaret Stewart,EI@Haas,814,Individuals,FALSE,FALSE
+Silicon Valley Clean Energy,EI@Haas,221,Other Utilities,FALSE,TRUE
+Silicon Valley Power,EI@Haas,221,Other Utilities,FALSE,TRUE
+Southern California Edison,EI@Haas,221111,Other Utilities,FALSE,TRUE
+"The Center for Equity, Gender, and Leadership at Haas",EI@Haas,61,Universities,FALSE,FALSE
+The Loker Foundation,EI@Haas,8132,NGOs/Foundations,FALSE,FALSE
+UC Berkeley Rocca Dissertation Fellowship,EI@Haas,61,Universities,FALSE,FALSE
+UC Labs,EI@Haas,61,Universities,FALSE,FALSE
+UC Opportunity Lab,EI@Haas,61,Universities,FALSE,FALSE
+UK Department for International Development,EI@Haas,92,Government/National Lab,FALSE,FALSE
+UK Foreign and Commonwealth Development Office,EI@Haas,92,Government/National Lab,FALSE,FALSE
+USDA Economic Research Service,EI@Haas,92,Government/National Lab,FALSE,FALSE
+Washington Center for Equitable Growth,EI@Haas,813,NGOs/Foundations,FALSE,FALSE
+California Energy Commission,ERG,92,Government/National Lab,FALSE,FALSE
+California Public Utilities Commission,ERG,92,Government/National Lab,FALSE,FALSE
+Chongqing University,ERG,61,Universities,FALSE,FALSE
+Eli-nor Blake,ERG,814,Individuals,FALSE,FALSE
+Grid Alternatives,ERG,813,NGOs/Foundations,FALSE,FALSE
+Helen Cagam-pang,ERG,814,Individuals,FALSE,FALSE
+Joan Sprin-son,ERG,814,Individuals,FALSE,FALSE
+North China Electric Power University,ERG,61,Universities,FALSE,FALSE
+Sichuan University,ERG,61,Universities,FALSE,FALSE
+"Strath-more Energy Research Center (Nairobi, Kenya)",ERG,61,Universities,FALSE,FALSE
+The Wiese Family,ERG,814,Individuals,FALSE,FALSE
+The Zaffaroni Family Foundation,ERG,8132,NGOs/Foundations,FALSE,FALSE
+"Tsinghua University (Beijing, China)",ERG,61,Universities,FALSE,FALSE
+U.S. Department of Energy Office of Science,ERG,92,Government/National Lab,FALSE,FALSE
+U.S. National Science Foundation,ERG,92,Government/National Lab,FALSE,FALSE
+University of Tokyo,ERG,61,Universities,FALSE,FALSE
+Eric and Wendy Schmidt Family Foundation,DSE,8132,NGOs/Foundations,FALSE,FALSE
+California Energy Commission,GIF,92,Government/National Lab,FALSE,FALSE
+California Institute for Energy and Environment,GIF,61,Universities,FALSE,FALSE
+California Rural Legal Assistance,GIF,813,NGOs/Foundations,FALSE,FALSE
+Google,GIF,518210,Information Technology,FALSE,TRUE
+Kaiser Permanente,GIF,621999,Health Care,FALSE,TRUE
+National Institutes of Health,GIF,92,Government/National Lab,FALSE,FALSE
+The Nature Conservancy,GIF,813,NGOs/Foundations,FALSE,FALSE
+UC Berkeley School of Public Health,GIF,61,Universities,FALSE,FALSE
+United States Geological Survey,GIF,92,Government/National Lab,FALSE,FALSE
+W. M. Keck Foundation,GIF,8132,NGOs/Foundations,FALSE,FALSE
+Heising-Simons Foundation,ENSI,8132,NGOs/Foundations,FALSE,FALSE
+Philomathia Foundation,ENSI,8132,NGOs/Foundations,FALSE,FALSE
+The Kavli Foundation,ENSI,8132,NGOs/Foundations,FALSE,FALSE
+"University of California, Berkeley",ENSI,61,Universities,FALSE,FALSE
+California Energy Commission,RAEL,92,Government/National Lab,FALSE,FALSE
+California Public Utilities Commission,RAEL,92,Government/National Lab,FALSE,FALSE
+Department of Nuclear Engineering,RAEL,61,Universities,FALSE,FALSE
+Eli-nor Blake,RAEL,814,Individuals,FALSE,FALSE
+Energy and Resources Group,RAEL,61,Universities,FALSE,FALSE
+Helen Cagam-pang,RAEL,814,Individuals,FALSE,FALSE
+Joan Sprin-son,RAEL,814,Individuals,FALSE,FALSE
+The Wiese Family,RAEL,814,Individuals,FALSE,FALSE
+The Zaffaroni Family Foundation,RAEL,8132,NGOs/Foundations,FALSE,FALSE
+U.S. National Science Foundation,RAEL,92,Government/National Lab,FALSE,FALSE
+University of California,RAEL,61,Universities,FALSE,FALSE
+Adrienne Arsht-Rockefeller Resilience Center,C-CHANGE,8133,NGOs/Foundations,FALSE,FALSE
+Americares,C-CHANGE,813,NGOs/Foundations,FALSE,FALSE
+Barr Foundation,C-CHANGE,8132,NGOs/Foundations,FALSE,FALSE
+Biogen,C-CHANGE,325414,Chemicals,FALSE,TRUE
+Energy Foundation,C-CHANGE,813,NGOs/Foundations,FALSE,FALSE
+European Climate Foundation,C-CHANGE,8133,NGOs/Foundations,FALSE,FALSE
+John D. and Catherine T. MacArthur Foundation,C-CHANGE,8132,NGOs/Foundations,FALSE,FALSE
+John Merck Fund,C-CHANGE,8132,NGOs/Foundations,FALSE,FALSE
+J-PAL,CHE,511210,Information Technology,FALSE,TRUE
+BP,ENRP,324110,Fossil Fuel Production,TRUE,TRUE
+Eric and Wendy Schmidt Fund for Strategic Innovation,ENRP,8132,NGOs/Foundations,FALSE,FALSE
+Gordon and Betty Moore Foundation,ENRP,8132,NGOs/Foundations,FALSE,FALSE
+Jassim M. Jaidah Family,ENRP,814,Individuals,FALSE,FALSE
+National Science Foundation,ENRP,92,Government/National Lab,FALSE,FALSE
+POET LLC,ENRP,221112,Other Utilities,FALSE,TRUE
+Roy Family,ENRP,8132,NGOs/Foundations,FALSE,FALSE
+Evergrande Group,CGBC,237210,Construction,FALSE,TRUE
+AES Corporation,HEPG,22111,Fossil Fuel Utilities,TRUE,TRUE
+ANEEL - Brazilian Energy Regulatory Agency,HEPG,92,Government/National Lab,FALSE,FALSE
+Advanced Microgrid Solutions,HEPG,5417,Consulting,FALSE,TRUE
+Alabama Public Service Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Alberta Electric System Operator,HEPG,221,Other Utilities,FALSE,TRUE
+Alberta Utilities Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Allegheny Electric Cooperative,HEPG,221122,Other Utilities,FALSE,TRUE
+American Association of Blacks in Energy,HEPG,211,Fossil Fuel Production,TRUE,TRUE
+American Electric Power,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+American Public Power Association,HEPG,22111,Other Utilities,FALSE,TRUE
+American Transmission Company,HEPG,2211,Other Utilities,FALSE,TRUE
+American Wind Association,HEPG,221115,Other Utilities,FALSE,TRUE
+Analysis Group,HEPG,541512,Consulting,FALSE,TRUE
+Appian Way Energy Partners,HEPG,523,Finance,FALSE,TRUE
+Arizona Corporation Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Arkansas Electric Cooperatives,HEPG,221119,Other Utilities,FALSE,TRUE
+Arkansas Public Utility Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Australia Competition and Consumer Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Bonneville Power Administration,HEPG,92,Government/National Lab,FALSE,FALSE
+Bracewell LLP,HEPG,541110,Consulting,FALSE,TRUE
+British Columbia Transmission Corporation,HEPG,2211,Other Utilities,FALSE,TRUE
+"Brown, Rudnick LLP",HEPG,541110,Consulting,FALSE,TRUE
+California Air Resources Board,HEPG,92,Government/National Lab,FALSE,FALSE
+California Energy Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+California Independent System Operator,HEPG,221,Other Utilities,FALSE,TRUE
+California Public Utilities Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Calpine,HEPG,22111,Other Utilities,FALSE,TRUE
+"Cambridge University, Judge Business School",HEPG,61,Universities,FALSE,FALSE
+Catholic University of Louvain,HEPG,61,Universities,FALSE,FALSE
+Central Maine Power,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+Charles River Associates,HEPG,541110,Consulting,FALSE,TRUE
+Christensen Associates,HEPG,541690,Consulting,FALSE,TRUE
+Cinergy Corporation,HEPG,22111,Fossil Fuel Utilities,TRUE,TRUE
+Clean Air Task Force,HEPG,813,NGOs/Foundations,FALSE,FALSE
+Colorado Public Utilities Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Con Edison,HEPG,22111,Fossil Fuel Utilities,TRUE,TRUE
+Congressional Research Service,HEPG,92,Government/National Lab,FALSE,FALSE
+Connecticut Department of Public Utility Control,HEPG,92,Government/National Lab,FALSE,FALSE
+Conservation Law Foundation,HEPG,813,NGOs/Foundations,FALSE,FALSE
+Constellation,HEPG,483112,Transportation,FALSE,TRUE
+Covington & Burling,HEPG,484110,Transportation,FALSE,TRUE
+DC Energy,HEPG,5231,Finance,FALSE,TRUE
+Delaware Public Service Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Direct Energy,HEPG,238210,Construction,FALSE,TRUE
+District of Columbia Public Service Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Duke Energy,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+ENGIE,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+ETH Zurich,HEPG,61,Universities,FALSE,FALSE
+Edison Electric Institute,HEPG,22111,Other Utilities,FALSE,TRUE
+Edison Mission Energy,HEPG,22111,Fossil Fuel Utilities,TRUE,TRUE
+Electric Power Research Institute (EPRI),HEPG,813,NGOs/Foundations,FALSE,FALSE
+Electric Power Supply Association (EPSA),HEPG,22111,Other Utilities,FALSE,TRUE
+Electric Reliability Council of Texas (ERCOT),HEPG,221122,Other Utilities,FALSE,TRUE
+Electricity Consumers Resource Council (ELCON),HEPG,22111,Other Utilities,FALSE,TRUE
+Enel,HEPG,221118,Fossil Fuel Utilities,TRUE,TRUE
+Entergy,HEPG,22111,Fossil Fuel Utilities,TRUE,TRUE
+Environmental Defense Fund,HEPG,813,NGOs/Foundations,FALSE,FALSE
+Exelon,HEPG,22111,Fossil Fuel Utilities,TRUE,TRUE
+FTI Consulting,HEPG,541219,Consulting,FALSE,TRUE
+Federal Energy Regulatory Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Federal Trade Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Florida Public Service Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Georgia Public Service Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Georgia Transmission Corporation,HEPG,221118,Other Utilities,FALSE,TRUE
+"Gibson, Dunn & Crutcher LLP",HEPG,541110,Consulting,FALSE,TRUE
+Government Accountability Office,HEPG,92,Government/National Lab,FALSE,FALSE
+Great Plains Institute,HEPG,8133,NGOs/Foundations,FALSE,FALSE
+Harvard Law School,HEPG,61,Universities,FALSE,FALSE
+House Committee on Energy and Commerce,HEPG,92,Government/National Lab,FALSE,FALSE
+IHS Markit,HEPG,519130,Information Technology,FALSE,TRUE
+ISO New England,HEPG,92,Government/National Lab,FALSE,FALSE
+Idaho Public Utilities Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Illinois Commerce Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Indiana Utility Regulatory Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+International Transmission Corporation,HEPG,22111,Fossil Fuel Utilities,TRUE,TRUE
+LS Power Development,HEPG,333613,Machineries and Metal,FALSE,TRUE
+Lawrence Berkeley National Laboratory,HEPG,92,Government/National Lab,FALSE,FALSE
+Linde plc,HEPG,325120,Chemicals,FALSE,TRUE
+London Economics International,HEPG,541614,Consulting,FALSE,TRUE
+Louisiana Public Service Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Macquarie Energy,HEPG,523930,Finance,FALSE,TRUE
+Maine Public Utilities Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Maryland Office of People's Counsel,HEPG,92,Government/National Lab,FALSE,FALSE
+Maryland Public Service Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Massachusetts Department of Energy Resources,HEPG,92,Government/National Lab,FALSE,FALSE
+Massachusetts Department of Public Utilities,HEPG,92,Government/National Lab,FALSE,FALSE
+Massachusetts Institute of Technology,HEPG,61,Universities,FALSE,FALSE
+Michigan Public Service Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Midcontinent Independent System Operator,HEPG,2211,Other Utilities,FALSE,TRUE
+Minnesota Public Utilities Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Mirant Corporation,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+Mississippi Public Service Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Morgan Stanley,HEPG,523110,Finance,FALSE,TRUE
+NERA Economic Consulting,HEPG,524210,Finance,FALSE,TRUE
+NRG Energy,HEPG,22111,Fossil Fuel Utilities,TRUE,TRUE
+National Association of Regulatory Utility Commissioners,HEPG,92,Government/National Lab,FALSE,FALSE
+National Grid,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+National Regulatory Research Institute,HEPG,92,Government/National Lab,FALSE,FALSE
+National Rural Electric Cooperative Association,HEPG,2211,Other Utilities,FALSE,TRUE
+Natural Gas Supply Association,HEPG,2212,Fossil Fuel Utilities,TRUE,TRUE
+Natural Resources Defense Council,HEPG,813,NGOs/Foundations,FALSE,FALSE
+New Jersey Board of Public Utilities,HEPG,92,Government/National Lab,FALSE,FALSE
+New York Independent System Operator,HEPG,92,Government/National Lab,FALSE,FALSE
+New York State Department of Public Service,HEPG,92,Government/National Lab,FALSE,FALSE
+NextEra Energy Resources,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+Niagara Mohawk,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+North American Electric Reliability Corporation,HEPG,92,Government/National Lab,FALSE,FALSE
+Nuclear Regulatory Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Ontario Energy Board,HEPG,92,Government/National Lab,FALSE,FALSE
+PJM Interconnection,HEPG,92,Government/National Lab,FALSE,FALSE
+Pacific Gas and Electric Company,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+Pennsylvania Public Utilities Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+"Pepco Holdings, Inc.",HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+Pinnacle West Capital Corporation,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+Public Service Enterprise Group,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+Public Utilities Commission of Ohio,HEPG,92,Government/National Lab,FALSE,FALSE
+Public Utility Commission of Texas,HEPG,92,Government/National Lab,FALSE,FALSE
+Recurrent Energy,HEPG,221118,Other Utilities,FALSE,TRUE
+Regulatory Assistance Project,HEPG,813,NGOs/Foundations,FALSE,FALSE
+Resources for the Future,HEPG,813,NGOs/Foundations,FALSE,FALSE
+Sagewell,HEPG,541690,Consulting,FALSE,TRUE
+San Diego Gas & Electric,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+Sempra Energy,HEPG,22111,Fossil Fuel Utilities,TRUE,TRUE
+Senate Committee on Energy and Natural Resources,HEPG,92,Government/National Lab,FALSE,FALSE
+Shell,HEPG,211112,Fossil Fuel Production,TRUE,TRUE
+"Skadden, Arps, Slate, Meagher & Flom",HEPG,541110,Consulting,FALSE,TRUE
+Southern California Edison,HEPG,221111,Other Utilities,FALSE,TRUE
+Southern Company,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+Stanford University,HEPG,61,Universities,FALSE,FALSE
+TXU Corporation,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+Tennessee Valley Authority,HEPG,221111,Fossil Fuel Utilities,TRUE,TRUE
+Terna s.p.a.,HEPG,2211,Other Utilities,FALSE,TRUE
+The Brattle Group,HEPG,541,Consulting,FALSE,TRUE
+U.S. Department of Energy,HEPG,92,Government/National Lab,FALSE,FALSE
+UNS Energy/Tucson Electric Power,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+United States Commodity Futures Trading Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+United States Nuclear Regulatory Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Universidad Complutense de Madrid,HEPG,61,Universities,FALSE,FALSE
+University of Minnesota Law School,HEPG,61,Universities,FALSE,FALSE
+University of Texas at Austin,HEPG,61,Universities,FALSE,FALSE
+Vanderbilt University Law School,HEPG,61,Universities,FALSE,FALSE
+Virginia State Corporation Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+Washington Utilities and Transportation Commission,HEPG,92,Government/National Lab,FALSE,FALSE
+World Resources Institute,HEPG,813,NGOs/Foundations,FALSE,FALSE
+Xcel Energy,HEPG,2211,Fossil Fuel Utilities,TRUE,TRUE
+AVINA Foundation,HEEP,8132,NGOs/Foundations,FALSE,FALSE
+Alfred P. Sloan Foundation,HEEP,8132,NGOs/Foundations,FALSE,FALSE
+Ash Center for Democratic Governance and Innovation,HEEP,61,Universities,FALSE,FALSE
+BP,HEEP,324110,Fossil Fuel Production,TRUE,TRUE
+Bank of America,HEEP,522110,Finance,FALSE,TRUE
+Belfer Center for Science and International Affairs,HEEP,61,Universities,FALSE,FALSE
+Belfer Center for Science and International Affairs at Harvard Kennedy School,HEEP,61,Universities,FALSE,FALSE
+Castleton Commodities International LLC,HEEP,211111,Fossil Fuel Production,TRUE,TRUE
+Chevron,HEEP,324110,Fossil Fuel Production,TRUE,TRUE
+Christopher P. Kaneb,HEEP,814,Individuals,FALSE,FALSE
+ClimateWorks Foundation,HEEP,813,NGOs/Foundations,FALSE,FALSE
+Doris Duke Charitable Foundation,HEEP,8132,NGOs/Foundations,FALSE,FALSE
+Duke Energy,HEEP,2211,Fossil Fuel Utilities,TRUE,TRUE
+Enel,HEEP,221118,Fossil Fuel Utilities,TRUE,TRUE
+Harvard Global Institute,HEEP,61,Universities,FALSE,FALSE
+Harvard University Center for the Environment,HEEP,61,Universities,FALSE,FALSE
+Harvard University Climate Change Solutions Fund,HEEP,61,Universities,FALSE,FALSE
+International Emissions Trading Association (IETA),HEEP,928120,Government/National Lab,FALSE,FALSE
+James M. and Cathleen D. Stone Foundation,HEEP,813,NGOs/Foundations,FALSE,FALSE
+Mossavar-Rahmani Center for Business and Government,HEEP,61,Universities,FALSE,FALSE
+National Science Foundation,HEEP,92,Government/National Lab,FALSE,FALSE
+Qatar National Food Security Programme,HEEP,92,Government/National Lab,FALSE,FALSE
+Salata Institute for Climate and Sustainability,HEEP,61,Universities,FALSE,FALSE
+Shell,HEEP,211112,Fossil Fuel Production,TRUE,TRUE
+U.S. Department of Energy,HEEP,92,Government/National Lab,FALSE,FALSE
+U.S. Environmental Protection Agency,HEEP,92,Government/National Lab,FALSE,FALSE
+Boston Office of Food Access,FLPC,92,Government/National Lab,FALSE,FALSE
+Boston Office of Food Justice,FLPC,92,Government/National Lab,FALSE,FALSE
+Feeding America,FLPC,813,NGOs/Foundations,FALSE,FALSE
+Global FoodBanking Network,FLPC,813,NGOs/Foundations,FALSE,FALSE
+Massachusetts Department of Environmental Protection,FLPC,92,Government/National Lab,FALSE,FALSE
+Massachusetts Farm to School Project,FLPC,813,NGOs/Foundations,FALSE,FALSE
+Mississippi Food Policy Council,FLPC,813,NGOs/Foundations,FALSE,FALSE
+Natural Resources Defense Council,FLPC,813,NGOs/Foundations,FALSE,FALSE
+Navajo Nation,FLPC,92,Government/National Lab,FALSE,FALSE
+Navajo Nation Department of Health,FLPC,92,Government/National Lab,FALSE,FALSE
+ReFED,FLPC,813,NGOs/Foundations,FALSE,FALSE
+Rhode Island Food Policy Council,FLPC,813,NGOs/Foundations,FALSE,FALSE
+Socially Disadvantaged Farmers and Ranchers Policy Research Center at Alcorn State University,FLPC,61,Universities,FALSE,FALSE
+Tennessee Department of Environment and Conservation,FLPC,92,Government/National Lab,FALSE,FALSE
+U.S. Department of Agriculture,FLPC,92,Government/National Lab,FALSE,FALSE
+U.S. Environmental Protection Agency,FLPC,92,Government/National Lab,FALSE,FALSE
+U.S. Food and Drug Administration,FLPC,92,Government/National Lab,FALSE,FALSE
+World Wildlife Fund,FLPC,8132,NGOs/Foundations,FALSE,FALSE
+National Institute of Environmental Health Sciences,HSPH-NIEHS,92,Government/National Lab,FALSE,FALSE
+Alfred P. Sloan Foundation,HPCA,8132,NGOs/Foundations,FALSE,FALSE
+Ash Center for Democratic Governance and Innovation,HPCA,61,Universities,FALSE,FALSE
+BP,HPCA,324110,Fossil Fuel Production,TRUE,TRUE
+Belfer Center for Science and International Affairs,HPCA,61,Universities,FALSE,FALSE
+Chevron,HPCA,324110,Fossil Fuel Production,TRUE,TRUE
+Christopher P. Kaneb,HPCA,814,Individuals,FALSE,FALSE
+Climate Change Solutions Fund,HPCA,61,Universities,FALSE,FALSE
+Duke University Energy Initiative,HPCA,61,Universities,FALSE,FALSE
+Enel,HPCA,221118,Fossil Fuel Utilities,TRUE,TRUE
+Fondazione Eni Enrico Mattei,HPCA,8133,NGOs/Foundations,FALSE,FALSE
+Harvard Global Institute,HPCA,61,Universities,FALSE,FALSE
+Harvard University Center for the Environment,HPCA,61,Universities,FALSE,FALSE
+Harvard University Climate Change Solutions Fund,HPCA,61,Universities,FALSE,FALSE
+Mercator Research Institute on Global Commons and Climate Change,HPCA,92,Government/National Lab,FALSE,FALSE
+Mossavar-Rahmani Center for Business and Government,HPCA,61,Universities,FALSE,FALSE
+National Center for Climate Change Strategy and International Cooperation,HPCA,92,Government/National Lab,FALSE,FALSE
+Resources for the Future,HPCA,813,NGOs/Foundations,FALSE,FALSE
+Salata Institute for Climate and Sustainability,HPCA,61,Universities,FALSE,FALSE
+Alfred P. Sloan Foundation,Harvard-China Project,8132,NGOs/Foundations,FALSE,FALSE
+Ash Center for Democratic Governance and Innovation,Harvard-China Project,61,Universities,FALSE,FALSE
+BP,Harvard-China Project,324110,Fossil Fuel Production,TRUE,TRUE
+Belfer Center for Science and International Affairs,Harvard-China Project,61,Universities,FALSE,FALSE
+Belfer Center for Science and International Affairs and the Ash Center for Democratic Governance and Innovation,Harvard-China Project,61,Universities,FALSE,FALSE
+Belfer Center for Science and International Affairs at Harvard Kennedy School,Harvard-China Project,61,Universities,FALSE,FALSE
+Christopher P. Kaneb,Harvard-China Project,814,Individuals,FALSE,FALSE
+Climate Change Solutions Fund,Harvard-China Project,61,Universities,FALSE,FALSE
+Duke University Energy Initiative,Harvard-China Project,61,Universities,FALSE,FALSE
+Enel,Harvard-China Project,221118,Fossil Fuel Utilities,TRUE,TRUE
+Fondazione Eni Enrico Mattei,Harvard-China Project,8133,NGOs/Foundations,FALSE,FALSE
+Harvard Global Institute,Harvard-China Project,61,Universities,FALSE,FALSE
+Harvard University Center for the Environment,Harvard-China Project,61,Universities,FALSE,FALSE
+Harvard University Climate Change Solutions Fund,Harvard-China Project,61,Universities,FALSE,FALSE
+Mercator Research Institute on Global Commons and Climate Change,Harvard-China Project,92,Government/National Lab,FALSE,FALSE
+Mossavar-Rahmani Center for Business and Government,Harvard-China Project,61,Universities,FALSE,FALSE
+National Center for Climate Change Strategy and International Cooperation,Harvard-China Project,92,Government/National Lab,FALSE,FALSE
+Resources for the Future,Harvard-China Project,813,NGOs/Foundations,FALSE,FALSE
+Belfer Center for Science and International Affairs,MTA,61,Universities,FALSE,FALSE
+Belfer Center's Middle East Initiative,MTA,61,Universities,FALSE,FALSE
+Carnegie Corporation of New York,MTA,8132,NGOs/Foundations,FALSE,FALSE
+Emirates Leadership Initiative,MTA,61,Universities,FALSE,FALSE
+John D. and Catherine T. MacArthur Foundation,MTA,8132,NGOs/Foundations,FALSE,FALSE
+National Science Foundation,MRSEC,92,Government/National Lab,FALSE,FALSE
+Concord Field Station,MCZ,61,Universities,FALSE,FALSE
+Department of Organismic and Evolutionary Biology,MCZ,61,Universities,FALSE,FALSE
+Ernst Mayr Library,MCZ,61,Universities,FALSE,FALSE
+Harvard Museum of Natural History,MCZ,61,Universities,FALSE,FALSE
+European Molecular Biology Laboratory,STS,92,Government/National Lab,FALSE,FALSE
+European School of Molecular Medicine,STS,61,Universities,FALSE,FALSE
+University of Cambridge Department of Geography,STS,61,Universities,FALSE,FALSE
+University of Sussex STEPS Centre,STS,61,Universities,FALSE,FALSE
+University of Vienna Department of Social Studies of Science,STS,61,Universities,FALSE,FALSE
+Bill & Melinda Gates Foundation,Taubman Center,8132,NGOs/Foundations,FALSE,FALSE
+Boone Family Foundation,Taubman Center,8132,NGOs/Foundations,FALSE,FALSE
+Brookings Institution,Taubman Center,813,NGOs/Foundations,FALSE,FALSE
+Center for American Political Studies,Taubman Center,61,Universities,FALSE,FALSE
+Center for Education Reform,Taubman Center,813,NGOs/Foundations,FALSE,FALSE
+Charles Koch Foundation,Taubman Center,8132,NGOs/Foundations,FALSE,FALSE
+EdChoice,Taubman Center,813,NGOs/Foundations,FALSE,FALSE
+Foundation for Excellence in Education,Taubman Center,813,NGOs/Foundations,FALSE,FALSE
+Heartland Institute,Taubman Center,813,NGOs/Foundations,FALSE,FALSE
+Heritage Foundation,Taubman Center,813,NGOs/Foundations,FALSE,FALSE
+Hertog Foundation,Taubman Center,8132,NGOs/Foundations,FALSE,FALSE
+Hoover Institution at Stanford University,Taubman Center,61,Universities,FALSE,FALSE
+Hubbard Family Foundation,Taubman Center,8132,NGOs/Foundations,FALSE,FALSE
+Institute for Justice,Taubman Center,813,NGOs/Foundations,FALSE,FALSE
+Jaquelin Hume Foundation,Taubman Center,813,NGOs/Foundations,FALSE,FALSE
+Joint Center for Poverty Research,Taubman Center,61,Universities,FALSE,FALSE
+Kern Family Foundation,Taubman Center,8132,NGOs/Foundations,FALSE,FALSE
+Lovett & Ruth Peters Foundation,Taubman Center,8132,NGOs/Foundations,FALSE,FALSE
+Lynde & Harry Bradley Foundation,Taubman Center,8132,NGOs/Foundations,FALSE,FALSE
+Rappaport Institute for Greater Boston,Taubman Center,61,Universities,FALSE,FALSE
+Searle Freedom Trust,Taubman Center,8132,NGOs/Foundations,FALSE,FALSE
+The Institute for Quantitative Social Science,Taubman Center,61,Universities,FALSE,FALSE
+Thomas B. Fordham Institute,Taubman Center,813,NGOs/Foundations,FALSE,FALSE
+Walton Family Foundation,Taubman Center,8132,NGOs/Foundations,FALSE,FALSE
+William E. Simon Foundation,Taubman Center,8132,NGOs/Foundations,FALSE,FALSE
+Alnylam Pharmaceuticals,Wyss,325412,Chemicals,FALSE,TRUE
+Bristol-Myers Squibb,Wyss,325412,Chemicals,FALSE,TRUE
+Cell Signaling Technologies,Wyss,325413,Chemicals,FALSE,TRUE
+Collaborative Fund,Wyss,92,Government/National Lab,FALSE,FALSE
+Eisai,Wyss,325412,Chemicals,FALSE,TRUE
+Eli Lilly and Co.,Wyss,325412,Chemicals,FALSE,TRUE
+FairJourney Biologics,Wyss,3254,Chemicals,FALSE,TRUE
+Harvard's Office of Technology Development,Wyss,92,Government/National Lab,FALSE,FALSE
+Kraft Heinz,Wyss,311,Food and Beverages,FALSE,TRUE
+Lundbeck A/S,Wyss,325412,Chemicals,FALSE,TRUE
+Merck and Co.,Wyss,325412,Chemicals,FALSE,TRUE
+Visterra,Wyss,3254,Chemicals,FALSE,TRUE
+National Science Foundation,ecoLearn,92,Government/National Lab,FALSE,FALSE
+Texas Instruments Incorporated,ecoLearn,334413,Electronics,FALSE,TRUE
+Alliance for Automotive Innovation,CEEPR,336110,Fossil Fuel Vehicles,TRUE,TRUE
+Ameren,CEEPR,2211,Fossil Fuel Utilities,TRUE,TRUE
+Associated Electric Cooperative Inc.,CEEPR,221122,Other Utilities,FALSE,TRUE
+BP,CEEPR,324110,Fossil Fuel Production,TRUE,TRUE
+CLP Holdings,CEEPR,2211,Fossil Fuel Utilities,TRUE,TRUE
+ClearPath Foundation,CEEPR,813,NGOs/Foundations,FALSE,FALSE
+ConocoPhillips,CEEPR,2111,Fossil Fuel Production,TRUE,TRUE
+Constellation,CEEPR,483112,Transportation,FALSE,TRUE
+Dominion Energy,CEEPR,22111,Fossil Fuel Utilities,TRUE,TRUE
+Duke Energy,CEEPR,2211,Fossil Fuel Utilities,TRUE,TRUE
+EDPC J-Power,CEEPR,221122,Fossil Fuel Utilities,TRUE,TRUE
+ENGIE,CEEPR,2211,Fossil Fuel Utilities,TRUE,TRUE
+Electricite de France,CEEPR,22111,Fossil Fuel Utilities,TRUE,TRUE
+EnBW,CEEPR,221122,Fossil Fuel Utilities,TRUE,TRUE
+Eneva,CEEPR,221112,Fossil Fuel Utilities,TRUE,TRUE
+Eni,CEEPR,324110,Fossil Fuel Production,TRUE,TRUE
+Equinor,CEEPR,324110,Fossil Fuel Production,TRUE,TRUE
+Eversource Energy,CEEPR,2211,Fossil Fuel Utilities,TRUE,TRUE
+Exelon,CEEPR,22111,Fossil Fuel Utilities,TRUE,TRUE
+ExxonMobil,CEEPR,324110,Fossil Fuel Production,TRUE,TRUE
+Gas Natural Fenosa,CEEPR,221,Fossil Fuel Utilities,TRUE,TRUE
+"Golden Spread Electric Cooperative, Inc.",CEEPR,221121,Other Utilities,FALSE,TRUE
+Great River Energy,CEEPR,221118,Other Utilities,FALSE,TRUE
+Hydro-Quebec,CEEPR,22111,Other Utilities,FALSE,TRUE
+IHI Corporation,CEEPR,334310,Electronics,FALSE,TRUE
+Iberdrola,CEEPR,221112,Fossil Fuel Utilities,TRUE,TRUE
+Kepco,CEEPR,2211,Fossil Fuel Utilities,TRUE,TRUE
+Kiewit Corporation,CEEPR,327320,Mineral Manufacturing (incl. Concrete),FALSE,TRUE
+LS Power Development,CEEPR,333613,Machineries and Metal,FALSE,TRUE
+National Grid,CEEPR,2211,Fossil Fuel Utilities,TRUE,TRUE
+Nike,CEEPR,316210,Fashion,FALSE,TRUE
+Norwegian Ministry of Petroleum and Energy,CEEPR,92,Government/National Lab,FALSE,FALSE
+Public Service Enterprise Group,CEEPR,2211,Fossil Fuel Utilities,TRUE,TRUE
+Shell,CEEPR,211112,Fossil Fuel Production,TRUE,TRUE
+Southern Company,CEEPR,2211,Fossil Fuel Utilities,TRUE,TRUE
+Swedish Energy Agency,CEEPR,92,Government/National Lab,FALSE,FALSE
+Takeda Pharmaceuticals,CEEPR,325412,Chemicals,FALSE,TRUE
+Toyota,CEEPR,336110,Fossil Fuel Vehicles,TRUE,TRUE
+TransCanada Corporation,CEEPR,486210,Fossil Fuel Production,TRUE,TRUE
+Vattenfall,CEEPR,221122,Fossil Fuel Utilities,TRUE,TRUE
+Washington Gas,CEEPR,221210,Fossil Fuel Utilities,TRUE,TRUE
+Alfred P. Sloan Foundation,J-PAL,8132,NGOs/Foundations,FALSE,FALSE
+Co-Impact Lab,J-PAL,813,NGOs/Foundations,FALSE,FALSE
+King Philanthropies,J-PAL,8132,NGOs/Foundations,FALSE,FALSE
+Laura and John Arnold Foundation,J-PAL,8132,NGOs/Foundations,FALSE,FALSE
+Overdeck Family Foundation,J-PAL,8132,NGOs/Foundations,FALSE,FALSE
+Kishore Mariwala,J-WAFS,814,Individuals,FALSE,FALSE
+Rabobank,J-WAFS,522298,Finance,FALSE,TRUE
+Xylem,J-WAFS,333914,Machineries and Metal,FALSE,TRUE
+Agence Francaise de Developpement,JPSPGC,92,Government/National Lab,FALSE,FALSE
+Amundi,JPSPGC,525910,Finance,FALSE,TRUE
+BP,JPSPGC,324110,Fossil Fuel Production,TRUE,TRUE
+Bank of Canada,JPSPGC,92,Government/National Lab,FALSE,FALSE
+Biogen,JPSPGC,325414,Chemicals,FALSE,TRUE
+CLP Holdings,JPSPGC,2211,Fossil Fuel Utilities,TRUE,TRUE
+CONCAWE,JPSPGC,211,Fossil Fuel Production,TRUE,TRUE
+Cargill,JPSPGC,424510,Wholesalers,FALSE,TRUE
+Chevron,JPSPGC,324110,Fossil Fuel Production,TRUE,TRUE
+ClearPath,JPSPGC,813,NGOs/Foundations,FALSE,FALSE
+ClearPath Foundation,JPSPGC,813,NGOs/Foundations,FALSE,FALSE
+ClimateWorks,JPSPGC,813,NGOs/Foundations,FALSE,FALSE
+ClimateWorks Foundation,JPSPGC,813,NGOs/Foundations,FALSE,FALSE
+Compania General de Combustibles S.A.,JPSPGC,211120,Fossil Fuel Production,TRUE,TRUE
+ConocoPhillips,JPSPGC,2111,Fossil Fuel Production,TRUE,TRUE
+Department of Energy,JPSPGC,92,Government/National Lab,FALSE,FALSE
+Department of Transportation,JPSPGC,92,Government/National Lab,FALSE,FALSE
+Dow Chemical,JPSPGC,334419,Electronics,FALSE,TRUE
+Duke Energy,JPSPGC,2211,Fossil Fuel Utilities,TRUE,TRUE
+EDPC J-Power,JPSPGC,221122,Fossil Fuel Utilities,TRUE,TRUE
+Earle A Killian III and Waidy Lee MIT Seed Fund,JPSPGC,61,Universities,FALSE,FALSE
+Electric Power Research Institute (EPRI),JPSPGC,813,NGOs/Foundations,FALSE,FALSE
+Electricite de France,JPSPGC,22111,Fossil Fuel Utilities,TRUE,TRUE
+Energy Futures Initiative,JPSPGC,8133,NGOs/Foundations,FALSE,FALSE
+Energy Information Administration,JPSPGC,92,Government/National Lab,FALSE,FALSE
+Eni,JPSPGC,324110,Fossil Fuel Production,TRUE,TRUE
+Environmental Protection Agency,JPSPGC,92,Government/National Lab,FALSE,FALSE
+Exelon,JPSPGC,22111,Fossil Fuel Utilities,TRUE,TRUE
+ExxonMobil,JPSPGC,324110,Fossil Fuel Production,TRUE,TRUE
+Federal Aviation Administration,JPSPGC,92,Government/National Lab,FALSE,FALSE
+G. Unger Vetlesen Foundation,JPSPGC,8132,NGOs/Foundations,FALSE,FALSE
+General Motors,JPSPGC,336110,Fossil Fuel Vehicles,TRUE,TRUE
+HSBC,JPSPGC,522291,Finance,FALSE,TRUE
+Hancock Natural Resource Group,JPSPGC,541611,Consulting,FALSE,TRUE
+Harvard School of Public Health,JPSPGC,61,Universities,FALSE,FALSE
+Hopewell Fund,JPSPGC,813,NGOs/Foundations,FALSE,FALSE
+Iberdrola,JPSPGC,221112,Fossil Fuel Utilities,TRUE,TRUE
+Institute of Nuclear Energy Research,JPSPGC,92,Government/National Lab,FALSE,FALSE
+International Energy Agency Gas & Oil Technology Collaboration Programme,JPSPGC,92,Government/National Lab,FALSE,FALSE
+International Food Policy Research Institute,JPSPGC,813,NGOs/Foundations,FALSE,FALSE
+Lockheed Martin Corporation,JPSPGC,336414,Aerospace,FALSE,TRUE
+MIT Energy Initiative,JPSPGC,61,Universities,FALSE,FALSE
+MIT Environmental Solutions Initiative,JPSPGC,61,Universities,FALSE,FALSE
+MIT International Science & Technology Initiatives,JPSPGC,61,Universities,FALSE,FALSE
+MIT Lincoln Laboratory,JPSPGC,92,Government/National Lab,FALSE,FALSE
+MIT Office of Sustainability,JPSPGC,61,Universities,FALSE,FALSE
+MIT Office of the Vice President for Research,JPSPGC,61,Universities,FALSE,FALSE
+MIT Skoltech Program,JPSPGC,61,Universities,FALSE,FALSE
+Manulife,JPSPGC,524113,Finance,FALSE,TRUE
+MathWorks,JPSPGC,511210,Information Technology,FALSE,TRUE
+Morgan Stanley,JPSPGC,523110,Finance,FALSE,TRUE
+Murphy Oil Corporation,JPSPGC,2111,Fossil Fuel Production,TRUE,TRUE
+NASA,JPSPGC,92,Government/National Lab,FALSE,FALSE
+National Grid,JPSPGC,2211,Fossil Fuel Utilities,TRUE,TRUE
+National Institute of Clean and Low-Carbon Energy,JPSPGC,92,Government/National Lab,FALSE,FALSE
+National Oceanic and Atmospheric Administration,JPSPGC,92,Government/National Lab,FALSE,FALSE
+National Renewable Energy Laboratory,JPSPGC,92,Government/National Lab,FALSE,FALSE
+National Science Foundation,JPSPGC,92,Government/National Lab,FALSE,FALSE
+Nike,JPSPGC,316210,Fashion,FALSE,TRUE
+Norwegian Ministry of Petroleum and Energy,JPSPGC,92,Government/National Lab,FALSE,FALSE
+Novartis,JPSPGC,325412,Chemicals,FALSE,TRUE
+Oglethorpe Power Corporation,JPSPGC,22111,Fossil Fuel Utilities,TRUE,TRUE
+Pacific Northwest National Laboratory,JPSPGC,92,Government/National Lab,FALSE,FALSE
+RTI International,JPSPGC,813,NGOs/Foundations,FALSE,FALSE
+Shell,JPSPGC,211112,Fossil Fuel Production,TRUE,TRUE
+Singapore-MIT Alliance for Research and Technology,JPSPGC,61,Universities,FALSE,FALSE
+Sustainable Insight Capital Management,JPSPGC,522320,Finance,FALSE,TRUE
+Tokyo Electric Power Company,JPSPGC,2211,Fossil Fuel Utilities,TRUE,TRUE
+Total,JPSPGC,324110,Fossil Fuel Production,TRUE,TRUE
+U.S. Air Force,JPSPGC,92,Government/National Lab,FALSE,FALSE
+U.S. Congressional Budget Office,JPSPGC,92,Government/National Lab,FALSE,FALSE
+U.S. Department of Agriculture,JPSPGC,92,Government/National Lab,FALSE,FALSE
+U.S. Department of Energy,JPSPGC,92,Government/National Lab,FALSE,FALSE
+U.S. Department of Transportation,JPSPGC,92,Government/National Lab,FALSE,FALSE
+U.S. Energy Information Administration,JPSPGC,92,Government/National Lab,FALSE,FALSE
+U.S. Environmental Protection Agency,JPSPGC,92,Government/National Lab,FALSE,FALSE
+U.S. Federal Aviation Administration,JPSPGC,92,Government/National Lab,FALSE,FALSE
+U.S. National Aeronautics and Space Administration,JPSPGC,92,Government/National Lab,FALSE,FALSE
+U.S. National Oceanographic and Atmospheric Administration,JPSPGC,92,Government/National Lab,FALSE,FALSE
+U.S. National Renewable Energy Laboratory,JPSPGC,92,Government/National Lab,FALSE,FALSE
+U.S. National Science Foundation,JPSPGC,92,Government/National Lab,FALSE,FALSE
+Wellington Management,JPSPGC,5239,Finance,FALSE,TRUE
+Weyerhaeuser Company,JPSPGC,321,Wood,FALSE,TRUE
+Concrete Advancement Foundation,MIT CSHub,3273,Mineral Manufacturing (incl. Concrete),FALSE,TRUE
+Portland Cement Association,MIT CSHub,3273,Mineral Manufacturing (incl. Concrete),FALSE,TRUE
+Ready Mixed Concrete Research & Education Foundation,MIT CSHub,813,NGOs/Foundations,FALSE,FALSE
+Amy Smith,D-Lab,814,Individuals,FALSE,FALSE
+Rockefeller Foundation,D-Lab,8132,NGOs/Foundations,FALSE,FALSE
+Shashank and Medha Karve,D-Lab,814,Individuals,FALSE,FALSE
+United States Agency for International Development,D-Lab,92,Government/National Lab,FALSE,FALSE
+Arthur Vining Davis Foundation,MIT ESI,8132,NGOs/Foundations,FALSE,FALSE
+National Oceanic and Atmospheric Administration,Sea Grant,92,Government/National Lab,FALSE,FALSE
+Aedie McEvoy,MIT SSI,814,Individuals,FALSE,FALSE
+Akira Sugano,MIT SSI,814,Individuals,FALSE,FALSE
+Alexander Borschow,MIT SSI,814,Individuals,FALSE,FALSE
+Anna Gabriella Antici Carroll,MIT SSI,814,Individuals,FALSE,FALSE
+Biogen,MIT SSI,325414,Chemicals,FALSE,TRUE
+Cecilia Melin,MIT SSI,814,Individuals,FALSE,FALSE
+David Miller,MIT SSI,814,Individuals,FALSE,FALSE
+Dorothy King,MIT SSI,814,Individuals,FALSE,FALSE
+Douglas Drane,MIT SSI,814,Individuals,FALSE,FALSE
+Dwight Poler,MIT SSI,814,Individuals,FALSE,FALSE
+General Motors,MIT SSI,336110,Fossil Fuel Vehicles,TRUE,TRUE
+Goldman-Sonnenfeldt Foundation,MIT SSI,813,NGOs/Foundations,FALSE,FALSE
+Grantham Foundation for the Protection of the Environment,MIT SSI,8132,NGOs/Foundations,FALSE,FALSE
+Gustavo Pierini,MIT SSI,814,Individuals,FALSE,FALSE
+Hamid Hakimzadeh,MIT SSI,814,Individuals,FALSE,FALSE
+John Houston,MIT SSI,814,Individuals,FALSE,FALSE
+John Mazzarino,MIT SSI,814,Individuals,FALSE,FALSE
+John McEvoy,MIT SSI,814,Individuals,FALSE,FALSE
+Joleen Julis,MIT SSI,814,Individuals,FALSE,FALSE
+Joseph D'Arcy Carroll,MIT SSI,814,Individuals,FALSE,FALSE
+Julis-Rubinowitz Family,MIT SSI,814,Individuals,FALSE,FALSE
+Kathryn Ann Penkus Corzo,MIT SSI,814,Individuals,FALSE,FALSE
+Katja Goldman,MIT SSI,814,Individuals,FALSE,FALSE
+Keishin Sasaki,MIT SSI,814,Individuals,FALSE,FALSE
+Kirsten Poler,MIT SSI,814,Individuals,FALSE,FALSE
+Lam Yiu Chu,MIT SSI,814,Individuals,FALSE,FALSE
+Linda Cornfield,MIT SSI,814,Individuals,FALSE,FALSE
+Lockheed Martin Corporation,MIT SSI,336414,Aerospace,FALSE,TRUE
+Mary Anne Kim,MIT SSI,814,Individuals,FALSE,FALSE
+Michael Even,MIT SSI,814,Individuals,FALSE,FALSE
+Michael Sonnenfeldt,MIT SSI,814,Individuals,FALSE,FALSE
+Mitch Julis,MIT SSI,814,Individuals,FALSE,FALSE
+Raymond Wood,MIT SSI,814,Individuals,FALSE,FALSE
+Ricardo Marino,MIT SSI,814,Individuals,FALSE,FALSE
+Robert Ackerley,MIT SSI,814,Individuals,FALSE,FALSE
+Robert King,MIT SSI,814,Individuals,FALSE,FALSE
+Thomas Haas Foundation,MIT SSI,8132,NGOs/Foundations,FALSE,FALSE
+William Ford Jr.,MIT SSI,814,Individuals,FALSE,FALSE
+William and Flora Hewlett Foundation,MIT SSI,8132,NGOs/Foundations,FALSE,FALSE
+World Business Council for Sustainable Development,MIT SSI,928120,Government/National Lab,FALSE,FALSE
+Yue Chen,MIT SSI,814,Individuals,FALSE,FALSE
+A.P. Moller - Maersk,MITCTL,483211,Transportation,FALSE,TRUE
+AB InBev,MITCTL,312120,Food and Beverages,FALSE,TRUE
+ATL Partners,MITCTL,523999,Finance,FALSE,TRUE
+Agility,MITCTL,488999,Transportation,FALSE,TRUE
+Ahold/Delhaize,MITCTL,445110,Retail,FALSE,TRUE
+Amazon,MITCTL,455219,Retail,FALSE,TRUE
+American Industrial Partners,MITCTL,541990,Consulting,FALSE,TRUE
+Analog Devices,MITCTL,334413,Electronics,FALSE,TRUE
+Armada,MITCTL,331,Machineries and Metal,FALSE,TRUE
+Avetta,MITCTL,511210,Information Technology,FALSE,TRUE
+B2W/LASA,MITCTL,453998,Retail,FALSE,TRUE
+BASF,MITCTL,325,Chemicals,FALSE,TRUE
+BMW,MITCTL,336110,Fossil Fuel Vehicles,TRUE,TRUE
+BNSF Railway,MITCTL,482111,Transportation,FALSE,TRUE
+Barcel,MITCTL,311919,Food and Beverages,FALSE,TRUE
+BioMarin,MITCTL,325414,Chemicals,FALSE,TRUE
+Boston Scientific,MITCTL,334510,Electronics,FALSE,TRUE
+Brambles / CHEP,MITCTL,541420,Consulting,FALSE,TRUE
+Bristol Myers Squibb,MITCTL,325412,Chemicals,FALSE,TRUE
+C.H. Robinson,MITCTL,484121,Transportation,FALSE,TRUE
+CMA CGM,MITCTL,483111,Transportation,FALSE,TRUE
+CSX Transportation,MITCTL,482111,Transportation,FALSE,TRUE
+CVS Health,MITCTL,621,Health Care,FALSE,TRUE
+Cardinal Health,MITCTL,424210,Wholesalers,FALSE,TRUE
+Cintas,MITCTL,812331,Other Services,FALSE,TRUE
+Colgate-Palmolive,MITCTL,325611,Chemicals,FALSE,TRUE
+Coppel,MITCTL,452,Retail,FALSE,TRUE
+Coyote Logistics,MITCTL,492110,Transportation,FALSE,TRUE
+DP World,MITCTL,488310,Transportation,FALSE,TRUE
+Dell Inc.,MITCTL,334111,Electronics,FALSE,TRUE
+Dow AgroSciences,MITCTL,3252,Chemicals,FALSE,TRUE
+ExxonMobil,MITCTL,324110,Fossil Fuel Production,TRUE,TRUE
+FEMSA,MITCTL,312111,Food and Beverages,FALSE,TRUE
+FM Global,MITCTL,524126,Finance,FALSE,TRUE
+FedEx,MITCTL,492110,Transportation,FALSE,TRUE
+Flex,MITCTL,334412,Electronics,FALSE,TRUE
+Flipkart,MITCTL,454110,Retail,FALSE,TRUE
+Genentech,MITCTL,325412,Chemicals,FALSE,TRUE
+General Mills,MITCTL,311230,Food and Beverages,FALSE,TRUE
+GlaxoSmithKline,MITCTL,325412,Chemicals,FALSE,TRUE
+GlobalTranz,MITCTL,488510,Transportation,FALSE,TRUE
+Goodyear,MITCTL,326211,Plastics,FALSE,TRUE
+Infor,MITCTL,511210,Information Technology,FALSE,TRUE
+Inspectorio,MITCTL,541511,Consulting,FALSE,TRUE
+Intel Corporation,MITCTL,334413,Electronics,FALSE,TRUE
+Iron Mountain,MITCTL,531120,Real Estate,FALSE,TRUE
+Johnson & Johnson,MITCTL,325412,Chemicals,FALSE,TRUE
+Johnson Controls,MITCTL,336360,Miscellaneous Manufacturing,FALSE,TRUE
+Kinaxis,MITCTL,518210,Information Technology,FALSE,TRUE
+L'Oreal,MITCTL,325620,Chemicals,FALSE,TRUE
+LLamasoft,MITCTL,518210,Information Technology,FALSE,TRUE
+Lenovo,MITCTL,511210,Information Technology,FALSE,TRUE
+Link Logistics,MITCTL,484110,Transportation,FALSE,TRUE
+Luxottica,MITCTL,339115,Miscellaneous Manufacturing,FALSE,TRUE
+MSC,MITCTL,5241,Finance,FALSE,TRUE
+Matson,MITCTL,483113,Transportation,FALSE,TRUE
+Michelin,MITCTL,326211,Plastics,FALSE,TRUE
+Microsoft,MITCTL,513210,Information Technology,FALSE,TRUE
+Mitsubishi Heavy Industries,MITCTL,333,Machineries and Metal,FALSE,TRUE
+Mondelez International,MITCTL,311821,Food and Beverages,FALSE,TRUE
+Nestle,MITCTL,311,Food and Beverages,FALSE,TRUE
+New Balance,MITCTL,316210,Fashion,FALSE,TRUE
+New York Shipping Exchange,MITCTL,541611,Consulting,FALSE,TRUE
+Niagara Bottling,MITCTL,31211,Food and Beverages,FALSE,TRUE
+Nike,MITCTL,316210,Fashion,FALSE,TRUE
+Nippon Express,MITCTL,488510,Transportation,FALSE,TRUE
+Nolan Transportation,MITCTL,488999,Transportation,FALSE,TRUE
+Nordstrom,MITCTL,458110,Retail,FALSE,TRUE
+Office of Rail and Road,MITCTL,92,Government/National Lab,FALSE,FALSE
+OnProcess,MITCTL,454390,Retail,FALSE,TRUE
+PepsiCo,MITCTL,31211,Food and Beverages,FALSE,TRUE
+Procter & Gamble,MITCTL,332211,Machineries and Metal,FALSE,TRUE
+ROCHE,MITCTL,325412,Chemicals,FALSE,TRUE
+Realterm,MITCTL,531210,Real Estate,FALSE,TRUE
+Ryder,MITCTL,532120,Real Estate,FALSE,TRUE
+Salesforce,MITCTL,513210,Information Technology,FALSE,TRUE
+Schlumberger,MITCTL,213112,Fossil Fuel Production,TRUE,TRUE
+Schneider Electric,MITCTL,335311,Electronics,FALSE,TRUE
+Shell,MITCTL,211112,Fossil Fuel Production,TRUE,TRUE
+Signet,MITCTL,522320,Finance,FALSE,TRUE
+Starbucks,MITCTL,722513,Hospitality,FALSE,TRUE
+TJX Companies,MITCTL,458110,Retail,FALSE,TRUE
+Takeda Pharmaceuticals,MITCTL,325412,Chemicals,FALSE,TRUE
+The Hershey Company,MITCTL,3113,Food and Beverages,FALSE,TRUE
+The Kroger Co.,MITCTL,445110,Retail,FALSE,TRUE
+U.S. Xpress,MITCTL,484121,Transportation,FALSE,TRUE
+USTRANSCOM,MITCTL,92,Government/National Lab,FALSE,FALSE
+Uber,MITCTL,485310,Transportation,FALSE,TRUE
+Unilever,MITCTL,3256,Chemicals,FALSE,TRUE
+"United Parcel Service, Inc.",MITCTL,492110,Transportation,FALSE,TRUE
+Verisk Analytics,MITCTL,524298,Finance,FALSE,TRUE
+Walmart,MITCTL,455219,Retail,FALSE,TRUE
+Waters,MITCTL,334516,Electronics,FALSE,TRUE
+Wayfair,MITCTL,444140,Retail,FALSE,TRUE
+Weft,MITCTL,541511,Consulting,FALSE,TRUE
+Xylem,MITCTL,333914,Machineries and Metal,FALSE,TRUE
+adidas,MITCTL,316210,Fashion,FALSE,TRUE
+project44,MITCTL,541611,Consulting,FALSE,TRUE
+Alfa Energy Group,MITEI,5416,Consulting,FALSE,TRUE
+American Tower,MITEI,531120,Real Estate,FALSE,TRUE
+Analog Devices,MITEI,334413,Electronics,FALSE,TRUE
+Associated Electric Cooperative Inc.,MITEI,221122,Other Utilities,FALSE,TRUE
+BP,MITEI,324110,Fossil Fuel Production,TRUE,TRUE
+Booz Allen Hamilton,MITEI,541611,Consulting,FALSE,TRUE
+Bosch,MITEI,336390,Miscellaneous Manufacturing,FALSE,TRUE
+Braskem,MITEI,325110,Chemicals,FALSE,TRUE
+Cenovus Energy,MITEI,324110,Fossil Fuel Production,TRUE,TRUE
+Chevron,MITEI,324110,Fossil Fuel Production,TRUE,TRUE
+China General Nuclear,MITEI,2211,Other Utilities,FALSE,TRUE
+Citizens Utility Board,MITEI,813,NGOs/Foundations,FALSE,FALSE
+Commonwealth Fusion Systems,MITEI,221118,Other Utilities,FALSE,TRUE
+ConocoPhillips,MITEI,2111,Fossil Fuel Production,TRUE,TRUE
+Constellation,MITEI,483112,Transportation,FALSE,TRUE
+Copec,MITEI,424720,Fossil Fuel Production,TRUE,TRUE
+Cummins,MITEI,333618,Machineries and Metal,FALSE,TRUE
+Dominion Energy,MITEI,22111,Fossil Fuel Utilities,TRUE,TRUE
+Duke Energy,MITEI,2211,Fossil Fuel Utilities,TRUE,TRUE
+EDF Energy,MITEI,221122,Fossil Fuel Utilities,TRUE,TRUE
+ENGIE,MITEI,2211,Fossil Fuel Utilities,TRUE,TRUE
+ENN,MITEI,221210,Fossil Fuel Utilities,TRUE,TRUE
+Enel,MITEI,221118,Fossil Fuel Utilities,TRUE,TRUE
+Enerjisa,MITEI,221122,Other Utilities,FALSE,TRUE
+Eneva,MITEI,221112,Fossil Fuel Utilities,TRUE,TRUE
+Eni,MITEI,324110,Fossil Fuel Production,TRUE,TRUE
+Environmental Defense Fund,MITEI,813,NGOs/Foundations,FALSE,FALSE
+Enzen,MITEI,541330,Consulting,FALSE,TRUE
+Equinor,MITEI,324110,Fossil Fuel Production,TRUE,TRUE
+Eversource Energy,MITEI,2211,Fossil Fuel Utilities,TRUE,TRUE
+Exelon,MITEI,22111,Fossil Fuel Utilities,TRUE,TRUE
+ExxonMobil,MITEI,324110,Fossil Fuel Production,TRUE,TRUE
+Ferrovial,MITEI,237,Construction,FALSE,TRUE
+Gas Natural Fenosa,MITEI,221,Fossil Fuel Utilities,TRUE,TRUE
+General Motors,MITEI,336110,Fossil Fuel Vehicles,TRUE,TRUE
+"Golden Spread Electric Cooperative, Inc.",MITEI,221121,Other Utilities,FALSE,TRUE
+IHI Corporation,MITEI,334310,Electronics,FALSE,TRUE
+IHS Markit,MITEI,519130,Information Technology,FALSE,TRUE
+Iberdrola,MITEI,221112,Fossil Fuel Utilities,TRUE,TRUE
+Indonesia Asahan Aluminium (Inalum),MITEI,331492,Machineries and Metal,FALSE,TRUE
+Jera Americas,MITEI,541330,Consulting,FALSE,TRUE
+LS Power Development,MITEI,333613,Machineries and Metal,FALSE,TRUE
+Magnolia Quality Development Corporation Limited,MITEI,237210,Construction,FALSE,TRUE
+McDermott,MITEI,333611,Machineries and Metal,FALSE,TRUE
+NEC Energy Solutions,MITEI,334111,Electronics,FALSE,TRUE
+National Grid,MITEI,2211,Fossil Fuel Utilities,TRUE,TRUE
+National Renewable Energy Laboratory,MITEI,92,Government/National Lab,FALSE,FALSE
+PJM Interconnection,MITEI,92,Government/National Lab,FALSE,FALSE
+PTTEP,MITEI,211120,Fossil Fuel Production,TRUE,TRUE
+Paul & Matthew Mashikian,MITEI,814,Individuals,FALSE,FALSE
+Petronas,MITEI,211120,Fossil Fuel Production,TRUE,TRUE
+Public Service Enterprise Group,MITEI,2211,Fossil Fuel Utilities,TRUE,TRUE
+Raizen,MITEI,311314,Food and Beverages,FALSE,TRUE
+Repsol,MITEI,324110,Fossil Fuel Production,TRUE,TRUE
+Rio Tinto,MITEI,212,Mining,FALSE,TRUE
+S&P Global,MITEI,561450,Administration and Support,FALSE,TRUE
+Saudi Aramco,MITEI,324110,Fossil Fuel Production,TRUE,TRUE
+Schlumberger,MITEI,213112,Fossil Fuel Production,TRUE,TRUE
+Sertecpet,MITEI,211120,Fossil Fuel Production,TRUE,TRUE
+Shell,MITEI,211112,Fossil Fuel Production,TRUE,TRUE
+Siemens,MITEI,333249,Machineries and Metal,FALSE,TRUE
+TATA Power,MITEI,334515,Electronics,FALSE,TRUE
+Terna s.p.a.,MITEI,2211,Other Utilities,FALSE,TRUE
+Total,MITEI,324110,Fossil Fuel Production,TRUE,TRUE
+Toyota,MITEI,336110,Fossil Fuel Vehicles,TRUE,TRUE
+U.S. Department of Energy,MITEI,92,Government/National Lab,FALSE,FALSE
+Washington Gas,MITEI,221210,Fossil Fuel Utilities,TRUE,TRUE
+World Business Council for Sustainable Development,MITEI,928120,Government/National Lab,FALSE,FALSE
+Xignux,MITEI,311612,Food and Beverages,FALSE,TRUE
+Chevron,Bits & Watts,324110,Fossil Fuel Production,TRUE,TRUE
+E.ON,Bits & Watts,2211,Fossil Fuel Utilities,TRUE,TRUE
+ENGIE,Bits & Watts,2211,Fossil Fuel Utilities,TRUE,TRUE
+Electric Power Research Institute (EPRI),Bits & Watts,813,NGOs/Foundations,FALSE,FALSE
+Google,Bits & Watts,518210,Information Technology,FALSE,TRUE
+Hitachi,Bits & Watts,541519,Consulting,FALSE,TRUE
+Infosys,Bits & Watts,541511,Consulting,FALSE,TRUE
+Innogy SE,Bits & Watts,22111,Fossil Fuel Utilities,TRUE,TRUE
+National Science Foundation,Bits & Watts,92,Government/National Lab,FALSE,FALSE
+Origin Energy,Bits & Watts,2211,Fossil Fuel Utilities,TRUE,TRUE
+Pacific Gas and Electric Company,Bits & Watts,2211,Fossil Fuel Utilities,TRUE,TRUE
+Portland General Electric,Bits & Watts,2211,Other Utilities,FALSE,TRUE
+RTE,Bits & Watts,335311,Electronics,FALSE,TRUE
+Sacramento Municipal Utility District,Bits & Watts,221,Other Utilities,FALSE,TRUE
+Shell,Bits & Watts,211112,Fossil Fuel Production,TRUE,TRUE
+Siemens,Bits & Watts,333249,Machineries and Metal,FALSE,TRUE
+State Grid Corporation of China,Bits & Watts,335311,Electronics,FALSE,TRUE
+Terna s.p.a.,Bits & Watts,2211,Other Utilities,FALSE,TRUE
+ALICE Technologies,CIFE,541690,Consulting,FALSE,TRUE
+"Accu-Crete, Inc.",CIFE,238,Construction,FALSE,TRUE
+Aconex,CIFE,518210,Information Technology,FALSE,TRUE
+Allegion,CIFE,332510,Machineries and Metal,FALSE,TRUE
+Allegro Projekt AB,CIFE,541330,Consulting,FALSE,TRUE
+Allplan GmbH,CIFE,541511,Consulting,FALSE,TRUE
+Altair Inc.,CIFE,511210,Information Technology,FALSE,TRUE
+Alvarez and Marsal,CIFE,541611,Consulting,FALSE,TRUE
+Ananda Development,CIFE,531210,Real Estate,FALSE,TRUE
+Apple,CIFE,334220,Electronics,FALSE,TRUE
+Arup,CIFE,541330,Consulting,FALSE,TRUE
+Autodesk,CIFE,519130,Information Technology,FALSE,TRUE
+BEXEL Consulting,CIFE,541330,Consulting,FALSE,TRUE
+BKW Antec Group,CIFE,541330,Consulting,FALSE,TRUE
+Bechtel Corporation,CIFE,236220,Construction,FALSE,TRUE
+"Beck Group, Inc.",CIFE,236220,Construction,FALSE,TRUE
+Boldt Company,CIFE,236210,Construction,FALSE,TRUE
+Bouygues Construction,CIFE,237990,Construction,FALSE,TRUE
+Building and Construction Authority,CIFE,92,Government/National Lab,FALSE,FALSE
+CCC (Consolidated Contractors Co.),CIFE,531110,Real Estate,FALSE,TRUE
+Cadwork,CIFE,541330,Consulting,FALSE,TRUE
+ConTech Lab,CIFE,61,Universities,FALSE,FALSE
+DBM Global,CIFE,332312,Machineries and Metal,FALSE,TRUE
+DC Strategies,CIFE,541618,Consulting,FALSE,TRUE
+"DPR Construction, Inc.",CIFE,236220,Construction,FALSE,TRUE
+Design + Construction Strategies,CIFE,541618,Consulting,FALSE,TRUE
+Drees & Sommer,CIFE,236220,Construction,FALSE,TRUE
+ENGIE,CIFE,2211,Fossil Fuel Utilities,TRUE,TRUE
+ExxonMobil,CIFE,324110,Fossil Fuel Production,TRUE,TRUE
+FH Nordwestschweiz,CIFE,61,Universities,FALSE,FALSE
+FIATECH,CIFE,5416,Consulting,FALSE,TRUE
+Fachhochschule Nordwestschweiz,CIFE,61,Universities,FALSE,FALSE
+Federation of Danish Building Industries,CIFE,236,Construction,FALSE,TRUE
+Foundamental VC,CIFE,327320,Mineral Manufacturing (incl. Concrete),FALSE,TRUE
+GOLDBECK GmbH,CIFE,332311,Machineries and Metal,FALSE,TRUE
+Gilead Sciences,CIFE,325414,Chemicals,FALSE,TRUE
+"Glodon Software Co., Ltd.",CIFE,541511,Consulting,FALSE,TRUE
+Google,CIFE,518210,Information Technology,FALSE,TRUE
+Gregory Pl Luth & Assoc.,CIFE,541330,Consulting,FALSE,TRUE
+HITT Contracting Inc.,CIFE,238110,Construction,FALSE,TRUE
+"HOK Group, Inc.",CIFE,541330,Consulting,FALSE,TRUE
+Haas Fertigbau,CIFE,23611,Construction,FALSE,TRUE
+Hawila Projekt AB,CIFE,541330,Consulting,FALSE,TRUE
+Hilti Corporation,CIFE,333517,Machineries and Metal,FALSE,TRUE
+Implenia Schweiz AG,CIFE,541310,Consulting,FALSE,TRUE
+Iris Technologies,CIFE,236115,Construction,FALSE,TRUE
+JLL,CIFE,531390,Real Estate,FALSE,TRUE
+Kruse Smith,CIFE,236117,Construction,FALSE,TRUE
+Louis Berger,CIFE,541330,Consulting,FALSE,TRUE
+M. A. Mortenson,CIFE,236220,Construction,FALSE,TRUE
+MT Hojgaard,CIFE,236220,Construction,FALSE,TRUE
+MWH Constructors,CIFE,237110,Construction,FALSE,TRUE
+Max Bogl,CIFE,541330,Consulting,FALSE,TRUE
+McKinsey & Company,CIFE,541611,Consulting,FALSE,TRUE
+Microsoft,CIFE,513210,Information Technology,FALSE,TRUE
+Mortenson,CIFE,236220,Construction,FALSE,TRUE
+NCC,CIFE,238290,Construction,FALSE,TRUE
+Nike,CIFE,316210,Fashion,FALSE,TRUE
+Norconsult,CIFE,541618,Consulting,FALSE,TRUE
+Nureva,CIFE,541511,Consulting,FALSE,TRUE
+Obayashi Corporation,CIFE,236220,Construction,FALSE,TRUE
+Optima,CIFE,522390,Finance,FALSE,TRUE
+Oscar Properties,CIFE,531390,Real Estate,FALSE,TRUE
+PT Blink,CIFE,541511,Consulting,FALSE,TRUE
+Permasteelisa Group,CIFE,332312,Machineries and Metal,FALSE,TRUE
+Quartz Robotics,CIFE,4921,Transportation,FALSE,TRUE
+RIB Limited,CIFE,511210,Information Technology,FALSE,TRUE
+Ramboll,CIFE,541330,Consulting,FALSE,TRUE
+Rhumbix,CIFE,561990,Administration and Support,FALSE,TRUE
+Ryan Companies,CIFE,541310,Consulting,FALSE,TRUE
+STO Building Group,CIFE,236220,Construction,FALSE,TRUE
+Skanska,CIFE,2361,Construction,FALSE,TRUE
+South32,CIFE,2122,Mining,FALSE,TRUE
+Stanford Health Care,CIFE,61,Universities,FALSE,FALSE
+Strategic Building Innovation,CIFE,238990,Construction,FALSE,TRUE
+Strategic Project Solutions,CIFE,541618,Consulting,FALSE,TRUE
+Suffolk Construction Company,CIFE,236220,Construction,FALSE,TRUE
+Sweco,CIFE,334513,Electronics,FALSE,TRUE
+Swinerton,CIFE,236220,Construction,FALSE,TRUE
+Synchro Software Ltd,CIFE,541511,Consulting,FALSE,TRUE
+Trimble,CIFE,334519,Electronics,FALSE,TRUE
+Tyrens AB,CIFE,541330,Consulting,FALSE,TRUE
+U.S. General Services Administration,CIFE,92,Government/National Lab,FALSE,FALSE
+Ultragenyx Pharmaceutical,CIFE,325414,Chemicals,FALSE,TRUE
+University of Lima,CIFE,61,Universities,FALSE,FALSE
+University of Oulu,CIFE,61,Universities,FALSE,FALSE
+VIA Technik,CIFE,541340,Consulting,FALSE,TRUE
+Veidekke Sverige AB,CIFE,236,Construction,FALSE,TRUE
+Veni AS,CIFE,541511,Consulting,FALSE,TRUE
+Verteco Technologies Ltd,CIFE,2211,Other Utilities,FALSE,TRUE
+WSP,CIFE,3252,Chemicals,FALSE,TRUE
+Walt Disney Imagineering,CIFE,516120,Information Technology,FALSE,TRUE
+Whatt.io LLC,CIFE,541511,Consulting,FALSE,TRUE
+Yau Lee Holdings Ltd,CIFE,236210,Construction,FALSE,TRUE
+buildingSMART USA,CIFE,236,Construction,FALSE,TRUE
+Ana Pessoa-Trejos and Raul Trejos,CLAS,814,Individuals,FALSE,FALSE
+Edward and Margaret Soares,CLAS,814,Individuals,FALSE,FALSE
+Gran Mariscal de Ayacucho Foundation,CLAS,92,Government/National Lab,FALSE,FALSE
+Hugh and Josephine Knotts Knowles,CLAS,814,Individuals,FALSE,FALSE
+Luksic Family Fund,CLAS,814,Individuals,FALSE,FALSE
+Monica Miller Walsh and David Walsh,CLAS,814,Individuals,FALSE,FALSE
+Stanford Global Studies Division,CLAS,61,Universities,FALSE,FALSE
+Tinker Foundation,CLAS,8132,NGOs/Foundations,FALSE,FALSE
+U.S. Department of Education,CLAS,92,Government/National Lab,FALSE,FALSE
+U.S. Department of Energy Office of Basic Energy Science,CMC-UF,92,Government/National Lab,FALSE,FALSE
+EAT,COS,8133,NGOs/Foundations,FALSE,FALSE
+Emmett Interdisciplinary Program in Environment and Resources,COS,61,Universities,FALSE,FALSE
+Environmental Defense Fund,COS,813,NGOs/Foundations,FALSE,FALSE
+Future Earth,COS,813,NGOs/Foundations,FALSE,FALSE
+High Level Panel for a Sustainable Ocean Economy,COS,928120,Government/National Lab,FALSE,FALSE
+Hopkins Marine Station,COS,61,Universities,FALSE,FALSE
+Monterey Bay Aquarium,COS,813,NGOs/Foundations,FALSE,FALSE
+Monterey Bay Aquarium Research Institute,COS,813,NGOs/Foundations,FALSE,FALSE
+National Center for Ecological Analysis and Synthesis,COS,61,Universities,FALSE,FALSE
+"School of Earth Sciences, Stanford University",COS,61,Universities,FALSE,FALSE
+"School of Engineering, Stanford University",COS,61,Universities,FALSE,FALSE
+"School of Humanities and Sciences, Stanford University",COS,61,Universities,FALSE,FALSE
+SeaBOS,COS,1141,Seafood,FALSE,TRUE
+Springer Nature,COS,334510,Electronics,FALSE,TRUE
+Stanford Design School,COS,61,Universities,FALSE,FALSE
+Stanford Doerr School of Sustainability,COS,61,Universities,FALSE,FALSE
+Stanford School of Humanities and Sciences,COS,61,Universities,FALSE,FALSE
+Stanford University,COS,61,Universities,FALSE,FALSE
+Stanford Woods Institute for the Environment,COS,61,Universities,FALSE,FALSE
+Stockholm Resilience Center,COS,61,Universities,FALSE,FALSE
+World Economic Forum,COS,928120,Government/National Lab,FALSE,FALSE
+Freeman Spogli Institute for International Studies,FSE,61,Universities,FALSE,FALSE
+Stanford Woods Institute for the Environment,FSE,61,Universities,FALSE,FALSE
+William Wrigley Senior Fellowship,FSE,61,Universities,FALSE,FALSE
+CA Office of Planning and Research,CEPP (S),92,Government/National Lab,FALSE,FALSE
+CA Public Utilities Commission,CEPP (S),92,Government/National Lab,FALSE,FALSE
+Legislative Analyst's Office,CEPP (S),92,Government/National Lab,FALSE,FALSE
+Resources Legacy Fund,CEPP (S),813,NGOs/Foundations,FALSE,FALSE
+The Greenlining Institute,CEPP (S),813,NGOs/Foundations,FALSE,FALSE
+Center for Innovation in Global Health,DEHE,61,Universities,FALSE,FALSE
+Center for Innovation in Global Health at the Stanford School of Medicine,DEHE,61,Universities,FALSE,FALSE
+FSI Global Development and Poverty,DEHE,61,Universities,FALSE,FALSE
+Stanford Center for Innovation in Global Health,DEHE,61,Universities,FALSE,FALSE
+Stanford Institute for Innovation in Developing Economies,DEHE,61,Universities,FALSE,FALSE
+Stanford Woods Institute for the Environment,DEHE,61,Universities,FALSE,FALSE
+Stanford Woods Institute's Environmental Venture Projects,DEHE,61,Universities,FALSE,FALSE
+American Petroleum Institute,EMF,211,Fossil Fuel Production,TRUE,TRUE
+Aramco Services,EMF,324110,Fossil Fuel Production,TRUE,TRUE
+BP,EMF,324110,Fossil Fuel Production,TRUE,TRUE
+CRIEPI,EMF,92,Government/National Lab,FALSE,FALSE
+California Energy Commission,EMF,92,Government/National Lab,FALSE,FALSE
+Canada Energy Regulator,EMF,92,Government/National Lab,FALSE,FALSE
+Chevron,EMF,324110,Fossil Fuel Production,TRUE,TRUE
+Electric Power Research Institute (EPRI),EMF,813,NGOs/Foundations,FALSE,FALSE
+Electricite de France,EMF,22111,Fossil Fuel Utilities,TRUE,TRUE
+Environment Canada,EMF,92,Government/National Lab,FALSE,FALSE
+Environment and Climate Change Canada,EMF,92,Government/National Lab,FALSE,FALSE
+ExxonMobil,EMF,324110,Fossil Fuel Production,TRUE,TRUE
+National Oceanic and Atmospheric Administration,EMF,92,Government/National Lab,FALSE,FALSE
+Sandia National Laboratories,EMF,92,Government/National Lab,FALSE,FALSE
+Sasol,EMF,325998,Chemicals,FALSE,TRUE
+Schlumberger,EMF,213112,Fossil Fuel Production,TRUE,TRUE
+Shell,EMF,211112,Fossil Fuel Production,TRUE,TRUE
+Southern Company,EMF,2211,Fossil Fuel Utilities,TRUE,TRUE
+The Mitre Corporation,EMF,541720,Consulting,FALSE,TRUE
+TransCanada Corporation,EMF,486210,Fossil Fuel Production,TRUE,TRUE
+U.S. Department of Energy,EMF,92,Government/National Lab,FALSE,FALSE
+U.S. Environmental Protection Agency,EMF,92,Government/National Lab,FALSE,FALSE
+Idaho National Laboratory,CISAC,92,Government/National Lab,FALSE,FALSE
+Lawrence Livermore National Laboratory,CISAC,92,Government/National Lab,FALSE,FALSE
+Los Alamos National Laboratory,CISAC,92,Government/National Lab,FALSE,FALSE
+Sandia National Laboratories,CISAC,92,Government/National Lab,FALSE,FALSE
+Brazilian Electricity Regulatory Agency (ANEEL),PESD,92,Government/National Lab,FALSE,FALSE
+Centre for European Economic Research (ZEW),PESD,92,Government/National Lab,FALSE,FALSE
+Centro de Investigacion y Docencia Economicas (CIDE),PESD,61,Universities,FALSE,FALSE
+Chinese Academy of Social Sciences (CASS),PESD,92,Government/National Lab,FALSE,FALSE
+DIW Berlin,PESD,92,Government/National Lab,FALSE,FALSE
+"Electricity Industry Center, Carnegie Mellon University (CEIC)",PESD,61,Universities,FALSE,FALSE
+"Energy Research Center, University of Cape Town",PESD,61,Universities,FALSE,FALSE
+Federal University of Rio de Janeiro,PESD,61,Universities,FALSE,FALSE
+Guangdong Technoeconomic Research and Development Center,PESD,92,Government/National Lab,FALSE,FALSE
+Heinz College of Information Systems and Public Policy at Carnegie Mellon University,PESD,61,Universities,FALSE,FALSE
+India Institute of Management in Ahmedabad (IIM-A),PESD,61,Universities,FALSE,FALSE
+"Institute of Nuclear and New Energy Technology, Tsinghua University",PESD,61,Universities,FALSE,FALSE
+Instituto Tecnologico Autonomo de Mexico (ITAM),PESD,61,Universities,FALSE,FALSE
+Instituto de Estudios Superiores de Administracion (IESA),PESD,61,Universities,FALSE,FALSE
+KTH Royal Institute of Technology,PESD,61,Universities,FALSE,FALSE
+LS Power Development,PESD,333613,Machineries and Metal,FALSE,TRUE
+Liu Institute for Global Studies at the University of British Columbia,PESD,61,Universities,FALSE,FALSE
+Monash University,PESD,61,Universities,FALSE,FALSE
+Research Institute of Industrial Economics,PESD,8133,NGOs/Foundations,FALSE,FALSE
+Resources for the Future,PESD,813,NGOs/Foundations,FALSE,FALSE
+"Royal Holloway, University of London",PESD,61,Universities,FALSE,FALSE
+"School of Mechanical Engineering, Shanghai Jiaotong University",PESD,61,Universities,FALSE,FALSE
+Stanford Energy Modeling Forum,PESD,61,Universities,FALSE,FALSE
+Stanford Law School,PESD,61,Universities,FALSE,FALSE
+The Institute for Applied Systems Analysis,PESD,92,Government/National Lab,FALSE,FALSE
+University of Cape Town Graduate School of Business,PESD,61,Universities,FALSE,FALSE
+Bank of America,GCEP,522110,Finance,FALSE,TRUE
+Boise State University,GCEP,61,Universities,FALSE,FALSE
+Brigham Young University,GCEP,61,Universities,FALSE,FALSE
+California Institute of Technology,GCEP,61,Universities,FALSE,FALSE
+Carnegie Mellon University,GCEP,61,Universities,FALSE,FALSE
+Centre National de la Recherche Scientifique (CNRS/IRDEP),GCEP,92,Government/National Lab,FALSE,FALSE
+China University of Geosciences,GCEP,61,Universities,FALSE,FALSE
+Colorado School of Mines,GCEP,61,Universities,FALSE,FALSE
+Delft University of Technology,GCEP,61,Universities,FALSE,FALSE
+ETH Zurich,GCEP,61,Universities,FALSE,FALSE
+Energy Research Centre of the Netherlands,GCEP,92,Government/National Lab,FALSE,FALSE
+ExxonMobil,GCEP,324110,Fossil Fuel Production,TRUE,TRUE
+FOM Institute AMOLF,GCEP,92,Government/National Lab,FALSE,FALSE
+Ghent University,GCEP,61,Universities,FALSE,FALSE
+Harvard University,GCEP,61,Universities,FALSE,FALSE
+North Carolina State University,GCEP,61,Universities,FALSE,FALSE
+Northeastern University,GCEP,61,Universities,FALSE,FALSE
+Northwestern University,GCEP,61,Universities,FALSE,FALSE
+Peking University,GCEP,61,Universities,FALSE,FALSE
+Pennsylvania State University,GCEP,61,Universities,FALSE,FALSE
+Purdue University,GCEP,61,Universities,FALSE,FALSE
+Rensselaer Polytechnic Institute,GCEP,61,Universities,FALSE,FALSE
+Research Institute of Innovative Technology for the Earth (RITE),GCEP,92,Government/National Lab,FALSE,FALSE
+Rice University,GCEP,61,Universities,FALSE,FALSE
+Schlumberger,GCEP,213112,Fossil Fuel Production,TRUE,TRUE
+Universidad Politecnica de Madrid,GCEP,61,Universities,FALSE,FALSE
+University of Dundee,GCEP,61,Universities,FALSE,FALSE
+University of Illinois,GCEP,61,Universities,FALSE,FALSE
+University of Montana,GCEP,61,Universities,FALSE,FALSE
+University of New South Wales,GCEP,61,Universities,FALSE,FALSE
+University of Notre Dame,GCEP,61,Universities,FALSE,FALSE
+University of Picardie Jules Verne,GCEP,61,Universities,FALSE,FALSE
+University of Southern California,GCEP,61,Universities,FALSE,FALSE
+University of Sydney,GCEP,61,Universities,FALSE,FALSE
+University of Tennessee,GCEP,61,Universities,FALSE,FALSE
+University of Texas at Austin,GCEP,61,Universities,FALSE,FALSE
+University of Texas at Dallas,GCEP,61,Universities,FALSE,FALSE
+University of Wisconsin,GCEP,61,Universities,FALSE,FALSE
+Uppsala University,GCEP,61,Universities,FALSE,FALSE
+Utrecht University,GCEP,61,Universities,FALSE,FALSE
+Azimuth Capital Management,H2I,561990,Administration and Support,FALSE,TRUE
+Chevron,H2I,324110,Fossil Fuel Production,TRUE,TRUE
+ExxonMobil,H2I,324110,Fossil Fuel Production,TRUE,TRUE
+GSFutures,H2I,541611,Consulting,FALSE,TRUE
+Gas Technology Institute,H2I,813,NGOs/Foundations,FALSE,FALSE
+SK Group,H2I,322120,Paper,FALSE,TRUE
+Saoradh Enterprise Partners,H2I,221118,Other Utilities,FALSE,TRUE
+Shell,H2I,211112,Fossil Fuel Production,TRUE,TRUE
+Southern California Gas Company,H2I,221210,Fossil Fuel Utilities,TRUE,TRUE
+Technip Energies,H2I,237120,Construction,FALSE,TRUE
+Toyota,H2I,336110,Fossil Fuel Vehicles,TRUE,TRUE
+Trafigura,H2I,424720,Fossil Fuel Production,TRUE,TRUE
+Albertine Rift Conservation Society,NatCap,8133,NGOs/Foundations,FALSE,FALSE
+American Wind Wildlife Institute,NatCap,221115,Other Utilities,FALSE,TRUE
+Asian Development Bank,NatCap,92,Government/National Lab,FALSE,FALSE
+Bahamas Reef Environment and Education Fund,NatCap,8133,NGOs/Foundations,FALSE,FALSE
+Barbados Coastal Zone Management Unit,NatCap,92,Government/National Lab,FALSE,FALSE
+Bard College,NatCap,61,Universities,FALSE,FALSE
+Bay Area Conservation and Development Commission,NatCap,92,Government/National Lab,FALSE,FALSE
+Bay Area Regional Collaborative,NatCap,92,Government/National Lab,FALSE,FALSE
+Belize Coastal Zone Management Authority and Institute,NatCap,92,Government/National Lab,FALSE,FALSE
+Bioversity International,NatCap,813,NGOs/Foundations,FALSE,FALSE
+Blue Cross Blue Shield of Minnesota,NatCap,524114,Finance,FALSE,TRUE
+California Coastal Commission,NatCap,92,Government/National Lab,FALSE,FALSE
+Cambridge Institute for Sustainability Leadership,NatCap,61,Universities,FALSE,FALSE
+Cary Institute of Ecosystem Studies,NatCap,813,NGOs/Foundations,FALSE,FALSE
+Center for Climate Systems Research,NatCap,61,Universities,FALSE,FALSE
+Central Bank of Costa Rica,NatCap,92,Government/National Lab,FALSE,FALSE
+Chinese Academy of Sciences,NatCap,92,Government/National Lab,FALSE,FALSE
+City of Balneario Camboriu,NatCap,92,Government/National Lab,FALSE,FALSE
+City of Extrema,NatCap,92,Government/National Lab,FALSE,FALSE
+City of Minneapolis,NatCap,92,Government/National Lab,FALSE,FALSE
+City of St. Paul,NatCap,92,Government/National Lab,FALSE,FALSE
+Clark Labs,NatCap,61,Universities,FALSE,FALSE
+Coca-Cola Company,NatCap,312111,Food and Beverages,FALSE,TRUE
+Compass,NatCap,531210,Real Estate,FALSE,TRUE
+Costa Rican Ministry of Environment and Energy,NatCap,92,Government/National Lab,FALSE,FALSE
+Department of Soil Conservation and Watershed Management,NatCap,92,Government/National Lab,FALSE,FALSE
+Dow Chemical,NatCap,334419,Electronics,FALSE,TRUE
+Downstream Strategies,NatCap,541620,Consulting,FALSE,TRUE
+Dupont Pioneer,NatCap,424910,Wholesalers,FALSE,TRUE
+Environmental Science Associates,NatCap,541720,Consulting,FALSE,TRUE
+French Agricultural Research Centre for International Development,NatCap,92,Government/National Lab,FALSE,FALSE
+Government of Myanmar,NatCap,92,Government/National Lab,FALSE,FALSE
+Group on Earth Observations Biodiversity Observation Network,NatCap,928120,Government/National Lab,FALSE,FALSE
+Guandu,NatCap,92,Government/National Lab,FALSE,FALSE
+Gund Institute for Ecological Economics,NatCap,61,Universities,FALSE,FALSE
+Hainan Research Academy of Environmental Sciences,NatCap,92,Government/National Lab,FALSE,FALSE
+Himachal Pradesh Department of Forests,NatCap,92,Government/National Lab,FALSE,FALSE
+Industrial Economics,NatCap,541618,Consulting,FALSE,TRUE
+Institute of Ecology,NatCap,92,Government/National Lab,FALSE,FALSE
+Institute of Mountain Hazards and Environment,NatCap,92,Government/National Lab,FALSE,FALSE
+Inter-American Development Bank,NatCap,92,Government/National Lab,FALSE,FALSE
+Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services,NatCap,928120,Government/National Lab,FALSE,FALSE
+International Center for Tropical Agriculture,NatCap,928120,Government/National Lab,FALSE,FALSE
+International Food Policy Research Institute,NatCap,813,NGOs/Foundations,FALSE,FALSE
+International Water Management Institute,NatCap,813,NGOs/Foundations,FALSE,FALSE
+Iowa Department of Natural Resources,NatCap,92,Government/National Lab,FALSE,FALSE
+Kering,NatCap,316,Fashion,FALSE,TRUE
+King's College London,NatCap,61,Universities,FALSE,FALSE
+Legislative Citizen Commission on Minnesota Resources,NatCap,92,Government/National Lab,FALSE,FALSE
+Marin County,NatCap,92,Government/National Lab,FALSE,FALSE
+Mass Audubon,NatCap,813,NGOs/Foundations,FALSE,FALSE
+Minnesota Department of Health,NatCap,92,Government/National Lab,FALSE,FALSE
+Monterey County,NatCap,92,Government/National Lab,FALSE,FALSE
+Myanmar Ministry of Natural Resources and Environmental Conservation,NatCap,92,Government/National Lab,FALSE,FALSE
+NASA,NatCap,92,Government/National Lab,FALSE,FALSE
+NOAA,NatCap,92,Government/National Lab,FALSE,FALSE
+Nanyang Technological University,NatCap,61,Universities,FALSE,FALSE
+National Patagonian Center,NatCap,92,Government/National Lab,FALSE,FALSE
+Nepal Electricity Authority,NatCap,92,Government/National Lab,FALSE,FALSE
+Netherlands Development Organization,NatCap,8133,NGOs/Foundations,FALSE,FALSE
+Office of the Prime Minister of The Bahamas,NatCap,92,Government/National Lab,FALSE,FALSE
+Pakistan Forest Department,NatCap,92,Government/National Lab,FALSE,FALSE
+Pakistan Ministry of Agriculture,NatCap,92,Government/National Lab,FALSE,FALSE
+Perry Institute for Marine Science,NatCap,813,NGOs/Foundations,FALSE,FALSE
+Point Blue Conservation Science,NatCap,813,NGOs/Foundations,FALSE,FALSE
+Rice University,NatCap,61,Universities,FALSE,FALSE
+Royal University of Phnom Penh,NatCap,61,Universities,FALSE,FALSE
+SC3 group,NatCap,523910,Finance,FALSE,TRUE
+Saint Paul Riverfront Corporation,NatCap,8133,NGOs/Foundations,FALSE,FALSE
+San Francisco Estuary Institute,NatCap,813,NGOs/Foundations,FALSE,FALSE
+San Mateo County,NatCap,92,Government/National Lab,FALSE,FALSE
+Santa Cruz County,NatCap,92,Government/National Lab,FALSE,FALSE
+"Severe Storm Prediction, Education and Evacuation from Disasters Center",NatCap,61,Universities,FALSE,FALSE
+Sonoma County,NatCap,92,Government/National Lab,FALSE,FALSE
+Stockholm Resilience Center,NatCap,61,Universities,FALSE,FALSE
+Sustainability Science Program,NatCap,61,Universities,FALSE,FALSE
+The Catalan Institute for Water Research,NatCap,92,Government/National Lab,FALSE,FALSE
+The Economics of Ecosystems and Biodiversity,NatCap,928120,Government/National Lab,FALSE,FALSE
+The Nature Conservancy,NatCap,813,NGOs/Foundations,FALSE,FALSE
+The Trust for Public Land,NatCap,813,NGOs/Foundations,FALSE,FALSE
+Unilever,NatCap,3256,Chemicals,FALSE,TRUE
+United States Department of Agriculture,NatCap,92,Government/National Lab,FALSE,FALSE
+United States Department of Defense,NatCap,92,Government/National Lab,FALSE,FALSE
+United States Environmental Protection Agency,NatCap,92,Government/National Lab,FALSE,FALSE
+United States Fish and Wildlife Service,NatCap,92,Government/National Lab,FALSE,FALSE
+United States Forest Service,NatCap,92,Government/National Lab,FALSE,FALSE
+United States Golf Association,NatCap,813,NGOs/Foundations,FALSE,FALSE
+Universidade Eduardo Mondlane,NatCap,61,Universities,FALSE,FALSE
+"University of California, Berkeley",NatCap,61,Universities,FALSE,FALSE
+"University of California, Santa Cruz",NatCap,61,Universities,FALSE,FALSE
+University of Exeter,NatCap,61,Universities,FALSE,FALSE
+University of Illinois,NatCap,61,Universities,FALSE,FALSE
+University of Minnesota,NatCap,61,Universities,FALSE,FALSE
+University of Rhode Island,NatCap,61,Universities,FALSE,FALSE
+University of Texas,NatCap,61,Universities,FALSE,FALSE
+University of The Bahamas,NatCap,61,Universities,FALSE,FALSE
+University of Washington,NatCap,61,Universities,FALSE,FALSE
+Washington State University,NatCap,61,Universities,FALSE,FALSE
+Wildlife Conservation Society,NatCap,813,NGOs/Foundations,FALSE,FALSE
+World Agroforestry Center,NatCap,928120,Government/National Lab,FALSE,FALSE
+World Bank,NatCap,92,Government/National Lab,FALSE,FALSE
+World Wildlife Fund,NatCap,8132,NGOs/Foundations,FALSE,FALSE
+Xi'an Jiaotong University,NatCap,61,Universities,FALSE,FALSE
+American Petroleum Institute,NGI,211,Fossil Fuel Production,TRUE,TRUE
+Anadarko Petroleum,NGI,2111,Fossil Fuel Production,TRUE,TRUE
+Aramco Services,NGI,324110,Fossil Fuel Production,TRUE,TRUE
+Azimuth Capital Management,NGI,561990,Administration and Support,FALSE,TRUE
+BP,NGI,324110,Fossil Fuel Production,TRUE,TRUE
+Baker Hughes,NGI,213111,Fossil Fuel Production,TRUE,TRUE
+C. Michael and Diane P. Ming,NGI,814,Individuals,FALSE,FALSE
+Cedigaz,NGI,541710,Consulting,FALSE,TRUE
+Chesapeake Energy,NGI,2111,Fossil Fuel Production,TRUE,TRUE
+ConocoPhillips,NGI,2111,Fossil Fuel Production,TRUE,TRUE
+EQT Corporation,NGI,2111,Fossil Fuel Production,TRUE,TRUE
+ExxonMobil,NGI,324110,Fossil Fuel Production,TRUE,TRUE
+Gas Technology Institute,NGI,813,NGOs/Foundations,FALSE,FALSE
+Gulf Energy Information,NGI,211111,Fossil Fuel Production,TRUE,TRUE
+Gulfport Energy,NGI,2111,Fossil Fuel Production,TRUE,TRUE
+IHS Markit,NGI,519130,Information Technology,FALSE,TRUE
+John Crane Inc.,NGI,339991,Miscellaneous Manufacturing,FALSE,TRUE
+Kairos Aerospace,NGI,518210,Information Technology,FALSE,TRUE
+Kerogen Capital,NGI,551111,Private Equity,FALSE,TRUE
+Kinder Morgan Inc.,NGI,486210,Fossil Fuel Production,TRUE,TRUE
+Leede Operating,NGI,213112,Fossil Fuel Production,TRUE,TRUE
+NW Innovation Works,NGI,237310,Construction,FALSE,TRUE
+New Jersey Resources,NGI,221210,Fossil Fuel Utilities,TRUE,TRUE
+Pacific Gas and Electric Company,NGI,2211,Fossil Fuel Utilities,TRUE,TRUE
+Pipeline Research Council International,NGI,486,Fossil Fuel Production,TRUE,TRUE
+Project Canary,NGI,541620,Consulting,FALSE,TRUE
+Promigas,NGI,486210,Fossil Fuel Production,TRUE,TRUE
+SCF Partners,NGI,523999,Finance,FALSE,TRUE
+SNAM,NGI,221210,Fossil Fuel Utilities,TRUE,TRUE
+Schlumberger,NGI,213112,Fossil Fuel Production,TRUE,TRUE
+Seven Generations Energy,NGI,2111,Fossil Fuel Production,TRUE,TRUE
+Shell,NGI,211112,Fossil Fuel Production,TRUE,TRUE
+Southern California Gas Company,NGI,221210,Fossil Fuel Utilities,TRUE,TRUE
+Stanford Doerr School of Sustainability and Precourt Institute for Energy,NGI,61,Universities,FALSE,FALSE
+Stanford Energy,NGI,61,Universities,FALSE,FALSE
+The Cynthia and George Mitchell Foundation,NGI,8132,NGOs/Foundations,FALSE,FALSE
+Total,NGI,324110,Fossil Fuel Production,TRUE,TRUE
+Trafigura,NGI,424720,Fossil Fuel Production,TRUE,TRUE
+"Tudor, Pickering, Holt & Co.",NGI,523999,Finance,FALSE,TRUE
+Veriten,NGI,541690,Consulting,FALSE,TRUE
+White Deer Energy,NGI,523999,Finance,FALSE,TRUE
+Zorlu Energy Group,NGI,221111,Fossil Fuel Utilities,TRUE,TRUE
+Nature Air,INOGO,48111,Transportation,FALSE,TRUE
+Travel Excellence,INOGO,561510,Administration and Support,FALSE,TRUE
+BASF,SUNCAT,325,Chemicals,FALSE,TRUE
+DOE FWP at SLAC,SUNCAT,92,Government/National Lab,FALSE,FALSE
+"Danish Agency for Science, Technology and Innovation",SUNCAT,92,Government/National Lab,FALSE,FALSE
+Danish Council for Strategic Research,SUNCAT,92,Government/National Lab,FALSE,FALSE
+Dow Corning,SUNCAT,325211,Chemicals,FALSE,TRUE
+Global Climate Change & Energy Project,SUNCAT,61,Universities,FALSE,FALSE
+Haldor Topsoe A/S,SUNCAT,332,Machineries and Metal,FALSE,TRUE
+Honda,SUNCAT,336110,Fossil Fuel Vehicles,TRUE,TRUE
+JNC Corporation,SUNCAT,325211,Chemicals,FALSE,TRUE
+Joint Center for Artificial Photosynthesis,SUNCAT,92,Government/National Lab,FALSE,FALSE
+SLAC National Accelerator Laboratory,SUNCAT,92,Government/National Lab,FALSE,FALSE
+SUNCAT,SUNCAT,61,Universities,FALSE,FALSE
+SUNCAT-FWP,SUNCAT,61,Universities,FALSE,FALSE
+"School of Engineering, Stanford University",SUNCAT,61,Universities,FALSE,FALSE
+Stanford School of Engineering,SUNCAT,61,Universities,FALSE,FALSE
+Stanford University,SUNCAT,61,Universities,FALSE,FALSE
+State Grid Corporation of China,SUNCAT,335311,Electronics,FALSE,TRUE
+Toyota,SUNCAT,336110,Fossil Fuel Vehicles,TRUE,TRUE
+U.S. Department of Energy,SUNCAT,92,Government/National Lab,FALSE,FALSE
+U.S. Department of Energy Office of Basic Energy Science,SUNCAT,92,Government/National Lab,FALSE,FALSE
+Villum Foundation,SUNCAT,8132,NGOs/Foundations,FALSE,FALSE
+Precourt Institute for Energy,SCRI,61,Universities,FALSE,FALSE
+Stanford Woods Institute for the Environment,SCRI,61,Universities,FALSE,FALSE
+"Aemetis Carbon Capture, Inc",SCCS,454310,Retail,FALSE,TRUE
+Aera,SCCS,334519,Electronics,FALSE,TRUE
+California Resources Corporation,SCCS,211120,Fossil Fuel Production,TRUE,TRUE
+Chevron,SCCS,324110,Fossil Fuel Production,TRUE,TRUE
+Ecopetrol,SCCS,324110,Fossil Fuel Production,TRUE,TRUE
+ExxonMobil,SCCS,324110,Fossil Fuel Production,TRUE,TRUE
+NexGen Carbon Solutions,SCCS,221,Other Utilities,FALSE,TRUE
+Occidental Petroleum Corporation,SCCS,2111,Fossil Fuel Production,TRUE,TRUE
+Saudi Aramco,SCCS,324110,Fossil Fuel Production,TRUE,TRUE
+Shell,SCCS,211112,Fossil Fuel Production,TRUE,TRUE
+U.S. Department of Energy,SCCS,92,Government/National Lab,FALSE,FALSE
+BHP,SCERF,212,Mining,FALSE,TRUE
+CSIRO,SCERF,92,Government/National Lab,FALSE,FALSE
+Chevron,SCERF,324110,Fossil Fuel Production,TRUE,TRUE
+ConocoPhillips,SCERF,2111,Fossil Fuel Production,TRUE,TRUE
+Edison,SCERF,221111,Fossil Fuel Utilities,TRUE,TRUE
+Eni,SCERF,324110,Fossil Fuel Production,TRUE,TRUE
+ExxonMobil,SCERF,324110,Fossil Fuel Production,TRUE,TRUE
+"Japan Petroleum Exploration Co., Ltd. (JAPEX)",SCERF,211111,Fossil Fuel Production,TRUE,TRUE
+KoBold Metals,SCERF,331491,Machineries and Metal,FALSE,TRUE
+OMV,SCERF,2111,Fossil Fuel Production,TRUE,TRUE
+OYO Corporation,SCERF,334519,Electronics,FALSE,TRUE
+PTTEP,SCERF,211120,Fossil Fuel Production,TRUE,TRUE
+Petrobras,SCERF,324110,Fossil Fuel Production,TRUE,TRUE
+Repsol,SCERF,324110,Fossil Fuel Production,TRUE,TRUE
+Woodside,SCERF,211120,Fossil Fuel Production,TRUE,TRUE
+Precourt Institute for Energy,SEEPAC,61,Universities,FALSE,FALSE
+Stanford Institute for Economic Policy Research,SEEPAC,61,Universities,FALSE,FALSE
+Center on Nanostructuring for Efficient Energy Conversion,SIMES,61,Universities,FALSE,FALSE
+KLA Corporation,SIMES,333314,Machineries and Metal,FALSE,TRUE
+Linac Coherent Light Source (LCLS),SIMES,92,Government/National Lab,FALSE,FALSE
+Precourt Institute for Energy,SIMES,61,Universities,FALSE,FALSE
+SUNCAT,SIMES,61,Universities,FALSE,FALSE
+Stanford Synchrotron Radiation Lightsource,SIMES,92,Government/National Lab,FALSE,FALSE
+The Bay Area Photovoltaics Consortium,SIMES,61,Universities,FALSE,FALSE
+The Geballe Laboratory for Advanced Materials (GLAM),SIMES,61,Universities,FALSE,FALSE
+The PULSE Institute for Ultrafast Energy Science,SIMES,61,Universities,FALSE,FALSE
+Woods Institute for the Environment,SIMES,61,Universities,FALSE,FALSE
+Amway Corporation,SPRC,424310,Wholesalers,FALSE,TRUE
+C. F. Rehnborg Chair in Preventive Medicine,SPRC,61,Universities,FALSE,FALSE
+California Tobacco-Related Disease Research Program,SPRC,92,Government/National Lab,FALSE,FALSE
+Henry J. Kaiser Family Foundation,SPRC,813,NGOs/Foundations,FALSE,FALSE
+James Whitten Memorial Lecture,SPRC,61,Universities,FALSE,FALSE
+National Center for Complementary and Integrative Health,SPRC,61,Universities,FALSE,FALSE
+National Institute on Aging,SPRC,92,Government/National Lab,FALSE,FALSE
+National Institute on Drug Abuse,SPRC,92,Government/National Lab,FALSE,FALSE
+National Institutes of Health,SPRC,92,Government/National Lab,FALSE,FALSE
+"Richard B. Terry, PhD Memorial Fund",SPRC,61,Universities,FALSE,FALSE
+Shaklee Corporation,SPRC,325412,Chemicals,FALSE,TRUE
+Accel,STVP,335313,Electronics,FALSE,TRUE
+Cisco,STVP,334118,Electronics,FALSE,TRUE
+Citi Ventures,STVP,522110,Finance,FALSE,TRUE
+DFJ,STVP,525910,Finance,FALSE,TRUE
+Fenwick & West,STVP,541199,Consulting,FALSE,TRUE
+Mayfield,STVP,523999,Finance,FALSE,TRUE
+National Science Foundation,STVP,92,Government/National Lab,FALSE,FALSE
+NextGen Crowdfunding,STVP,561990,Administration and Support,FALSE,TRUE
+Pear,STVP,519290,Information Technology,FALSE,TRUE
+Threshold,STVP,61,Universities,FALSE,FALSE
+Conrad N. Hilton Foundation,Woods,8132,NGOs/Foundations,FALSE,FALSE
+Cyrus Tang Foundation,Woods,8132,NGOs/Foundations,FALSE,FALSE
+Energy Foundation,Woods,813,NGOs/Foundations,FALSE,FALSE
+Gordon and Betty Moore Foundation,Woods,8132,NGOs/Foundations,FALSE,FALSE
+Heinz Family Foundation,Woods,8132,NGOs/Foundations,FALSE,FALSE
+International Seafood Sustainability Foundation,Woods,813,NGOs/Foundations,FALSE,FALSE
+John D. and Catherine T. MacArthur Foundation,Woods,8132,NGOs/Foundations,FALSE,FALSE
+National Science Foundation,Woods,92,Government/National Lab,FALSE,FALSE
+Packard Foundation,Woods,8132,NGOs/Foundations,FALSE,FALSE
+Precourt Strategic Energy Research Consortium,Woods,61,Universities,FALSE,FALSE
+RK Melon Foundation,Woods,8132,NGOs/Foundations,FALSE,FALSE
+Walton Family Foundation,Woods,8132,NGOs/Foundations,FALSE,FALSE
+William and Flora Hewlett Foundation,Woods,8132,NGOs/Foundations,FALSE,FALSE
+Applied Materials,StorageX,333242,Machineries and Metal,FALSE,TRUE
+BASF,StorageX,325,Chemicals,FALSE,TRUE
+CHILWEE,StorageX,335912,Electronics,FALSE,TRUE
+CIA Research LABS,StorageX,92,Government/National Lab,FALSE,FALSE
+Chevron,StorageX,324110,Fossil Fuel Production,TRUE,TRUE
+ExxonMobil,StorageX,324110,Fossil Fuel Production,TRUE,TRUE
+"Murata Manufacturing Co., Ltd.",StorageX,3344,Electronics,FALSE,TRUE
+Phillips 66,StorageX,324110,Fossil Fuel Production,TRUE,TRUE
+Portland General Electric,StorageX,2211,Other Utilities,FALSE,TRUE
+ReNew Power,StorageX,221115,Other Utilities,FALSE,TRUE
+Samsung,StorageX,334419,Electronics,FALSE,TRUE
+Shell,StorageX,211112,Fossil Fuel Production,TRUE,TRUE
+Siemens,StorageX,333249,Machineries and Metal,FALSE,TRUE
+Toyota,StorageX,336110,Fossil Fuel Vehicles,TRUE,TRUE
+Trafigura,StorageX,424720,Fossil Fuel Production,TRUE,TRUE
+Bank of America,SEA,522110,Finance,FALSE,TRUE
+ExxonMobil,SEA,324110,Fossil Fuel Production,TRUE,TRUE
+Shell,SEA,211112,Fossil Fuel Production,TRUE,TRUE
+Total,SEA,324110,Fossil Fuel Production,TRUE,TRUE
+Bank of America,SFI,522110,Finance,FALSE,TRUE
+Precourt Institute for Energy,SFI,61,Universities,FALSE,FALSE
+Bill Lane Center for the American West,WitW,61,Universities,FALSE,FALSE
+Natural Capital Project,WitW,61,Universities,FALSE,FALSE
+Precourt Energy Efficiency Center,WitW,61,Universities,FALSE,FALSE
+Reinventing the Nation's Urban Water Infrastructure (ReNUWIt),WitW,61,Universities,FALSE,FALSE
+Stanford Woods Institute for the Environment,WitW,61,Universities,FALSE,FALSE
+The Center for Groundwater Evaluation and Management,WitW,61,Universities,FALSE,FALSE
+Conrad N. Hilton Foundation,WHD,8132,NGOs/Foundations,FALSE,FALSE
+IRC,WHD,813,NGOs/Foundations,FALSE,FALSE
+Lifeline Fund,WHD,813,NGOs/Foundations,FALSE,FALSE
+Makerere University,WHD,61,Universities,FALSE,FALSE
+Millennium Water Alliance,WHD,813,NGOs/Foundations,FALSE,FALSE
+Revitalising Informal Settlements and the Environments (RISE),WHD,61,Universities,FALSE,FALSE
+Sesame Workshop,WHD,813,NGOs/Foundations,FALSE,FALSE
+Stanford Medicine,WHD,61,Universities,FALSE,FALSE
+Water For People,WHD,813,NGOs/Foundations,FALSE,FALSE
+WellDone International,WHD,813,NGOs/Foundations,FALSE,FALSE
+World Vision,WHD,813,NGOs/Foundations,FALSE,FALSE

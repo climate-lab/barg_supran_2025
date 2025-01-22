@@ -1,0 +1,118 @@
+abbr,hits,uni,center
+BCGC,2,UC Berkeley,Berkeley Center for Green Chemistry
+BWC,12,UC Berkeley,Berkeley Water Center
+EBI,43,UC Berkeley,Energy & Biosciences Institute
+EI@Haas,16,UC Berkeley,Energy Institute at Haas
+DSE,0,UC Berkeley,Eric and Wendy Schmidt Center for Data Science & Environment
+ENSI,0,UC Berkeley,Kavli Energy NanoScience Institute
+CHE,1,Harvard University,Center for History and Economics
+CID,16,Harvard University,Center for International Development
+HCRA,40,Harvard University,Center for Risk Analysis
+CSWR,3,Harvard University,Center for the Study of World Religions
+ecoLearn,0,Harvard University,ecoLearn
+ENRP,11,Harvard University,Environment and Natural Resources Program
+EELP,34,Harvard University,Environmental & Energy Law Program
+ELPC,0,Harvard University,Environmental Law and Policy Clinic
+CGBC,2,Harvard University,Harvard Center for Green Buildings and Cities
+HCPDS,2,Harvard University,Harvard Center for Population and Development Studies
+ERC,0,Harvard University,Harvard Education and Research Center
+HEPG,7,Harvard University,Harvard Electricity Policy Group
+HEEP,141,Harvard University,Harvard Environmental Economics Program
+FLPC,26,Harvard University,Harvard Food Law and Policy Clinic
+HGHI,22,Harvard University,Harvard Global Health Institute
+HSPH-NIEHS,0,Harvard University,Harvard NIEHS Center for Environmental Health
+HPCA,20,Harvard University,Harvard Project on Climate Agreements
+HUH,9,Harvard University,Harvard University Herbaria
+MTA,7,Harvard University,Managing the Atom
+MRSEC,0,Harvard University,Materials Research Science and Engineering Center
+MCZ,68,Harvard University,Museum of Comparative Zoology
+STS,3,Harvard University,"Program on Science, Technology, and Society"
+RPP,0,Harvard University,Regulatory Policy Program
+RIH,0,Harvard University,Rowland Institute at Harvard
+SSP,1,Harvard University,Sustainability Science Program
+Taubman Center,5,Harvard University,Taubman Center for State and Local Government
+Wyss,5,Harvard University,Wyss Institute for Biologically Inspired Engineering
+CEEPR,18,MIT,MIT Center for Energy and Environmental Policy Research
+CGCS,24,MIT,MIT Center for Global Change Science
+MITEI,118,MIT,MIT Energy Initiative
+JPSPGC,150,MIT,MIT Joint Program on the Science and Policy of Global Change
+Sea Grant,5,MIT,MIT Sea Grant
+WHD,0,Stanford University,"Water, Health & Development"
+BLC,46,Stanford University,Bill Lane Center for the American West
+Bits & Watts,0,Stanford University,Bits & Watts Initiative
+CCB,24,Stanford University,Center for Conservation Biology
+CMC-UF,0,Stanford University,Center for Mechanistic Control in Unconventional Formations
+COS,24,Stanford University,Center for Ocean Solutions
+FSE,11,Stanford University,Center on Food Security and the Environment
+CEPP (S),64,Stanford University,Climate & Energy Policy Program
+DEHE,0,Stanford University,"Disease Ecology, Health and the Environment"
+EMF,43,Stanford University,Energy Modeling Forum
+FRI,20,Stanford University,Freeman Spogli Institute for International Studies
+GFI,1,Stanford University,Global Freshwater Initiative
+HPHP,0,Stanford University,"Healthy Planet, Healthy People Working Group"
+HMS,60,Stanford University,Hopkins Marine Station
+H2I,2,Stanford University,Hydrogen Initiative
+d.school,0,Stanford University,Institute of Design at Stanford
+JRBP,9,Stanford University,Jasper Ridge Biological Preserve
+Ethics Center,0,Stanford University,McCoy Family Center for Ethics in Society
+Morrison Insitute,1,Stanford University,Morrison Institute for Population and Resource Studies
+NatCap,23,Stanford University,Natural Capital Project
+NGI,3,Stanford University,Natural Gas Initiative
+INOGO,0,Stanford University,Osa & Golfito Initiative
+PTL,0,Stanford University,Photonics at Thermodynamic Limits
+SCCS,0,Stanford University,Stanford Center for Carbon Storage
+SCERF,0,Stanford University,Stanford Center for Earth Resources Forecasting
+SEEPAC,0,Stanford University,Stanford Environmental & Energy Policy Analysis Center
+SIMES,0,Stanford University,Stanford Institute for Materials & Energy Sciences
+SPRC,0,Stanford University,Stanford Prevention Research Center
+STVP,4,Stanford University,Stanford Technology Ventures Program
+Woods,293,Stanford University,Stanford Woods Institute for the Environment
+StorageX,0,Stanford University,StorageX Initiative
+SEA,1,Stanford University,Strategic Energy Alliance
+SUNCAT,0,Stanford University,SUNCAT Center for Interface Science & Catalysis
+SFI,1,Stanford University,Sustainable Finance Initiative
+TomKat Center,4,Stanford University,TomKat Center for Sustainable Energy
+TRCC,1,Stanford University,Tuna Research & Conservation Center
+WitW,63,Stanford University,Water in the West
+BFI,11,UC Berkeley,Berkeley Food Institute (BFI)
+BNNI,0,UC Berkeley,Berkeley Nanosciences and Nanoengineering Institute (BNNI)
+BRIE,4,UC Berkeley,Berkeley Roundtable on the International Economy (BRIE)
+BSAC,0,UC Berkeley,Berkeley Sensor and Actuator Center (BSAC)
+CIEE,5,UC Berkeley,California Institute for Energy and Environment (CIEE)
+QB3,0,UC Berkeley,California Institute for Quantitative Biosciences (QB3)
+PATH,0,UC Berkeley,California Partners for Advanced Transit and Highways (PATH)
+CEDR,0,UC Berkeley,Center for Environmental Design Research (CEDR)
+CEPP (B),3,UC Berkeley,Center for Environmental Public Policy (CEPP)
+CGS,0,UC Berkeley,Center for Gas Separations Relevant to Clean Energy Technologies
+CLEE,37,UC Berkeley,"Center for Law, Energy and the Environment (CLEE)"
+CBE,4,UC Berkeley,Center for the Built Environment (CBE)
+ERG,53,UC Berkeley,Energy and Resources Group (ERG)
+GIF,0,UC Berkeley,Geospatial Innovation Facility (GIF)
+RAEL,45,UC Berkeley,Renewable and Appropriate Energy Laboratory (RAEL)
+C-CHANGE,112,Harvard University,"Center for Climate, Health, and the Global Environment (C-CHANGE)"
+Harvard-China Project,0,Harvard University,"Harvard-China Project on Energy, Economy, and Environment"
+M-RCBG,13,Harvard University,Mossavar-Rahmani Center for Business and Government
+J-PAL,14,MIT,Abdul Latif Jameel Poverty Action Lab (J-PAL)
+J-WAFS,4,MIT,Abdul Latif Jameel Water and Food Systems Lab (J-WAFS)
+MITCTL,8,MIT,MIT Center for Transportation and Logistics (MITCTL)
+MIT CSHub,8,MIT,MIT Concrete Sustainability Hub (MIT CSHub)
+D-Lab,10,MIT,MIT D-Lab
+MIT ESI,10,MIT,MIT Environmental Solutions Initiative (MIT ESI)
+MIT SSI,3,MIT,MIT Sloan Sustainability Initiative (MIT SSI)
+PSFC,30,MIT,Plasma Science and Fusion Center (PSFC)
+CIFE,0,Stanford University,Center for Integrated Facility Engineering (CIFE)
+CLAS,1,Stanford University,Center for Latin American Studies (CLAS)
+ENRLP,0,Stanford University,Environmental and Natural Resources Law & Policy Program (ENRLP)
+CISAC,0,Stanford University,"Freeman Spogli Institute for International Studies, Center for International Security and Cooperation (CISAC)"
+FSI-Woods FSE,0,Stanford University,"Freeman Spogli Institute for International Studies, Food Security & the Environment (FSE): Joint Program with the Stanford Woods Institute"
+PESD,89,Stanford University,"Freeman Spogli Institute for International Studies, Program on Energy & Sustainable Development (PESD)"
+GCEP,60,Stanford University,Global Climate & Energy Project (GCEP)
+SCRI,0,Stanford University,Stanford Carbon Removal Initiative (in development)
+SIEPR ENRE,0,Stanford University,"Stanford Institute for Economic Policy Research (SIEPR), Energy, Natural Resources and the Environment Program"
+STC,58,Stanford University,Steyer-Taylor Center for Energy Policy & Finance
+BPSM,0,Stanford University,Basin Processes and Subsurface Modeling
+SFC,0,Stanford University,Smart Fields Consortium
+SCITS,0,Stanford University,Stanford Center for Induced and Triggered Seismicity
+SUETRI-A,0,Stanford University,SUETRI-A: Subsurface Engineering for the Energy Transition
+SUETRI-B,0,Stanford University,SUETRI-B: Stanford University Energy Transition Research Institute
+SUETRI-D,0,Stanford University,SUETRI-D: Research Consortium on Innovation in Energy Systems Monitoring and Testing — includes SUPRI-TIDES

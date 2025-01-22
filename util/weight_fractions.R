@@ -1,0 +1,29 @@
+library(tidyverse)
+library(here)
+
+weight_fractions <- function(funders, centers, aggregate_uni = T){
+  # First, normalize the influence across centers.
+  weighted_influence <- centers %>%
+    # filter(abbr %in% funders$abbr) %>%
+    mutate(share = hits/sum(hits))
+  
+  weighted_fractions <- funders %>%
+    group_by(abbr, ff, industry) %>%
+    # Then, get every industry's share of every center's influence.
+    summarize(n = n(), .groups = "drop") %>%
+    full_join(weighted_influence, by = "abbr") %>%
+    mutate(industry = if_else(is.na(industry), "No disclosure", industry)) %>%
+    group_by(abbr) %>%
+    # Make sure we also get the weighted fraction if there are no disclosed funders for a center.
+    mutate(ind_share = if_else(industry == "No disclosure", 1, n/sum(n))) %>%
+    ungroup() %>%
+    # Multiply the industry's share of each center with the center's influence.
+    mutate(weighted_fraction = ind_share * share) # %>%
+    # This would be the steps to aggregate across centers:
+    # group_by(industry) %>%
+    # # Sum across centers.
+    # summarize(normalized = sum(normalized_share)) %>%
+    # arrange(desc(normalized))
+  
+  weighted_fractions
+}

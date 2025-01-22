@@ -1,0 +1,437 @@
+---
+title: "fig_2_methods"
+output: html_document
+---
+
+```{r library}
+library(tidyverse)
+suppressPackageStartupMessages(library(here))
+library(patchwork)
+```
+
+## ToDo
+
+1. Read
+2. Set parameters
+3. Count funders by industry
+4. Count ties by industry
+5. Get center impacts
+6. Get weighted fractions
+7. Combine everything
+
+## 1. Read
+
+```{r read}
+centers <- read_csv(here("data", "centers.csv"))
+funders <- read_csv(here("data", "funders.csv")) %>%
+  filter(corp) # Doing this cor companies only
+glimpse(funders)
+```
+
+## 2. Parameters
+
+```{r parameters}
+plots <- list()
+ff_industries <- c("Fossil Fuel Production", 
+                   "Fossil Fuel Utilities",
+                   "Fossil Fuel Vehicles")
+n_for_plot <- 10
+label_size <- 7 # For title, annotation, etc
+annotation_size <- 6 # For x and y labs etc
+industry_colors <- c("Fossil Fuel Production" = "#B22222",
+                     "Fossil Fuel Utilities" = "#E64B35",
+                     "Fossil Fuel Vehicles" = "#A0522D", 
+                     "Fossil Fuel Sector" = "#FF6347", 
+                     "Other corporate" = "#B2EBF2",
+                     "No disclosure" = "#333333", 
+                     "No reported corporate funders" = "white")
+text_styling <- theme(
+  text = element_text(size = unit(annotation_size, "pt"), 
+                      family = "Noto sans"), 
+  plot.title = element_text(size = unit(label_size, "pt"), 
+                            family = "Noto sans"), 
+  axis.text = element_text(size = unit(annotation_size, "pt"), 
+                           family = "Noto sans"))
+legend_styling <- theme(legend.position = "bottom", 
+                        legend.title = element_blank(),
+                        legend.text = element_text(
+                          size = annotation_size),
+                        legend.key.size = unit(0.8, "lines"),
+                        legend.spacing.y = unit(5, "lines"),
+                        legend.margin = margin(
+                          t = 5, r = 0, b = 0, l = 0),
+                        legend.key.spacing = unit(0.8, "lines"),
+                        nrow = 2)
+```
+
+## 3. Count funders by industry
+
+Count funders in dataframe.
+
+```{r count funders}
+funders_by_industry <- funders %>%
+  filter(corp) %>%
+  distinct(funder, industry) %>%
+  group_by(industry) %>%
+  summarize(funders = n()) %>%
+  mutate(share = funders / sum(funders)) %>%
+  arrange(desc(funders))
+stats <- list(funders_by_industry = funders_by_industry)
+stats$funders_by_industry
+```
+
+Plot the counts. We separately create the bar plot and stacked bar plot and
+then fit them together just for testing.
+
+```{r ties_industry, fig.height=60/25.4, fig.width=45/25.4, dpi = 150, warning = FALSE}
+# First, the top 10 industries by number of funders
+plots$funders_by_industry_plot <- stats$funders_by_industry %>%
+  mutate(ff = if_else(industry %in% ff_industries, "Fossil Fuel Sector", "Other corporate")) %>%
+  mutate(share_percent = scales::percent(share, accuracy = 1)) %>%
+  mutate(label = str_glue("{share_percent} {industry}")) %>%
+  head(n_for_plot) %>%
+  mutate(industry = fct_reorder(industry, funders)) %>%
+  mutate(ff = factor(ff, levels = c("Other corporate", "Fossil Fuel Sector"))) %>%
+  ggplot(aes(y = industry, x = funders, fill = ff, label = label)) +
+    geom_col(color = "black") +
+    geom_text(aes(x = 2), hjust = 0, size = 6/.pt) +
+    scale_x_continuous(expand = c(0, 0), 
+                       breaks = c(0, 20, 40, 60)) +
+    scale_fill_manual(values = industry_colors) +
+    theme_minimal() +
+    theme(axis.title.y = element_blank(), 
+          axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank(),
+          text = element_text(size = unit(7, "pt")),
+          title = ggtext::element_markdown()) +
+    ggtitle("**A** We identify corporate funders...") +
+    xlab("Number of Funders") +
+    text_styling
+
+# Then the shares as a stacked barplot
+plots$funders_share <- stats$funders_by_industry %>%
+  mutate(ff = industry %in% ff_industries) %>%
+  group_by(ff) %>%
+  summarize(n = sum(funders)) %>%
+  mutate(ff = if_else(ff, "Fossil Fuel Sector", "Other corporate")) %>% 
+  mutate(share_percent = scales::percent(n/sum(n), accurary = 1)) %>%
+  mutate(placeh = "test") %>% # To ensure that we get a stacked barplot
+  mutate(ff = factor(ff, levels = c("Other corporate", "Fossil Fuel Sector"))) %>%
+  ggplot(aes(y = n, x = placeh, fill = ff, label = share_percent)) +
+    geom_bar(position = "stack", stat = "identity", color = "black") +
+    geom_text(angle = 90, position = position_stack(vjust = 0.5), 
+              size = annotation_size/.pt) +
+    scale_y_continuous(expand = c(0, 0)) +
+    scale_fill_manual(values = industry_colors) +
+    theme_minimal() +
+    theme(axis.text.y = element_blank(),
+          axis.title.y = element_text(margin = margin(r=-1, l = -1)),
+          axis.text.x = element_blank(),
+          axis.ticks = element_blank(), 
+          panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(), 
+          plot.margin = margin(l = 8), 
+          title = ggtext::element_markdown()) +
+    ylab("Totals") +
+    xlab("Number of Funders") +
+    text_styling
+
+plots$funders_by_industry_plot + plots$funders_share +
+  plot_layout(width = c(7, 1), axis_titles = "collect", guides = "collect") &
+  legend_styling
+```
+
+## 4. Count ties by industry
+
+Count ties in dataframe. Same process as previous step 3.
+
+```{r n_ties}
+ties_by_industry <- funders %>%
+  filter(corp) %>%
+  group_by(industry) %>%
+  summarize(ties = n()) %>%
+  mutate(share = ties / sum(ties)) %>%
+  arrange(desc(ties))
+stats$ties_by_industry <- ties_by_industry
+stats$ties_by_industry
+```
+
+```{r ties_industry, fig.height=60/25.4, fig.width=45/25.4, dpi = 150, warning = F, error = F}
+plots$industry_ties_plot <- stats$ties_by_industry %>%
+  mutate(ff = if_else(industry %in% ff_industries, "Fossil Fuel Sector", "Other corporate")) %>%
+  mutate(share_percent = scales::percent(share, accuracy = 1)) %>%
+  mutate(label = str_glue("{share_percent} {industry}")) %>%
+  head(n_for_plot) %>%
+  mutate(industry = fct_reorder(industry, ties)) %>%
+  mutate(ff = factor(ff, levels = c("Other corporate", "Fossil Fuel Sector"))) %>%
+  ggplot(aes(y = industry, x = ties, fill = ff, label = label)) +
+    geom_col(color = "black") +
+    geom_text(aes(x = 3), hjust = 0, size = annotation_size/.pt) +  
+    scale_x_continuous(expand = c(0, 0)) +
+    scale_fill_manual(values = industry_colors) +
+    theme_minimal() +
+    theme(axis.title.y = element_blank(),
+          axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank(),
+          title = ggtext::element_markdown()) +
+    ggtitle("**B** ...count ties to centers...") +
+    xlab("Number of Ties") +
+    text_styling
+plots$ties_share <- stats$ties_by_industry %>%
+  mutate(ff = industry %in% ff_industries) %>%
+  group_by(ff) %>%
+  summarize(n = sum(ties)) %>%
+  mutate(ff = if_else(ff, "Fossil Fuel Sector", "Other corporate")) %>%
+  mutate(share_percent = scales::percent(n/sum(n), accurary = 1)) %>%
+  mutate(placeh = "") %>%
+  mutate(ff = factor(ff, levels = c("Other corporate", "Fossil Fuel Sector"))) %>%
+  ggplot(aes(y = n, x = placeh, fill = ff, label = share_percent)) +
+    geom_bar(position = "stack", stat = "identity", color = "black") +
+    geom_text(angle = 90, position = position_stack(vjust = 0.5), 
+              size = annotation_size/.pt) +
+    scale_y_continuous(expand = c(0, 0)) +
+    scale_fill_manual(values = industry_colors) +
+    theme_minimal() +
+    theme(axis.title.y = element_text(margin = margin(r=-1, l = -1)),
+          axis.text.y = element_blank(),
+          axis.text.x = element_blank(),
+          axis.ticks = element_blank(), 
+          panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(), 
+          plot.margin = margin(l = 8),
+          axis.title.x = ggtext::element_markdown(), 
+          title = ggtext::element_markdown()) +
+    xlab("Number of Ties") +
+    ylab("Totals") +
+    text_styling 
+
+plots$industry_ties_plot + plots$ties_share +
+  plot_layout(width = c(7, 1), guides = "collect", axis_titles = "collect") &
+  legend_styling
+```
+
+## 5. Get center impacts
+
+Preprocess counts of hits per center.
+
+```{r by_center}
+influence_counts <- centers %>%
+  arrange(desc(hits)) %>%
+  select(abbr, uni, hits) %>%
+  mutate(share = hits / sum(hits))
+stats$influence_counts <- influence_counts
+stats$influence_counts
+```
+
+Here we also want to know which centers disclose no funders vs. which centers
+disclose no *corporate* funders.
+
+```{r centers_wo_funders}
+# Get centers with corporate funders.
+centers_w_corp <- funders %>%
+  filter(corp) %>%
+  {unique(.$abbr)}
+
+# Categorize centers by include corp and non-corp only funders.
+data_availability <- centers %>%
+  mutate(funder_data = case_when(abbr %in% centers_w_corp ~ "corp", 
+                                 abbr %in% funders$abbr ~ "non-corp", 
+                                 T ~ "none")
+         )
+table(data_availability$funder_data)
+
+centers %>%
+  filter(!abbr %in% data_availability$abbr) %>%
+  {testthat::expect_true(nrow(.) == 0)}
+```
+
+Plot it out. Same process as in 3. and 4.
+
+```{r ties_industry, fig.height=60/25.4, fig.width=45/25.4, dpi = 150, warning = F, error = F}
+plots$center_stories_plot <- stats$influence_counts %>%
+  left_join(select(data_availability, abbr, funder_data), by = "abbr") %>%
+  mutate(share_percent = scales::percent(share/sum(share), accuracy = 1)) %>%
+  slice_max(hits, n = 10) %>%
+  mutate(description = case_when(funder_data == "corp" ~ "Disclosed corporate funders",
+                            funder_data == "non-corp" ~ 
+                              "No reported corporate funders", 
+                            funder_data == "none" ~ "No disclosure")) %>%
+  mutate(label = str_glue("{share_percent} {abbr}")) %>%
+  mutate(extra_label = if_else(funder_data == "none", label, NA)) %>%
+  mutate(abbr = fct_reorder(abbr, hits)) %>%
+  ggplot(aes(y = abbr, x = hits, label = label, fill = description)) +
+    geom_col(color = "black") +
+    geom_text(aes(x = 5), hjust = 0, size = annotation_size/.pt) +
+    geom_text(aes(x = 5, label = extra_label), hjust = 0, 
+              size = annotation_size/.pt, color = "white") +
+    scale_x_continuous(expand = c(0, 0)) +
+    scale_fill_manual(values = industry_colors) +
+    theme_minimal() +
+    theme(axis.title.y = element_blank(), 
+          axis.text.y = element_blank(),
+          legend.title = element_blank(),
+          legend.position = "none",
+          axis.ticks.y = element_blank(), 
+          title = ggtext::element_markdown()) +
+    ggtitle("**C** ...assess centers' prominence...") +
+    xlab("Number of Newspaper Articles") +
+    guides(alpha = "none") +
+    text_styling
+plots$center_storis_summed <- stats$influence_counts %>%
+  left_join(select(data_availability, abbr, funder_data), by = "abbr") %>%
+  group_by(funder_data) %>%
+  summarize(hits = sum(hits)) %>%
+  mutate(share = hits/sum(hits)) %>%
+  mutate(description = 
+           case_when(funder_data == "corp" ~ "Disclosed corporate funders", 
+                     funder_data == "non-corp" ~ "No reported corporate funders", 
+                     funder_data == "none" ~ "No disclosure")) %>%
+  mutate(share_percent = scales::percent(share, accurary = 1)) %>%
+  mutate(extra_label = if_else(funder_data == "none", share_percent, NA)) %>%
+  mutate(placeh = "") %>%
+  ggplot(aes(y = hits, x = placeh, fill = description, label = share_percent)) +
+    geom_bar(position = "stack", stat = "identity", color = "black") +
+    geom_text(angle = 90, position = position_stack(vjust = 0.5), 
+              size = annotation_size/.pt) +
+    geom_text(aes(label = extra_label), angle = 90, 
+              position = position_stack(vjust = 0.5),
+              size = annotation_size/.pt, color = "white") +
+    scale_y_continuous(expand = c(0, 0)) +
+    scale_fill_manual(values = industry_colors) +
+    theme_minimal() +
+    theme(axis.text.y = element_blank(),
+          # axis.title.x = element_blank(),
+          # legend.position = "none",
+          legend.title = element_blank(),
+          axis.title.y = element_text(margin = margin(r=-1, l = -1)),
+          axis.text.x = element_blank(),
+          axis.ticks = element_blank(), 
+          panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(), 
+          plot.margin = margin(l = 8), 
+          title = ggtext::element_markdown()) +
+    ylab("Totals") +
+    xlab("Number of Newspaper Articles") +
+    text_styling
+
+plots$center_stories_plot + plots$center_storis_summed +
+  plot_layout(width = c(7, 1), guides = "collect", axis_titles = "collect") &
+  legend_styling
+```
+
+## 6. Get weighted fractions
+
+Here we can conveniently use a prepared function for normalizing funder
+fractions.
+
+```{r norm}
+source(here("util", "weight_fractions.R"))
+stats$final_normalization <- weight_fractions(funders, centers)
+
+stats$final_normalization %>%
+  mutate(normalized = as.character(signif(normalized, 5))) 
+testthat::expect_true(sum(stats$final_normalization$normalized) == 1)
+```
+
+```{r ties_industry, fig.height=60/25.4, fig.width=45/25.4, dpi = 150, warning = F, error = F}
+plots$normalizations <- stats$final_normalization %>%
+  mutate(industry = if_else(industry == "Fossil Fuel Vehicle Manufacturers",
+                            "Fossil Fuel Vehicle Manuf.", industry)) %>%
+  mutate(ff = if_else(industry %in% ff_industries, "Fossil Fuel Sector", "Other corporate")) %>%
+  head(n_for_plot) %>%
+  mutate(industry = fct_reorder(industry, normalized)) %>%
+  mutate(ff = factor(ff, levels = c("Other corporate", "Fossil Fuel Sector"))) %>%
+  # ggplot(aes(x = industry, y = normalized)) +
+  ggplot(aes(y = industry, x = normalized, label = industry, fill = ff)) +
+    geom_col(color = "black") +
+    # geom_label(aes(label = industry, angle = 90, y = 0.07), alpha = 0.5) +
+    geom_text(aes(x = 0.001), hjust = 0, 
+              size = annotation_size/.pt) +
+    scale_x_continuous(expand = c(0, 0)) +
+    scale_fill_manual(values = industry_colors) +
+    theme_minimal() +
+    theme(axis.title.y = element_blank(), 
+          axis.text.y = element_blank(), 
+          axis.text.x = element_blank(),
+          axis.ticks.y = element_blank(), 
+          axis.ticks.x = element_blank(), 
+          text = element_text(size = unit(label_size, "pt")), 
+          title = ggtext::element_markdown()) +
+    xlab("Weighted Fractions\n(relative scale)") +
+    ggtitle("**D** ...and calculate weighted fractions.") +
+    text_styling
+plots$normalizations_total <- stats$final_normalization %>%
+  mutate(ff = if_else(industry %in% ff_industries, "Fossil Fuel Sector", "Other corporate")) %>%
+  group_by(ff) %>%
+  summarize(normalized = sum(normalized)) %>%
+  mutate(percent = scales::percent(normalized, accuracy = 1)) %>%
+  mutate(placeh = "") %>%
+  mutate(ff = factor(ff, levels = c("Other corporate", "Fossil Fuel Sector"))) %>%
+  ggplot(aes(x = placeh, y = normalized, fill = ff, label = percent)) +
+    geom_bar(position = "stack", stat = "identity", color = "black") +
+    geom_text(angle = 90, position = position_stack(vjust = 0.5), 
+              size = annotation_size/.pt) +
+    scale_fill_manual(values = industry_colors) +
+    scale_y_continuous(expand = c(0, 0)) +
+    theme_minimal() +
+    theme(axis.title.y = element_text(margin = margin(r=-1, l = -1)),
+          axis.text.y = element_blank(),
+          axis.text.x = element_blank(),
+          axis.ticks = element_blank(),
+          panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(), 
+          plot.margin = margin(l = 8), 
+          title = ggtext::element_markdown()) +
+    xlab("Weighted Fractions\n(relative scale)") +
+    ylab("Totals") +
+    text_styling 
+plots$normalizations_title <- wrap_elements(grid::textGrob("...and obtain indirect impact.", 
+                 gp = grid::gpar(fontsize = 7, fontfamily = "Noto sans")))
+  
+plots$normalizations + plots$normalizations_total +
+  plot_layout(width = c(7, 1), guides = "collect", axis_titles = "collect") &
+  legend_styling
+```
+
+## 7. Combine everything
+
+```{r storytime, warning = F}
+storytime_plots <- plots$funders_by_industry_plot + plots$funders_share + 
+  plots$industry_ties_plot + plots$ties_share + 
+  plots$center_stories_plot + plots$center_storis_summed +
+  plots$normalizations + plots$normalizations_total +
+  plot_layout(widths = c(rep(c(7, 1), 4)), axis_titles = "collect")
+
+plots$arranged_plot <- storytime_plots /  
+  guide_area() +
+  plot_layout(guides = "collect", heights = c(100, 1)) &
+  legend_styling
+ggsave(here("out", "arranged_plot.png"),
+       plots$arranged_plot, 
+       dpi = 300, 
+       units = "mm", 
+       width = 180,
+       height = 65)
+knitr::include_graphics(here("out", "arranged_plot.png"))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

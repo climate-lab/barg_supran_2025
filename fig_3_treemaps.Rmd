@@ -1,0 +1,369 @@
+---
+title: "fig_3_treemaps"
+output: html_document
+---
+
+```{r library}
+library(tidyverse)
+library(here)
+library(treemapify)
+library(patchwork)
+```
+
+## ToDo
+
+1. Read input and parameters
+2. Functions for treemaps
+3. Functions for horizontal barplots
+4. Generate plots
+5. Arrange plots
+
+## 1. Read input and parameters
+
+```{r parm}
+text_styling <- theme(
+  text = element_text(size = unit(annotation_size, "pt"), family = "Noto sans"), 
+  plot.title = element_text(size = unit(label_size, "pt"), family = "Noto sans"), 
+  axis.text = element_text(size = unit(annotation_size, "pt"), family = "Noto sans"))
+
+industry_colors <- c("Fossil Fuel Production" = "#B22222",
+                     "Fossil Fuel Utilities" = "#E64B35",
+                     "Fossil Fuel Vehicles" = "#A0522D", 
+                     "Fossil Fuel Sector" = "#FF6347", 
+                     "Other corporate" = "#B2EBF2",
+                     "No reported corporate funders" = "white",  
+                     "No disclosure" = "#333333", 
+                     "NA" = "#CCCCCC")
+```
+
+```{r read}
+centers <- read_csv(here("data", "centers.csv"))
+funders <- read_csv(here("data", "funders.csv")) %>%
+  left_join(select(centers, abbr, uni), by = "abbr")
+glimpse(funders)
+funders %>%
+  filter(is.na(uni)) %>%
+  {testthat::expect_equal(nrow(.), 0)}
+```
+
+## 2. Functions for treemaps
+
+With this first function we prepare the dataframe that holds all information
+for the treemaps. (1) Which centers to draw as-is as placeholders to show
+their weighted fractions because they do not have any corporate funders. (2)
+Which centers to subdivide by corporate funders and how.
+
+```{r test}
+test <- weight_fractions(filter(funders, uni == "UC Berkeley"), 
+                         filter(centers, uni == "UC Berkeley"))
+sum(test$weighted_fraction)
+```
+
+```{r preprocess_df}
+source(here("util", "weight_fractions.R"))
+preprocess_df <- function(uni_){
+  weighted_fractions <- filter(funders, uni == uni_) %>%
+    weight_fractions(filter(centers, uni == uni_))
+  # Our research question is mainly concerned with the prevalence of fossil fuel 
+  # ties among corporate funders, so we will primarily focus on that. 
+  # We will depict all centers, but focus on corporate funders among those
+  # centers that have them and create placeholder boxes for the others.
+  
+  # Determine centers that have no corporate funders or no funders.
+  data_df <- centers %>%
+    filter(uni == uni_) %>%
+    select(abbr, uni) %>%
+    left_join(funders, by = c("abbr", "uni")) %>%
+    group_by(abbr, uni) %>%
+    summarize(type = case_when(
+      any(corp) ~ "corp",
+      any(!is.na(funder)) ~ "non-corp",
+      T ~ "none"
+    ), .groups = "drop")
+  
+  # Go by group.
+  # Where there is no funders, we just take the weight of the center as-is.
+  no_disclosure <- filter(data_df, type == "none") %>%
+    left_join(weighted_fractions, by = c("uni", "abbr"))
+  # Where there are only non-corporate funders, we want to aggregate.
+  # We do not want to break out those funders but only show a placeholder for 
+  # these centers.
+  non_corp <- filter(data_df, type == "non-corp") %>%
+    left_join(weighted_fractions, by = c("uni", "abbr")) %>%
+    group_by(abbr) %>%
+    summarize(industry = "No reported corporate funders", 
+              weighted_fraction = sum(weighted_fraction))
+  
+  # For other centers, our focus is on the corporate funders. We divide 
+  # these centers up for corporate funders.
+  corp <- weighted_fractions %>%
+    filter(!(abbr %in% c(no_disclosure$abbr, non_corp$abbr))) %>%
+    left_join(distinct(funders, industry, corp), by = "industry") %>%
+    filter(corp) %>%
+    group_by(abbr) %>%
+    mutate(corp_total = sum(ind_share)) %>%
+    ungroup() %>%
+    mutate(weighted_fraction = weighted_fraction / corp_total)
+  
+  # Also, we want to aggregate non-fossil fuel corporate weighted fractions.
+  corp <- corp %>%
+    filter(!ff) %>%
+    group_by(abbr) %>%
+    summarize(industry = "Other corporate", 
+              weighted_fraction = sum(weighted_fraction)) %>%
+    bind_rows(filter(corp, ff))
+  
+  bind_rows(corp, non_corp, no_disclosure)
+}
+
+# This should yield the data for each center, let's briefly verify this.
+preprocess_test <- preprocess_df("UC Berkeley")
+centers %>%
+  filter(uni == "UC Berkeley") %>%
+  filter(!abbr %in% preprocess_test$abbr) %>%
+  {testthat::expect_equal(nrow(.), 0)}
+# The sum of weighted fractions for one university should be 1
+# (although there might be slight derivation because of floating-point error)
+preprocess_test %>%
+  {sum(.$weighted_fraction)}
+```
+
+Now we can generate the actual treemap.
+
+```{r ties_industry, fig.height=60/25.4, fig.width=45/25.4, dpi = 150, warning = F, error = F}
+plot_treemap <- function(df, white_labels){
+  df %>%
+    mutate(industry = factor(
+      industry,
+      c("No disclosure", "No reported corporate funders", "Fossil Fuel Production",
+        "Fossil Fuel Utilities", "Fossil Fuel Vehicles", "Other corporate"))) %>%
+    arrange(industry) %>%
+    mutate(label_color = if_else(abbr %in% white_labels, "white", "black")) %>%
+    ggplot(aes(area = weighted_fraction, subgroup = abbr, fill = industry,
+              label = abbr)) +
+      geom_treemap() + 
+      geom_treemap_subgroup_text(aes(color = label_color),
+                                 grow = F, 
+                                 reflow = T,  
+                                 padding.x = grid::unit(1, "mm"), 
+                                 padding.y = grid::unit(1, "mm"), 
+                                 place = "topleft",
+                                 size = 6) +
+      geom_treemap_subgroup_border(color = "black", size = 2) +
+      scale_fill_manual(values = industry_colors, guide = F) +
+      # Necessary for treemapify package:
+      scale_color_manual(values = c("white" = "white", "black" = "black")) +
+      # scale_linetype_manual(guide = F) +
+      text_styling + 
+      theme(plot.margin = margin(b = 5), 
+            title = ggtext::element_markdown())
+}
+white_labels <- c("BRIE", "EBI")
+plot_treemap(preprocess_test, white_labels)
+```
+
+## 3. Functions for horizontal barplots
+
+We do this in two steps. First, create a new dataframe -- simply aggregate all weighted fractions. Then pipe that into ggplot.
+
+```{r barplot, fig.height=20/25.4, fig.width=45/25.4, dpi = 150, warning = F, error = F}
+make_barplot <- function(df){
+  total_placeholders <- tibble(
+    industry = c("Other corporate", "Fossil Fuel Vehicles", "Fossil Fuel Utilities", 
+                 "Fossil Fuel Production",
+                 "No reported corporate funders", "No disclosure")
+  )
+  df %>%
+    filter(!industry %in% c("No reported corporate funders", "No disclosure")) %>%
+    group_by(industry) %>%
+    summarize(weighted_fraction = sum(weighted_fraction)) %>%
+    # Normalize again so we can get percentages that sum to 1.
+    mutate(weighted_fraction = weighted_fraction / sum(weighted_fraction)) %>%
+    mutate(share_percent = scales::percent(weighted_fraction, accuracy = 1L)) %>%
+    # No need to show the 0% shares.
+    mutate(share_percent = if_else(share_percent == "0%", "", share_percent)) %>%
+    # We the share is below 7%, we print the percentages above.
+    mutate(label_above = if_else(weighted_fraction < 0.07, share_percent, "")) %>%
+    # And the we don't need to print those percentages on the bar anymore.
+    mutate(share_percent = if_else(weighted_fraction < 0.07, "", share_percent)) %>%
+    # Making sure that every value shows up in every plot so we get one shared
+    # legend for all parts, treemaps and stacked barplots.
+    bind_rows(total_placeholders) %>%
+    # This step is optional and only serves to get rid of some error message 
+    # related to NAs.
+    mutate(weighted_fraction = if_else(is.na(weighted_fraction), 0, weighted_fraction), 
+           share_percent = if_else(is.na(share_percent), "", share_percent), 
+           label_above = if_else(is.na(label_above), "", label_above)) %>%
+    mutate(industry = factor(industry, c("Other corporate", "Fossil Fuel Vehicles", 
+                                         "Fossil Fuel Utilities", "Fossil Fuel Production", 
+                                         "No reported corporate funders", 
+                                         "No disclosure"))) %>%
+    # Make sure that we get a stacked barplot getting a placeholder y-value.
+    mutate(placeh = "") %>%
+    mutate(label_color = if_else(industry == "Fossil Fuel Production", "white", "black")) %>%
+    ggplot(
+      aes(y = placeh, x = weighted_fraction, label = share_percent, fill = industry)) +
+      geom_col(position = "stack", color = "black") +
+      geom_text(aes(color = label_color), position = position_stack(vjust = 0.5),
+                size = annotation_size/.pt) +
+      # Y-value is trial and error.
+      geom_text(aes(label = label_above, y = 1.7), 
+                position = position_stack(vjust = 0.5),
+                size = annotation_size/.pt) +
+      scale_fill_manual(values = industry_colors) +
+      scale_color_manual(values = c("black" = "black", "white" = "white"), 
+                         guide = F) +
+      scale_x_continuous(expand = c(0, 0)) +
+      coord_cartesian(
+        clip = "off") +
+      theme_minimal() + 
+      ggtitle("Corporate Funder Totals") +
+      theme(plot.margin = margin(t = 5, b = 5, l = 3, r = 3),
+            legend.position = "bottom",
+            axis.title.x = element_blank(),
+            axis.title.y = element_blank(),
+            axis.text.y = element_blank(),
+            axis.text.x = element_blank(),
+            axis.ticks = element_blank(),
+            panel.grid.major = element_blank(),
+            legend.title = element_blank(),
+            panel.grid.minor = element_blank(),
+            plot.title = element_text(hjust = 0.5, 
+                                      margin = margin(b = 1, t = 0)), 
+            title = ggtext::element_markdown()) +
+      text_styling # +
+      # guides(fill = guide_legend(nrow = 2))
+}
+preprocess_df("UC Berkeley") %>%
+  make_barplot() +
+  guides(fill = F)
+```
+
+## 4. Generate plots
+
+We go university by university.
+
+### a. Harvard University
+
+```{r harvard, fig.height=80/25.4, fig.width=45/25.4, dpi = 150}
+harvard_white_labels <- c("HGHI", "EELP", "HCRA", "HUH","CID")
+harvard_df <- preprocess_df("Harvard University")
+plots$harvard_treemap <- harvard_df %>%
+  plot_treemap(harvard_white_labels)
+plots$harvard_totals <- harvard_df %>%
+  make_barplot()
+wrap_plots(plots$harvard_treemap / (plots$harvard_totals + guides(fill = F)) + 
+             plot_layout(heights = c(8, 1)))
+
+```
+
+### b. MIT
+
+```{r mit, fig.height=60/25.4, fig.width=45/25.4, dpi = 150}
+mit_white_labels <- c("CGCS", "PSFC")
+mit_df <- preprocess_df("MIT")
+plots$mit_treemap <- mit_df %>%
+  plot_treemap(mit_white_labels)
+plots$mit_totals <- mit_df %>%
+  make_barplot()
+wrap_plots(plots$mit_treemap / (plots$mit_totals + guides(fill = F)) + 
+             plot_layout(heights = c(8, 1)))
+```
+
+### c. Stanford
+
+```{r mit, fig.height=60/25.4, fig.width=45/25.4, dpi = 150}
+stanford_white_labels <- c("BLC", "STC", "HMS", "FRI", "EMF", "GCEP")
+stanford_df <- preprocess_df("Stanford University")
+plots$stanford_treemap <- stanford_df %>%
+  plot_treemap(stanford_white_labels)
+plots$stanford_totals <- stanford_df %>%
+  make_barplot()
+wrap_plots(plots$stanford_treemap / (plots$stanford_totals + guides(fill = F)) + 
+             plot_layout(heights = c(8, 1)))
+```
+
+### d. UC Berkeley
+
+```{r mit, fig.height=60/25.4, fig.width=45/25.4, dpi = 150}
+berkeley_white_labels <- c("EBI", "BRIE")
+berkeley_df <- preprocess_df("UC Berkeley")
+plots$berkeley_treemap <- berkeley_df %>%
+  plot_treemap(berkeley_white_labels)
+plots$berkeley_totals <- berkeley_df %>%
+  make_barplot()
+wrap_plots(plots$berkeley_treemap / (plots$berkeley_totals + guides(fill = F)) + 
+             plot_layout(heights = c(8, 1)))
+```
+
+## 5. Arrange plots
+
+```{r arrange}
+plots$berkeley_treemap_total <- wrap_plots(
+  plots$berkeley_treemap /
+    plots$berkeley_totals +
+    plot_layout(heights = c(8, 1)))
+plots$harvard_treemap_total <- wrap_plots(plots$harvard_treemap /
+                                            plots$harvard_totals +
+                                            plot_layout(heights = c(8, 1)))
+plots$mit_treemap_total <- wrap_plots(plots$mit_treemap /
+                                        plots$mit_totals +
+                                        plot_layout(heights = c(8,1)))
+plots$stanford_treemap_total <- wrap_plots(plots$stanford_treemap /
+                                             plots$stanford_totals +
+                                             plot_layout(heights = c(8, 1)))
+
+plots$arranged_treemap_totals <- wrap_plots(
+  plots$harvard_treemap_total +
+    plots$mit_treemap_total + plots$stanford_treemap_total +
+    plots$berkeley_treemap_total +
+    plot_layout(nrow = 1)) /
+  guide_area() + plot_layout(heights = c(10, 1), guides = "collect")  +
+  plot_annotation(
+    # title = "***Resulting weighted fractions***",
+    # caption = "*Note*: Centers with no disclosure or no corporate donors not counted toward totals.",
+    theme = theme(
+      plot.title = ggtext::element_markdown(
+        family = "Noto sans", size = 7),
+      plot.caption = ggtext::element_markdown(family = "Noto sans",
+                                              size = 7, hjust = 0))) &
+  # legend_styling 
+   theme(legend.position = "bottom", 
+         legend.title = element_blank(),
+         legend.text = element_text(size = annotation_size),
+         legend.key.size = unit(0.8, "lines"),
+         legend.spacing.y = unit(5, "lines"),
+         legend.margin = margin(t = 5, r = 0, b = 0, l = 0),
+         legend.key.spacing = unit(0.3, "lines"))
+
+
+ggsave(here("out", "treemaps.png"),
+       dpi = 300,
+       units = "mm",
+       width = 180,
+       height = 80)
+knitr::include_graphics(here("out", "treemaps.png"))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

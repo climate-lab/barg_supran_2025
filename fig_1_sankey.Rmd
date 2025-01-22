@@ -1,0 +1,391 @@
+---
+title: "fig_1_sankey"
+output: html_document
+---
+
+```{r library}
+library(tidyverse)
+suppressPackageStartupMessages(library(here))
+library(ggalluvial)
+```
+
+## ToDo
+
+1. Read and preprocess
+2. Set parameters
+3. Setup for Sankey columns
+4. Get counts and order the observations
+5. `pivot_longer` to prepare data format for Sankey
+6. Plot raw Sankey diagram without styling to extract geometry
+7. Adjust distance between columns
+8. Final aesthetics and plot
+
+## 1. Read and preprocess
+
+```{r read}
+centers <- read_csv(here("data", "centers.csv"))
+funders <- read_csv(here("data", "funders.csv")) %>% 
+  filter(corp) %>%
+  left_join(select(centers, abbr, uni), by = "abbr")
+glimpse(funders)
+```
+
+```{r preprocess}
+funders <- funders %>%
+  mutate(funder = if_else(funder == "Pacific Gas and Electric Company", "PG&E", 
+                          funder)) %>%
+  mutate(industry = case_when(
+    industry == "Mineral Manufacturing (incl. Concrete)" ~ "Mineral Manufacturing",
+    industry == "Miscellaneous Manufacturing" ~ "Misc. Manufacturing",
+    industry == "Administration and Support" ~ "Admin. and Support",
+    T ~ industry
+  ))
+glimpse(funders)
+```
+
+## 2. Set parameters
+
+```{r param}
+cutoff <- 5
+print_min <- 5
+significant_funders <- funders %>% 
+  group_by(funder) %>%
+  filter(n() >= cutoff) %>%
+  {unique(.$funder)}
+
+ff_industries <- c("Fossil Fuel Production", 
+                   "Fossil Fuel Utilities",
+                   "Fossil Fuel Vehicles")
+```
+
+## 3. Setup for Sankey column
+
+We want to be able to control where the outgoing flows from the second column
+attach to in the third column. Within centers, we want all the funding flows
+from the fossil fuel sector to be stacked at the top. To accomplish this, 
+we split all centers into fossil fuel funding and non-fossil fuel funding.
+Later, we will draw one box over both of these parts that we write the name
+of the center onto. Similar approach for the fourth column.
+
+```{r centers_ff}
+funders <- funders %>%
+  mutate(ff_center = if_else(ff, as.character(str_glue("ff_{abbr}")), abbr)) %>%
+  mutate(ff_uni = if_else(ff, as.character(str_glue("ff_{uni}")), uni))
+glimpse(funders)
+```
+
+We split off significant funders. In the second column, we will print these 
+separately.
+
+```{r sign}
+funders <- funders %>%
+  group_by(funder) %>%
+  mutate(n = n()) %>%
+  ungroup() %>%
+  mutate(significance = n >= cutoff) %>%
+  mutate(sign = if_else(significance, funder, industry)) %>%
+  select(-n)
+glimpse(funders)
+```
+
+Next, we aggregate the non-significant funders and prepare new labels for these
+where necessary.
+
+```{r non_sign}
+no_sign_ind <- funders %>%
+  group_by(industry) %>%
+  filter(all(significance == F)) %>%
+  {unique(.$industry)}
+
+sign_other <- funders %>%
+  group_by(industry) %>%
+  filter(any(significance == T)) %>%
+  filter(! significance) %>%
+  distinct(industry, funder) %>%
+  mutate(new_label = case_when(
+    industry == "Fossil Fuel Production" ~ str_glue(
+      "{n()} other\nFossil Fuel Producers"
+      ),
+    industry == "Fossil Fuel Utilities" ~ str_glue(
+      "{n()} other\nFossil Fuel Utilities"
+    ), 
+    industry == "Fossil Fuel Vehicles" ~ str_glue(
+      "{n()} other\nFossil Fuel Vehicle\nManufacturers"
+    ),
+    T ~ str_glue("{n()} other\n{industry}\ncompanies")
+  )) %>%
+  ungroup() %>%
+  distinct(industry, new_label) %>%
+  mutate(x = 2) # We are only doing this transformation for the second axis
+```
+
+## 4. Get counts and order the observations
+
+Column 4 we order alphabetically
+
+```{r sort_uni}
+uni_order <- funders %>%
+  group_by(uni) %>%
+  mutate(n = n()) %>%
+  ungroup() %>%
+  distinct(ff_uni, n, ff) %>%
+  # Sort manually by alphabet
+  mutate(n = case_when(
+    str_detect(ff_uni, "Harvard University") ~ 1,
+    str_detect(ff_uni, "MIT") ~2, 
+    str_detect(ff_uni, "Stanford University") ~ 3, 
+    str_detect(ff_uni, "UC Berkeley") ~ 4)) %>%
+  arrange(n, desc(ff)) %>%
+  {.$ff_uni}
+uni_order
+```
+
+Now we need to sort out the centers. Here, we sort by university and counts.
+
+```{r sort_center}
+center_stats <- funders %>%
+  group_by(uni) %>%
+  mutate(n_uni = n()) %>%
+  group_by(abbr) %>%
+  mutate(n = n()) %>%
+  distinct(uni, n_uni, n, ff_center, abbr, ff) %>%
+  # Sort manually by alphabet again
+  mutate(n_uni = case_when(
+    str_detect(uni, "Harvard University") ~ 1, 
+    str_detect(uni, "MIT") ~2, 
+    str_detect(uni, "Stanford University") ~ 3,
+    str_detect(uni, "UC Berkeley") ~ 4)) %>%
+  ungroup()
+
+# Making sure the ties are correctly drawn for centers that are ff only
+# Without these lines, the centers (without ff) would not be in the 
+# vector for ordering at all so they would be NA and listed last.
+center_additions <- center_stats %>%
+  group_by(abbr) %>%
+  filter(n() == 1) %>%
+  filter(ff) %>%
+  mutate(ff_center = str_remove(ff_center, "ff_"), 
+         ff = F) %>%
+  ungroup()
+
+center_order <- center_stats %>%
+  bind_rows(center_additions) %>%
+  arrange(n_uni, desc(n), abbr, desc(ff)) %>%
+  {.$ff_center}
+```
+
+Sort industries by count.
+
+```{r order_ind}
+industry_order <- funders %>%
+  group_by(funder) %>%
+  mutate(n_ties = n()) %>%
+  group_by(industry, ff) %>%
+  mutate(n = n()) %>%
+  ungroup() %>%
+  distinct(significance, sign, industry, ff, n, n_ties) %>%
+  # Manual tie breaker for finance vs. Machineries and Metal
+  mutate(n = if_else(industry == "Machineries and Metal", n - 0.1, n)) %>%
+  arrange(desc(n), desc(ff), desc(significance), desc(n_ties)) %>%
+  {unique(.$sign)}
+order_strata <- c(uni_order, center_order, industry_order)
+```
+
+## 5. `pivot_longer` to prepare data format for Sankey
+
+We have 752 observations for corporations. That is, 752 unique ties between 
+corporations and research centers. We give each observation an ID and then
+pivot longer to create a variable that tells us what column in the Sankey 
+diagram we are in. That is, we expect to obtain a total of 3,008 observations.
+
+```{r sankey_df}
+sankey_df <- funders %>%
+  select(funder, industry, sign, abbr, ff_center, uni, ff_uni, ff) %>%
+  mutate(ind = industry) %>%
+  mutate(id = row_number()) %>%
+  pivot_longer(cols = c(industry, sign, abbr, uni), names_to = "axis") %>%
+  mutate(actual = case_when(axis %in% c("industry", "sign") ~ value, 
+                            axis == "abbr" ~ ff_center, 
+                            axis == "uni" ~ ff_uni)) %>%
+  mutate(axis = case_when(axis == "industry" ~ "Industry", 
+                          axis == "sign" ~ "Funder", 
+                          axis == "abbr" ~ "Center", 
+                          axis == "uni" ~ "University")) %>%
+  mutate(axis = factor(axis, c("Industry", "Funder", "Center", 
+                               "University")),  
+         value = factor(value, order_strata), 
+         actual = factor(actual, order_strata)) %>%
+  mutate(ff = if_else(ind %in% ff_industries, ind, "other"))
+# View(sankey_df)
+glimpse(sankey_df)
+# Make sure this all worked out
+sankey_df %>%
+  filter(if_any(everything(), is.na)) %>%
+  {testthat::expect_true(nrow(.) == 0)}
+```
+
+## 6. Plot raw Sankey diagram without styling to extract geometry
+
+```{r plot_raw}
+raw_plot <- sankey_df %>%
+  ggplot(aes(x = axis, alluvium = id, stratum = value, label = value, fill = ff)) +
+    geom_flow(aes(stratum = actual, fill = ff), width = 2/7) +
+    geom_stratum(aes(fill = after_stat(label)), width = 2/7) + 
+    geom_text(stat = "stratum", min.y = print_min, family = "Noto sans") +
+    scale_fill_manual(values = c("other" = "grey50", 
+                                 "Fossil Fuel Production" = "#B22222", 
+                                 "Fossil Fuel Utilities" = "#E64B35", 
+                                 "Fossil Fuel Vehicles" = "#A0522D")) +
+    theme_minimal() +
+    theme(legend.position = "none",
+          panel.grid = element_blank(),
+          plot.background = element_rect(fill = "white"))
+raw_plot
+```
+
+## 7. Adjust distance between columns
+
+This is an easy fix because the first column has an x-value of 1, the second
+column has an x-value of 2 and so forth.
+
+```{r layers}
+distance_modifier <- 0.5
+
+modified_layer <- layer_data(raw_plot) %>%
+  mutate(xmin = case_when(x == 1 ~ xmin + distance_modifier, 
+                          x %in% c(2, 3) ~ xmin, 
+                          x == 4 ~ xmin - distance_modifier), 
+         xmax = case_when(x == 1 ~ xmax + distance_modifier, 
+                          x %in% c(2, 3) ~ xmax, 
+                          x == 4 ~ xmax - distance_modifier), 
+         x = case_when(x == 1 ~ x + distance_modifier, 
+                       x %in% c(2, 3) ~ x, 
+                       x == 4 ~ x - distance_modifier))
+modified_layer %>%
+  filter(stratum == "Electronics")
+```
+
+The x variable is actually a list with four values that describe the sources 
+and destination of the edges between the columns. We quickly gather these anew
+from the other columns.
+
+```{r edges}
+new_edges <- modified_layer %>%
+  select(alluvium, fill, flow, xmin, xmax, ymin, ymax) %>%
+  group_by(alluvium) %>%
+  summarize(fill = fill[flow == "from"],
+            x = list(c(xmax[flow == "from"], xmin[flow == "to"],
+                       xmin[flow == "to"], xmax[flow == "from"])),
+            y = list(c(ymax[flow == "from"], ymax[flow == "to"],
+                       ymin[flow == "to"], ymin[flow == "from"]))) %>%
+  unnest(cols = c(x, y))
+```
+
+Similarly, we recalculate the location of the labels and, since we are already
+working on this, merge in the new labels we had prepared.
+
+```{r labels}
+new_labels <- modified_layer %>%
+  filter(flow == "from" | x == max(x)) %>%
+  group_by(x, label) %>%
+  mutate(y = sum(n*y)/ sum(n), .groups = "drop", 
+            sum = sum(n)) %>%
+  filter(sum >= print_min) %>%
+  left_join(sign_other, by = c("x" = "x", "label" = "industry")) %>%
+  mutate(label = if_else(!is.na(new_label), new_label, label)) %>%
+  mutate(label = if_else(max(x) == 2 & label %in% filter(funders, significance)$funder, 
+                         as.character(str_glue("{unique(label)} – {sum(count)} ties")), 
+                         label))
+```
+
+Finally, calculate new boxes.
+
+```{r boxes}
+new_boxes <- modified_layer %>% 
+  group_by(x, label) %>%
+  summarise(xmin = min(xmin), xmax = max(xmax), ymin = min(ymin), 
+            ymax = max(ymax), .groups = "drop", fill = last(fill)) %>%
+  # Manually change center and university colors
+  mutate(fill = case_when(
+    label %in% c(funders$abbr, funders$uni) ~ "#DDDDDD",
+    T ~ fill))
+```
+
+## 8. Final aesthetics and plot
+
+We will the boxes for universities according to their share of fossil fuel
+funders.
+
+```{r uni_fill}
+ff_uni_counts <- funders %>%
+  filter(ff) %>%
+  count(uni)
+unis <- funders$uni
+uni_boxes <- new_boxes %>%
+  filter(label %in% unis)
+uni_share_boxes <- new_boxes %>%
+  filter(label %in% unis) %>%
+  left_join(ff_uni_counts, by = c("label" = "uni")) %>%
+  mutate(ymin = ymax - n)
+```
+
+Plot final version.
+
+```{r plot_again, fig.width = 180/25.4, fig.height=225/25.4, warning=FALSE}
+final_plot <- ggplot(modified_layer) +
+  ggforce::geom_diagonal_wide(data = new_edges,
+                              aes(x = x, y = y, group = alluvium, 
+                                  fill = fill),
+                              alpha = 0.5) +
+  geom_rect(data = new_boxes,
+            aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax,
+                fill = fill), color = "black", linewidth = 0.2) +
+  geom_rect(data = uni_share_boxes,
+            aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+            fill = "#FF6347", alpha = .3) +
+  geom_rect(data = uni_boxes,
+            aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+            fill = NA, linewidth = 0.3, color = "black") +
+  geom_text(data = new_labels,
+            aes(x = x, y = y, label = label),
+            nudge_y = -0.5, width = 0.1,
+            inherit.aes = FALSE, size = 5/.pt,
+            lineheight = 0.8, family = "Noto sans", face = "italics") +
+  # recreate original x-axis breaks/labels, fill values, & axis titles
+  scale_x_continuous(breaks = sort(unique(modified_layer$x)),
+                     labels = layer_scales(raw_plot)$x$get_labels(), 
+                     position = "top", expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  scale_fill_identity() +
+  theme_minimal() +
+  theme(text = element_text(family = "Noto sans"), 
+        panel.grid = element_blank(),
+        axis.text.x = element_text(family = "Noto sans", color = "black",
+                                   size = 7),
+        panel.background = element_blank(),
+        plot.background = element_rect(fill = "white"), 
+        axis.title.x = element_blank(), 
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        plot.margin = margin(r= 3, l = 3, b = 3, t = 3), 
+        panel.spacing = unit(0, "lines"))
+ggsave(here("out", "sankey.png"), final_plot, units = "mm", 
+       dpi = 900, width = 180, height = 225)
+ggsave(here("out", "sankey.pdf"), final_plot, units = "mm", 
+       dpi = 900, width = 180, height = 225, 
+       device = grDevices::cairo_pdf)
+# ggsave(here("figures", "sankey_small.png"), final_plot, units = "mm", 
+#        dpi = 900, width = 180, height = 210)
+knitr::include_graphics(here("out", "sankey.png"))
+```
+
+
+
+
+
+
+
+
+
+
+

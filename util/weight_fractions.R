@@ -18,12 +18,7 @@ weight_fractions <- function(funders, centers){
     mutate(ind_share = if_else(industry == "No disclosure", 1, n/sum(n))) %>%
     ungroup() %>%
     # Multiply the industry's share of each center with the center's influence.
-    mutate(weighted_fraction = ind_share * share) # %>%
-    # This would be the steps to aggregate across centers:
-    # group_by(industry) %>%
-    # # Sum across centers.
-    # summarize(normalized = sum(normalized_share)) %>%
-    # arrange(desc(normalized))
+    mutate(weighted_fraction = ind_share * share)
   
   weighted_fractions
 }

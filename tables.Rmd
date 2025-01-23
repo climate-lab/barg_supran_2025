@@ -1,0 +1,297 @@
+---
+title: "table_1"
+output: html_document
+---
+
+```{r library}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(here)
+
+if (!"jules.tools" %in% installed.packages()){
+  devtools::install_github("julianbarg/jules.tools")
+}
+library(jules.tools)
+```
+
+## ToDo
+
+1. Read input
+2. Table 1 -- ranking by university and category
+3. Table 2 -- cross-university counts
+
+## 1. Read input
+
+```{r read}
+centers <- read_csv(here("data", "centers.csv"))
+glimpse(centers)
+cat("\n")
+funders <- read_csv(here("data", "funders.csv")) %>%
+  left_join(select(centers, abbr, uni), by = "abbr")
+glimpse(funders)
+```
+
+## 2. Table 1 -- ranking by university and category
+
+Here, we just want to compare across industries:
+
+```{r corp}
+corp_funders <- filter(funders, corp)
+```
+
+First, get the counts of funders. To get the counts across universities, 
+we aggregate and then add the counts per university again at the bottom
+with `bind_rows`.
+
+```{r funder_counts}
+funder_counts <- corp_funders %>%
+  distinct(uni, industry, funder, ff) %>%
+  group_by(uni, industry, ff) %>% 
+  summarize(value = n(), .groups = "drop") %>%
+  group_by(uni) %>%
+  mutate(share = value / sum(value), 
+         sector = sum(ff * value),
+         sector_share = sum(ff * value) / sum(value)) %>%
+  ungroup()
+funder_counts <- funder_counts %>%
+  group_by(industry, ff) %>%
+  summarize(value = sum(value), .groups = "drop") %>%
+  mutate(share = value / sum(value), 
+         sector = sum(ff * value),
+         sector_share = sum(ff * value) / sum(value)) %>%
+  mutate(uni = "Across universities") %>%
+  bind_rows(funder_counts) %>%
+  mutate(metric = "funders")
+glimpse(funder_counts)
+```
+
+Now, we do the same for the counts of unique ties between funders and centers.
+Very much the same approach that we took for funder counts. We again
+count by university, then aggregate across universities and use `bind_rows` to
+add the per-university counts again.
+
+```{r ties}
+tie_counts <- corp_funders %>%
+  distinct(uni, industry, funder, abbr, ff) %>%
+  group_by(uni, industry, ff) %>%
+  summarize(value = n(), .groups = "drop") %>%
+  group_by(uni) %>%
+  mutate(share = value / sum(value), 
+         sector = sum(ff * value),
+         sector_share = sum(ff * value) / sum(value)) %>%
+  ungroup()
+tie_counts <- tie_counts %>%
+  group_by(industry, ff) %>%
+  summarize(value = sum(value), .groups = "drop") %>%
+  mutate(uni = "Across universities") %>%
+  mutate(share = value / sum(value), 
+         sector = sum(ff * value), 
+         sector_share = sum(ff * value) / sum(value)) %>%
+  bind_rows(tie_counts) %>%
+  mutate(metric = "ties")
+glimpse(tie_counts)
+```
+
+Calculate weights across universities and per university.
+
+```{r weighted_fractions}
+source(here("util", "weight_fractions.R"))
+weights <- list()
+weights$across <- weight_fractions(corp_funders, centers, rm_no_disclosure = T) %>%
+  group_by(industry, ff) %>%
+  summarize(value = sum(weighted_fraction), .groups = "drop") %>%
+  mutate(uni = "All universities", 
+         sector_share = sum(ff*value),
+         share = value)
+testthat::expect_equal(sum(weights$across$value), 1)
+get_weights <- function(uni_){
+  df <- filter(corp_funders, str_detect(uni, uni_))
+  uni <- unique(df$uni)
+  weights <- df %>%
+    weight_fractions(filter(centers, str_detect(uni, uni_)), rm_no_disclosure = T) %>%
+    group_by(industry, ff) %>%
+    summarize(value = sum(weighted_fraction), .groups = "drop") %>%
+    mutate(uni = uni) %>%
+    group_by(uni) %>%
+    mutate(sector_share = sum(ff * value), 
+           share = value) %>%
+    ungroup() 
+  # Test that the normalization was correct:
+  testthat::expect_equal(sum(weights$value), 1)
+  weights
+}
+weights$harvard <- get_weights("Harvard")
+weights$mit <- get_weights("MIT")
+weights$stanford <- get_weights("Stanford")
+weights$berkeley <- get_weights("Berkeley")
+```
+
+Calculate all the ranks.
+
+```{r ranks}
+ranks_table <- bind_rows(weights) %>%
+  mutate(metric = "weighted fraction") %>%
+  bind_rows(funder_counts, tie_counts) %>%
+  group_by(uni, metric) %>%
+  mutate(rank = as.integer(rank(-value))) %>%
+  arrange(rank) %>%
+  filter(ff) %>%
+  slice_min(rank) %>%
+  ungroup() %>%
+  mutate(sector = scales::percent(sector_share, 1)) %>%
+  mutate(rank = str_glue("{rank} ({scales::percent(share, 1)})")) %>%
+  select(uni, metric, industry, rank, sector)
+glimpse(ranks_table)
+```
+
+Generate the title. Note that we are not adding the full column names.
+R would insert periods instead of spaces, so we add the full column names
+manually later.
+
+```{r write_ranks}
+neat_names <- c("University" = "uni", 
+                "Metric" = "metric",
+                "Rank" = "rank", 
+                "Sector" = "sector")
+
+ranks_table %>%
+  filter(uni != "Across universities") %>%
+  mutate(metric = case_when(
+    metric == "funders" ~ "Number of funders", 
+    metric == "ties" ~ "Number of funding ties", 
+    metric == "weighted fraction" ~ "Weighted funder fraction"
+  )) %>%
+  group_by(uni) %>%
+  mutate(uni = if_else(row_number() == 1, uni, "")) %>%
+  ungroup() %>%
+  mutate(metric = 
+           case_when(metric == "funders" ~ "Number of funders", 
+                     metric == "ties" ~ "Number of funding ties",
+                     metric == "weighted fraction" ~ "Weighted funder fraction")) %>%
+  rename(!!! neat_names) %>% 
+  jules.tools::make_pandoc_table(here("out", "table_1_ranks.md"))
+```
+
+## 3. Table 2 -- cross-university counts
+
+Creating a dataframe with the appropriate data and then exporting to markdown,
+to be converted to word or other formats as needed with `pandoc`.
+Note that in the column titles, this produces "Harvard" instead of "Harvard 
+University", same for "Stanford University", "UC Berkeley" and "All 
+Universities." That is because otherwise R would insert a period where the 
+space is when we `pivot_wider`. We manually fix this in the markdown output.
+
+```{r table_1}
+group_better <- c("ff" = "Fossil Fuel\nSector",
+                  "corp" = "All other\ncorporate",
+                  "gov" = "Government &\nnational labs", 
+                  "indv" = "Individuals", 
+                  "NGO" = "Third sector", 
+                  "uni" = "Universities", 
+                  "total" = "Total funding\nties")
+total_ties <- nrow(funders)
+total_by_uni <- funders %>%
+  group_by(uni) %>%
+  summarize(total = n())
+
+funders_grouped <- funders %>%
+  mutate(group = case_when(
+    ff ~ "ff",
+    corp ~ "corp", 
+    industry == "Government/National Lab" ~"gov",
+    industry == "Individuals" ~ "indv",
+    industry == "NGOs/Foundations" ~ "NGO",
+    industry == "Universities" ~ "uni"
+  ))
+funders_by_uni <- funders_grouped %>%
+  group_by(uni, group) %>%
+  summarize(n = n(), .groups = "drop") %>%
+  group_by(uni) %>%
+  mutate(n = str_glue("{n} ({scales::percent(n/sum(n), 1)})")) %>%
+  ungroup()
+funders_across <- funders_grouped %>%
+  group_by(group) %>%
+  summarize(n = n(), .groups = "drop") %>%
+  mutate(uni = "Universities") %>%
+  mutate(n = str_glue("{n} ({scales::percent(n/sum(n), 1)})"))
+funders_total <- funders %>%
+  group_by(uni) %>%
+  summarize(n = n()) %>%
+  mutate(group = "total") %>%
+  {add_row(., uni = "Universities", n = sum(.$n), group = "total")} %>%
+  # {add_row(., uni = "Across Universities", n = sum(.$n), group = "total")} %>%
+  mutate(n = as.character(n))
+subindustry <- funders %>%
+  filter(ff) %>%
+  group_by(uni, industry) %>%
+  summarize(n = n(), .groups = "drop") %>%
+  left_join(total_by_uni, by = "uni") %>%
+  mutate(n = str_glue("{n} ({scales::percent(n/total, 1)})")) %>%
+  select(-total)
+subind_w_total <- funders %>%
+  filter(ff) %>%
+  group_by(industry) %>%
+  summarize(
+    n = str_glue("{n()} ({scales::percent(n()/total_ties, 1)})")) %>%
+  # Should be "All Universities," see explanation above.
+  mutate(uni = "Universities") %>%
+  bind_rows(subindustry) %>%
+  mutate(subindustry = industry, 
+         group = "ff_sub") %>%
+  select(-industry)
+sector_table <- bind_rows(funders_across, subind_w_total, funders_by_uni, 
+          funders_total) %>%
+  mutate(uni = case_when(
+    uni == "Harvard University" ~ "Harvard", 
+    uni == "UC Berkeley" ~ "Berkeley", 
+    uni == "Stanford University" ~ "Stanford", 
+    T ~ uni
+  )) %>%
+  mutate(uni = factor(uni, levels = c("Harvard", "MIT", "Stanford", "Berkeley", "Universities"))) %>%
+  arrange(uni) %>%
+  pivot_wider(names_from = uni, values_from = n) %>%
+  mutate(group = factor(group, levels = c(
+    "ff", "ff_sub", "corp", "gov", "indv", "NGO", "uni", "total"))) %>%
+  mutate(across(.cols = c(Harvard, MIT, Stanford, `Berkeley`),
+  # mutate(across(.cols = c(Harvard, MIT, Stanford, `UC Berkeley`),
+                ~replace_na(.x, "0 (0%)"))) %>%
+  arrange(group) %>%
+  mutate(group = recode(group, !!!group_better)) %>%
+  rename(Sector = group, Industry = "subindustry") %>%
+  mutate(
+    Industry = if_else(is.na(Industry), " ", Industry))
+sector_table
+jules.tools::make_pandoc_table(sector_table, here("out", "table_2_sectors.md"))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

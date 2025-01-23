@@ -1,7 +1,7 @@
 library(tidyverse)
 library(here)
 
-weight_fractions <- function(funders, centers){
+weight_fractions <- function(funders, centers, rm_no_disclosure = FALSE){
   # First, normalize the influence across centers.
   weighted_influence <- centers %>%
     # filter(abbr %in% funders$abbr) %>%
@@ -20,5 +20,14 @@ weight_fractions <- function(funders, centers){
     # Multiply the industry's share of each center with the center's influence.
     mutate(weighted_fraction = ind_share * share)
   
-  weighted_fractions
+  if (rm_no_disclosure) {
+    weighted_fractions %>%
+      filter(industry != "No disclosure") %>%
+      # Now we need to normalize again
+      mutate(disclosure = sum(weighted_fraction)) %>%
+      mutate(weighted_fraction = weighted_fraction / disclosure) %>%
+      select(-disclosure)
+  } else {
+    weighted_fractions
+  }
 }

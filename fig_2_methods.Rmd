@@ -23,8 +23,7 @@ library(patchwork)
 
 ```{r read}
 centers <- read_csv(here("data", "centers.csv"))
-funders <- read_csv(here("data", "funders.csv")) %>%
-  filter(corp) # Doing this cor companies only
+funders <- read_csv(here("data", "funders.csv"))
 glimpse(funders)
 ```
 
@@ -300,8 +299,6 @@ plots$center_storis_summed <- stats$influence_counts %>%
     scale_fill_manual(values = industry_colors) +
     theme_minimal() +
     theme(axis.text.y = element_blank(),
-          # axis.title.x = element_blank(),
-          # legend.position = "none",
           legend.title = element_blank(),
           axis.title.y = element_text(margin = margin(r=-1, l = -1)),
           axis.text.x = element_blank(),
@@ -326,25 +323,25 @@ fractions.
 
 ```{r norm}
 source(here("util", "weight_fractions.R"))
-stats$final_normalization <- weight_fractions(funders, centers)
+stats$final_normalization <- weight_fractions(filter(funders, corp), 
+                                              centers, 
+                                              rm_no_disclosure = T) %>%
+  group_by(industry, ff) %>%
+  summarize(weighted_fraction = sum(weighted_fraction), .groups = "drop")
 
-stats$final_normalization %>%
-  mutate(normalized = as.character(signif(normalized, 5))) 
-testthat::expect_true(sum(stats$final_normalization$normalized) == 1)
+# stats$final_normalization %>%
+#   mutate(weighted_fraction = as.character(signif(weighted_fraction, 5))) 
+testthat::expect_equal(sum(stats$final_normalization$weighted_fraction), 1)
 ```
 
 ```{r ties_industry, fig.height=60/25.4, fig.width=45/25.4, dpi = 150, warning = F, error = F}
 plots$normalizations <- stats$final_normalization %>%
-  mutate(industry = if_else(industry == "Fossil Fuel Vehicle Manufacturers",
-                            "Fossil Fuel Vehicle Manuf.", industry)) %>%
   mutate(ff = if_else(industry %in% ff_industries, "Fossil Fuel Sector", "Other corporate")) %>%
-  head(n_for_plot) %>%
-  mutate(industry = fct_reorder(industry, normalized)) %>%
+  slice_max(n = n_for_plot, order_by = weighted_fraction) %>%
+  mutate(industry = fct_reorder(industry, weighted_fraction)) %>%
   mutate(ff = factor(ff, levels = c("Other corporate", "Fossil Fuel Sector"))) %>%
-  # ggplot(aes(x = industry, y = normalized)) +
-  ggplot(aes(y = industry, x = normalized, label = industry, fill = ff)) +
+  ggplot(aes(y = industry, x = weighted_fraction, label = industry, fill = ff)) +
     geom_col(color = "black") +
-    # geom_label(aes(label = industry, angle = 90, y = 0.07), alpha = 0.5) +
     geom_text(aes(x = 0.001), hjust = 0, 
               size = annotation_size/.pt) +
     scale_x_continuous(expand = c(0, 0)) +
@@ -363,11 +360,11 @@ plots$normalizations <- stats$final_normalization %>%
 plots$normalizations_total <- stats$final_normalization %>%
   mutate(ff = if_else(industry %in% ff_industries, "Fossil Fuel Sector", "Other corporate")) %>%
   group_by(ff) %>%
-  summarize(normalized = sum(normalized)) %>%
-  mutate(percent = scales::percent(normalized, accuracy = 1)) %>%
+  summarize(weighted_fraction = sum(weighted_fraction)) %>%
+  mutate(percent = scales::percent(weighted_fraction, accuracy = 1)) %>%
   mutate(placeh = "") %>%
   mutate(ff = factor(ff, levels = c("Other corporate", "Fossil Fuel Sector"))) %>%
-  ggplot(aes(x = placeh, y = normalized, fill = ff, label = percent)) +
+  ggplot(aes(x = placeh, y = weighted_fraction, fill = ff, label = percent)) +
     geom_bar(position = "stack", stat = "identity", color = "black") +
     geom_text(angle = 90, position = position_stack(vjust = 0.5), 
               size = annotation_size/.pt) +

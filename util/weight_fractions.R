@@ -1,7 +1,7 @@
 library(tidyverse)
 library(here)
 
-weight_fractions <- function(funders, centers, aggregate_uni = T){
+weight_fractions <- function(funders, centers){
   # First, normalize the influence across centers.
   weighted_influence <- centers %>%
     # filter(abbr %in% funders$abbr) %>%

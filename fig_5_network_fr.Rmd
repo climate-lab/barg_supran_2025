@@ -11,6 +11,10 @@ library(tidygraph)
 library(ggraph)
 ```
 
+## About
+
+This is the same file as fig 4, but using the Fruchterman-Reingold algorithm
+
 ## ToDo
 
 1. Parameters, input and preprocessing
@@ -243,7 +247,7 @@ significantly change the overall appearance.
 
 ```{r create_layout}
 set.seed(365)
-layout <- create_layout(graph_size, layout = "kk")
+layout <- create_layout(graph_size, layout = "fr")
 mean_x <- mean(layout$x)
 mean_y <- mean(layout$y)
 layout$x <- layout$x - mean_x
@@ -262,7 +266,7 @@ Sanity check -- overall position of nodes.
 graph <- ggraph(layout)
 graph +
   geom_node_point() +
-  labs(title = "kk")
+  labs(title = "fr")
 ```
 
 ## 5. Create layers
@@ -435,9 +439,8 @@ label_layer <-
                       fill = label_color,
                       fontface = if_else(large_center, "bold", "plain")),
                   repel = T, size = 5/.pt, 
-                  # force = 30, force_pull = 3.5,
-                  force = 10, force_pull = 0.9,
-                  # force = 1, force_pull = 1,
+                  force = 30, force_pull = 3.5,
+                  # force = 10, force_pull = 0.9,
                   label.padding = unit(0.1, "lines"),
                   show.legend = FALSE, seed = 132, min.segment.length = 0.2)
 
@@ -447,11 +450,11 @@ network_graph <- graph +
   nodes + 
   label_layer +
   # Add manual labels for the two clusters.
-  geom_label(aes(x = -0.2, y = 3.2, label = "Fossil Fuel Sector"), 
+  geom_label(aes(x = 1.9, y = -0.25, label = "Fossil Fuel Sector"), 
              size = 7/.pt, label.padding = unit(0.2, "lines"),
              fill = "white",
              fontface = "bold.italic") +
-  geom_label(aes(x = -2.7, y = -1.9, label = "Non-corporate sectors"), 
+  geom_label(aes(x = -3.15, y = -1.45, label = "Non-corporate sectors"), 
              size = 7/.pt, label.padding = unit(0.2, "lines"), 
              fill = "white",
              fontface = "bold.italic") +
@@ -462,29 +465,10 @@ network_graph <- graph +
         legend.box.spacing = unit(0, "pt"))
 # For the manuscript, we use .png, but final journal submission is .pdf file.
 # In the .pdf we may also delete unnecessary lines between nodes and labels.
-ggsave(here("out", "network.png"), network_graph, dpi = 300,
+ggsave(here("out", "fr_network.png"), network_graph, dpi = 300,
        width = 180, height = 160, units = "mm")
        # width = 9, height = 9)
-ggsave(here("out", "network.pdf"), network_graph, dpi = 300,
+ggsave(here("out", "fr_network.pdf"), network_graph, dpi = 300,
        width = 180, height = 160, units = "mm")
-knitr::include_graphics(here("out", "network.png"))
+knitr::include_graphics(here("out", "fr_network.png"))
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

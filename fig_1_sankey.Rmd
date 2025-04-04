@@ -39,7 +39,10 @@ funders <- funders %>%
     industry == "Miscellaneous Manufacturing" ~ "Misc. Manufacturing",
     industry == "Administration and Support" ~ "Admin. and Support",
     T ~ industry
-  ))
+  )) %>%
+  mutate(industry = if_else(industry == "Fossil Fuel Vehicle Manufacturers", 
+                            "Fossil Fuel Vehicle\nManufacturers", 
+                            industry))
 glimpse(funders)
 ```
 
@@ -53,9 +56,9 @@ significant_funders <- funders %>%
   filter(n() >= cutoff) %>%
   {unique(.$funder)}
 
-ff_industries <- c("Fossil Fuel Production", 
+ff_industries <- c("Fossil Fuel Producers", 
                    "Fossil Fuel Utilities",
-                   "Fossil Fuel Vehicles")
+                   "Fossil Fuel Vehicle\nManufacturers")
 ```
 
 ## 3. Setup for Sankey column
@@ -103,13 +106,13 @@ sign_other <- funders %>%
   filter(! significance) %>%
   distinct(industry, funder) %>%
   mutate(new_label = case_when(
-    industry == "Fossil Fuel Production" ~ str_glue(
+    industry == "Fossil Fuel Producers" ~ str_glue(
       "{n()} other\nFossil Fuel Producers"
       ),
     industry == "Fossil Fuel Utilities" ~ str_glue(
       "{n()} other\nFossil Fuel Utilities"
     ), 
-    industry == "Fossil Fuel Vehicles" ~ str_glue(
+    industry == "Fossil Fuel Vehicle\nManufacturers" ~ str_glue(
       "{n()} other\nFossil Fuel Vehicle\nManufacturers"
     ),
     T ~ str_glue("{n()} other\n{industry}\ncompanies")
@@ -233,9 +236,9 @@ raw_plot <- sankey_df %>%
     geom_stratum(aes(fill = after_stat(label)), width = 2/7) + 
     geom_text(stat = "stratum", min.y = print_min, family = "Noto sans") +
     scale_fill_manual(values = c("other" = "grey50", 
-                                 "Fossil Fuel Production" = "#B22222", 
+                                 "Fossil Fuel Producers" = "#B22222", 
                                  "Fossil Fuel Utilities" = "#E64B35", 
-                                 "Fossil Fuel Vehicles" = "#A0522D")) +
+                                 "Fossil Fuel Vehicle\nManufacturers" = "#A0522D")) +
     theme_minimal() +
     theme(legend.position = "none",
           panel.grid = element_blank(),

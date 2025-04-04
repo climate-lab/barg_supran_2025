@@ -1,0 +1,78 @@
+---
+title: "betweenness"
+output: html_document
+---
+
+```{r library}
+library(tidyverse)
+library(here)
+library(tidygraph)
+```
+
+```{r data}
+funders <- read_csv("data/funders.csv")
+glimpse(funders)
+```
+
+```{r graph}
+edges <- funders %>%
+  rename("from" = "funder",
+         "to" = "abbr")
+graph <- tbl_graph(edges = select(edges, from, to), directed = F) %>%
+  mutate(betweenness = centrality_betweenness())
+glimpse(graph)
+```
+
+```{r groups}
+noncorp <- c("Government/National Lab", "Universities", "NGOs/Foundations", 
+             "Individuals")
+betweenness_df <- activate(graph, nodes) %>%
+  as_tibble() %>%
+  right_join(distinct(funders, funder, industry), by = c("name" = "funder")) %>%
+  mutate(group = case_when(
+    str_starts(industry, "Fossil Fuel") ~ "ff",
+    industry %in% noncorp ~ "noncorp",
+    T ~ "other"
+  )) 
+glimpse(betweenness_df)
+```
+
+```{r anova}
+betweenness_df %>%
+  mutate(group = factor(group, c("ff", "other", "noncorp")))
+results <- aov(betweenness ~ group, data = betweenness_df)
+summary(results)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

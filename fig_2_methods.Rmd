@@ -23,7 +23,10 @@ library(patchwork)
 
 ```{r read}
 centers <- read_csv(here("data", "centers.csv"))
-funders <- read_csv(here("data", "funders.csv"))
+funders <- read_csv(here("data", "funders.csv")) %>%
+  mutate(industry = if_else(industry == "Fossil Fuel Vehicle Manufacturers", 
+                            "Fossil Fuel Vehicle Manuf.", 
+                            industry))
 glimpse(funders)
 ```
 
@@ -31,17 +34,18 @@ glimpse(funders)
 
 ```{r parameters}
 plots <- list()
-ff_industries <- c("Fossil Fuel Production", 
+ff_industries <- c("Fossil Fuel Producers", 
                    "Fossil Fuel Utilities",
-                   "Fossil Fuel Vehicles")
+                   "Fossil Fuel Vehicle Manuf.")
 n_for_plot <- 10
 label_size <- 7 # For title, annotation, etc
 annotation_size <- 6 # For x and y labs etc
-industry_colors <- c("Fossil Fuel Production" = "#B22222",
+industry_colors <- c("Fossil Fuel Producers" = "#B22222",
                      "Fossil Fuel Utilities" = "#E64B35",
-                     "Fossil Fuel Vehicles" = "#A0522D", 
+                     "Fossil Fuel Vehicle Manuf." = "#A0522D", 
                      "Fossil Fuel Sector" = "#FF6347", 
                      "Other corporate" = "#B2EBF2",
+                     "Disclosed corporate funders" = "#999999",
                      "No disclosure" = "#333333", 
                      "No reported corporate funders" = "white")
 text_styling <- theme(
@@ -411,24 +415,3 @@ ggsave(here("out", "arranged_plot.png"),
        height = 65)
 knitr::include_graphics(here("out", "arranged_plot.png"))
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

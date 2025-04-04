@@ -1,15 +1,38 @@
-  University            Metric   industry                 Rank      Sector
-  --------------------- -------- ------------------------ --------- --------
-  All universities      NA       Fossil Fuel Production   1 (28%)   44%
-  Harvard University    NA       Fossil Fuel Utilities    1 (32%)   37%
-                        NA       Fossil Fuel Utilities    1 (33%)   43%
-                        NA       Fossil Fuel Production   2 (33%)   50%
-  MIT                   NA       Fossil Fuel Utilities    1 (13%)   25%
-                        NA       Fossil Fuel Utilities    1 (18%)   36%
-                        NA       Fossil Fuel Production   1 (25%)   52%
-  Stanford University   NA       Fossil Fuel Production   2 (20%)   27%
-                        NA       Fossil Fuel Production   1 (32%)   39%
-                        NA       Fossil Fuel Production   2 (29%)   32%
-  UC Berkeley           NA       Fossil Fuel Vehicles     3 (9%)    17%
-                        NA       Fossil Fuel Vehicles     3 (10%)   20%
-                        NA       Fossil Fuel Production   2 (19%)   30%
+  ----------------------------------------------------------------------------
+  University   Metric               industry                Rank      Sector
+  ------------ -------------------- ----------------------- --------- --------
+  Harvard\     Number of funders    Fossil Fuel Utilities   1 (32%)   37%
+  University                                                          
+
+               Number of funding\   Fossil Fuel Utilities   1 (33%)   43%
+               ties                                                   
+
+               Weighted funder\     Fossil Fuel Producers   2 (33%)   50%
+               fraction                                               
+
+  MIT          Number of funders    Fossil Fuel Utilities   1 (13%)   25%
+
+               Number of funding\   Fossil Fuel Utilities   1 (18%)   36%
+               ties                                                   
+
+               Weighted funder\     Fossil Fuel Producers   1 (25%)   52%
+               fraction                                               
+
+  Stanford\    Number of funders    Fossil Fuel Producers   2 (20%)   27%
+  University                                                          
+
+               Number of funding\   Fossil Fuel Producers   1 (32%)   39%
+               ties                                                   
+
+               Weighted funder\     Fossil Fuel Producers   2 (29%)   32%
+               fraction                                               
+
+  UC\          Number of funders    Fossil Fuel Vehicle\    3 (9%)    17%
+  Berkeley                          Manufacturers                     
+
+               Number of funding\   Fossil Fuel Vehicle\    3 (9%)    20%
+               ties                 Manufacturers                     
+
+               Weighted funder\     Fossil Fuel Producers   3 (13%)   22%
+               fraction                                               
+  ----------------------------------------------------------------------------

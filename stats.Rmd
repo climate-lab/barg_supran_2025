@@ -1,0 +1,622 @@
+---
+title: "stats"
+output: html_document
+---
+
+In this notebook, we generate a CSV table that contains all the metrics we 
+include in the final paper. First, we generate a couple of variables by 
+category, then we generate other variables on a per-need basis section by 
+section.
+
+## ToDo
+
+1. Read data and setup
+2. Basic information
+3. Count number of ties for key actors
+4. Unweighted fractions of fossil fuel funders
+5. Unweighted fractions of fossil fuel funders to key centers
+5. Weighted funder fractions
+6. Disclosure stats
+7. More stats on fossil fuel sector
+8. Write
+
+## 1. Read data and setup
+
+```{r libraries, message = F}
+library(here)
+library(tidyverse)
+```
+
+```{r read}
+centers <- read_csv(here("data", "centers.csv"))
+funders <- read_csv(here("data", "funders.csv")) %>% 
+  left_join(select(centers, abbr, uni), by = "abbr")
+glimpse(funders)
+```
+
+```{r setup}
+vars <- tribble(
+  ~var, ~value, 
+  ~description
+)
+ff_producers <- "Fossil Fuel Producers"
+ff_utilities <- "Fossil Fuel Utilities"
+ff_vehicles <- "Fossil Fuel Vehicle Manufacturers"
+```
+
+## 2. Basic information
+
+```{r basic}
+ff_candidates <- "32411|211|213111|213112|4247|486|221|3361|3362|3363"
+n_unique <- function(vector){
+  length(unique(vector))
+}
+
+n_ff_companies <- n_unique(subset(funders, ff)$funder)
+n_corp_funders <-  n_unique(subset(funders, corp)$funder)
+
+basic <- tribble(
+  ~var, ~value, 
+  ~description,
+  "n_centers", n_unique(centers$abbr),
+  "Number of centers in our sample",
+  "n_funders", n_unique(funders$funder), 
+  "Number of identified unique funders", 
+  "n_companies", n_unique(subset(funders, corp & is.na(notes))$funder),
+  "Number of corporate funders excluding trade associations",
+  "n_trade", n_unique(subset(funders, corp & notes == "Trade association")$funder),
+  "Number of trade associations in the sample",
+  "n_corp_foundations", n_unique(subset(funders, corp & str_starts(notes, "Via"))$funder),
+  "Number of corporate foundations in the sample",
+  "n_corp_funders", n_corp_funders,
+  "Number of identified corporate funders",
+  "n_corp_ties", nrow(subset(funders, corp)), 
+  "Number of unique ties between corporate funders and centers",
+  "n_trade_assoc", n_unique(subset(funders, notes == "Trade association")$funder),
+  "Number of identified trade organizations", 
+  "n_not_ff_candidates", n_unique(
+    subset(funders, corp & !str_starts(naics, ff_candidates))$funder),
+  "Number of corporate funders in industries that we did not probe for fossil fuel interests",
+  "n_not_ff_candidate_industries", n_unique(
+    subset(funders, corp & !str_starts(naics, ff_candidates))$industry),
+  "Number of industries that we did not probe for fossil fuel interests",
+  "n_ff_candidates", n_unique(
+    subset(funders, corp & str_starts(naics, ff_candidates))$funder),
+  "Number of corporate funders in the fossil fuel interest candidate industries", 
+  "n_ff_companies", n_ff_companies,
+  "Number of corporate funders in our sample that are part of the Fossil Fuel Sector",
+  "n_ff_producers", n_unique(
+    subset(funders, industry == ff_producers)$funder),
+  "Number of Fossil Fuel Producers in our sample", 
+  "n_ff_ties", nrow(subset(funders, ff)), 
+  "Number of unique ties between Fossil Fuel Sector companies and centers", 
+  "n_ff_centers", n_unique(subset(funders, ff)$abbr),
+  "Number of research centers with ties to Fossil Fuel Sector companies",
+  "n_ff_utilities", n_unique(
+    subset(funders, industry == ff_utilities)$funder),
+  "Number of Fossil Fuel Utilities in our sample", 
+  "n_other_utilities", n_unique(
+    subset(funders, industry == "Other Utilities")$funder),
+  "Number of utilities that we did not code as Fossil Fuel Utilities", 
+  "n_ff_vehicles", n_unique(
+    subset(funders, industry == ff_vehicles)$funder),
+  "Number of Fossil Fuel Vehicle Manufacturers in our sample", 
+  "n_non_ff_vehicles", n_unique(
+    subset(funders, str_starts(naics, ff_candidates) 
+           & industry == "Miscellaneous Manufacturing")$funder),
+  "Number of car manufacturers that we did not code as Fossil Fuel Vehicle Manufacturers", 
+  "n_ff_vehicle_candidates", n_unique(
+    subset(funders, str_starts(naics, "3361|3362|3363"))$funder),
+  "Number of car manufacturers and suppliers in our sample that we probed for fossil fuel interests",
+  "n_ff_utility_candidates", n_unique(subset(funders, str_starts(naics, "221"))$funder),
+  "Number of utility companies in our sample that we probed for fossil fuel interests",
+  "n_centers_harvard", nrow(subset(centers, uni == "Harvard University")),
+  "Total number of centers in sample at Harvard",
+  "n_centers_mit",  nrow(subset(centers, uni == "MIT")),
+  "Total number of centers in sample at MIT",
+  "n_centers_stanford", nrow(subset(centers, uni == "Stanford University")),
+  "Total number of centers in sample at Stanford", 
+  "n_centers_berkeley", nrow(subset(centers, uni == "UC Berkeley")),
+  "Total number of centers in sample at UC Berkeley"
+) %>%
+  mutate(value = as.character(value))
+
+basic_shares <- tribble(
+  ~var, ~value,
+  ~description,
+  "ff_company_share", scales::percent(n_ff_companies/n_corp_funders, accuracy = 1),
+  "Fossil Fuel Sector companies' share of total unique corporate funders in our sample"
+)
+vars <- bind_rows(vars, basic, basic_shares)
+bind_rows(basic, basic_shares)
+```
+
+Key metrics for Fossil Fuel Sector industries and comparison points
+
+```{r ff_key}
+ff_utility_share <- n_unique(subset(funders, industry == ff_utilities)$funder) /
+  n_corp_funders
+consulting_share <- n_unique(subset(funders, industry == "Consulting")$funder) /
+  n_corp_funders
+electronics_share <- n_unique(subset(funders, industry == "Electronics")$funder) /
+  n_corp_funders
+ff_producers_share <- n_unique(subset(funders, industry == ff_producers)$funder) /
+  n_corp_funders
+more_shares <- tribble(
+  ~var, ~value, 
+  ~description, 
+  "ff_utility_share", ff_utility_share, 
+  "Share of Fossil Fuel Utilities' among total unique identified funders",
+  "consulting_share", consulting_share, 
+  "Share of consulting companies' among total unique identified funders",
+  "electronics_share", electronics_share, 
+  "Share of electronics firms among total unique identified funders", 
+  "ff_producers_share", ff_producers_share, 
+  "Share of Fossil Fuel Producers among total unique identified funders"
+  ) %>%
+  mutate(value = scales::percent(value, accuracy = 1))
+
+reference_counts <- tribble(
+  ~var, ~value, 
+  ~description, 
+  "consulting_total", n_unique(subset(funders, industry == "Consulting")$funder),
+  "Number of unique consulting companies in our sample", 
+  "electronics_total", n_unique(subset(funders, industry == "Electronics")$funder),
+  "Number of unique electronics companies in our sample"
+  ) %>%
+  mutate(value = as.character(value))
+
+vars <- bind_rows(vars, more_shares, reference_counts)
+bind_rows(more_shares, reference_counts)
+```
+
+A few additional count of non-corporate ties
+
+```{r tie_counts}
+indiv_ties <- funders %>%
+  filter(industry == "Individuals") %>%
+  distinct(funder, abbr) %>%
+  {nrow(.)}
+ngo_ties <- funders %>%
+  filter(industry == "NGOs/Foundations") %>%
+  distinct(funder, abbr) %>%
+  {nrow(.)}
+gov_ties <- funders %>%
+  filter(industry == "Government/National Lab") %>%
+  distinct(funder, abbr) %>%
+  {nrow(.)}
+
+additional_tie_counts <- tribble(
+  ~var, ~value, 
+  ~description,
+  "indiv_ties", indiv_ties,
+  "Number of unique individuals or families in our sample",
+  "ngo_ties", ngo_ties,
+  "Number of unique NGOs, foundations etc. in our sample",  
+  "gov_ties", gov_ties,
+  "Number of unique government entities and national labs in our sample"
+) %>%
+  mutate(value = as.character(value))
+
+vars <- bind_rows(vars, additional_tie_counts)
+additional_tie_counts
+```
+
+## 3. Count number of ties and funder fractions for key actors
+
+```{r top_funders}
+ties <- distinct(funders, funder, abbr, ff, corp)
+count_ties <- function(specific_funder){
+  as.character(nrow(filter(funders, funder == specific_funder)))
+}
+
+top_funders <- tribble(
+  ~var, ~value, 
+  ~description,
+  "exxonmobil_ties", count_ties("ExxonMobil"), 
+  "Number of ties between ExxonMobil and centers", 
+  "shell_ties", count_ties("Shell"),
+  "Number of ties between Shell and centers",
+  "chevron_ties", count_ties("Chevron"),
+  "Number of ties between Chevron and centers",
+  "bp_ties", count_ties("BP"),
+  "Number of ties between BP and centers",
+  "conocophillips_ties", count_ties("ConocoPhillips"),
+  "Number of ties between ConocoPhillips and centers",
+  "schlumberger_ties", count_ties("Schlumberger"),
+  "Number of ties between Schlumberger and centers",
+  "total_ties", count_ties("Total"),
+  "Number of ties between TotalEnergies and centers",
+  "pgande_ties", count_ties("Pacific Gas and Electric Company"),
+  "Number of ties between PG&E and centers",
+  "duke_ties", count_ties("Duke Energy"),
+  "Number of ties between Duke Energy and centers",
+  "engie_ties", count_ties("ENGIE"),
+  "Number of ties between ENGIE and centers",
+  "enel_ties", count_ties("Enel"),
+  "Number of ties between Enel and centers",
+  "toyota_ties", count_ties("Toyota"),
+  "Number of ties between Toyota and centers",
+  "boa_ties", count_ties("Bank of America"),
+  "Number of ties between Bank of America and centers"
+  )
+vars <- bind_rows(vars, top_funders)
+top_funders
+```
+
+## 4. Unweighted fractions of fossil fuel funders
+
+```{r sector_ties}
+ind_ties <- funders %>%
+  filter(corp) %>%
+  distinct(corp, funder, industry, abbr, ff, corp)
+ind_counts <- ind_ties %>%
+  count(industry)
+count_ind_ties <- function(specific_industry){
+  ind_counts %>%
+    filter(industry == specific_industry) %>%
+    pull(n)
+}
+calc_ind_share <- function(specific_industry){
+  scales::percent(subset(ind_counts, industry == specific_industry)$n /
+                    sum(ind_counts$n), accuracy = 1)
+}
+tie_counts <- tribble(
+  ~var, ~value, 
+  ~description, 
+  "total_corp_ties", nrow(ind_ties),
+  "Total number of ties between corporations and centers", 
+  "ff_sector_tie_total", sum(ind_ties$ff),
+  "Fossil fuel sector total number of ties to centers",
+  "ff_producers_tie_total", count_ind_ties(ff_producers),
+  "Fossil fuel producers' total number of ties to centers",
+  "ff_utility_tie_total", count_ind_ties(ff_utilities),
+  "Fossil fuel utilities' total number of ties to centers",
+  "ff_vehicle_tie_total", count_ind_ties(ff_vehicles),
+  "Fossil fuel vehicle manufacturers' total number of ties to centers"
+  ) %>%
+  mutate(value = as.character(value))
+
+tie_shares <- tribble(
+  ~var, ~value,
+  ~description,
+  "ff_sector_tie_share", scales::percent(sum(ind_ties$ff) / nrow(ind_ties), accuracy = 1),
+  "Fossil fuel sector's share of total ties between corporations and centers",
+  "ff_producers_tie_share", calc_ind_share(ff_producers),
+  "Fossil fuel producers' share of total ties between corporations and centers",
+  "ff_utility_tie_share", calc_ind_share(ff_utilities),
+  "Fossil fuel utilities' share of total ties between corporations and centers",
+  "ff_vehicle_tie_share", calc_ind_share(ff_vehicles),
+  "Fossil fuel vehicle manufacturers' share of total ties between corporations and centers"
+)
+
+ind_ranks_raw <- funders %>%
+  filter(corp) %>%
+  distinct(funder, ff, industry) %>%
+  count(industry) %>%
+  arrange(desc(n)) %>%
+  mutate(rank = min_rank(desc(n)))
+
+ind_ranks <- tribble(
+  ~var, ~value, 
+  ~description,
+  "consulting_rank", subset(ind_ranks_raw, industry == "Consulting")$rank,
+  "Rank of consulting industry when ranking all industries by number of funders",
+  "electronics_rank", subset(ind_ranks_raw, industry == "Electronics")$rank,
+  "Rank of electronics industry when ranking all industries by number of funders",
+  "ff_utilities_rank", subset(ind_ranks_raw, industry == ff_utilities)$rank,
+  "Rank of Fossil Fuel Utilities when ranking all industries by number of funders",
+  "ff_producers_rank", subset(ind_ranks_raw, industry == ff_producers)$rank,
+  "Rank of Fossil Fuel Producers when ranking all industries by number of funders"
+  ) %>%
+  mutate(value = as.character(value))
+
+
+vars <- bind_rows(vars, tie_counts, tie_shares, ind_ranks)
+bind_rows(tie_counts, tie_shares, ind_ranks)
+```
+
+## 5. Unweighted fractions of fossil fuel funders to key centers
+
+```{r center_ties}
+count_center_ties <- function(specific_abbr){
+  as.character(nrow(filter(ties, corp & abbr == specific_abbr)))
+}
+count_center_ff <- function(specific_abbr){
+  as.character(nrow(filter(ties, ff & abbr == specific_abbr)))
+}
+share_center_ff <- function(specific_abbr){
+  filter(ties, corp & abbr == specific_abbr) %>%
+    {scales::percent(sum(.$ff) / nrow(.))}
+}
+center_ties <- tribble(
+  ~var, ~value, 
+  ~description,
+  "hepg_ties", count_center_ties("HEPG"), 
+  "HEPG total number of ties",
+  "hepg_ff", count_center_ff("HEPG"), 
+  "HEPG number of fossil fuel ties", 
+  "hepg_share", share_center_ff("HEPG"), 
+  "HEPG share of fossil fuel ties", 
+  "heep_ties", count_center_ties("HEEP"), 
+  "HEEP total number of ties", 
+  "heep_ff", count_center_ff("HEEP"), 
+  "HEEP number of fossil fuel ties", 
+  "heep_share", share_center_ff("HEEP"), 
+  "HEEP share of fossil fuel ties",
+  "mitei_ties", count_center_ties("MITEI"), 
+  "MITEI total number of ties", 
+  "mitei_ff", count_center_ff("MITEI"), 
+  "MITEI number of fossil fuel ties", 
+  "mitei_share", share_center_ff("MITEI"), 
+  "MITEI share of fossil fuel ties",
+  "ceepr_ties", count_center_ties("CEEPR"), 
+  "CEEPR total number of ties", 
+  "ceepr_ff", count_center_ff("CEEPR"), 
+  "CEEPR number of fossil fuel ties", 
+  "ceepr_share", share_center_ff("CEEPR"), 
+  "CEEPR share of fossil fuel ties",
+  "jpspgc_ties", count_center_ties("JPSPGC"), 
+  "JPSPGC total number of ties", 
+  "jpspgc_ff", count_center_ff("JPSPGC"), 
+  "JPSPGC number of fossil fuel ties", 
+  "jpspgc_share", share_center_ff("JPSPGC"), 
+  "JPSPGC share of fossil fuel ties",
+  "ngi_ties", count_center_ties("NGI"), 
+  "NGI total number of ties", 
+  "ngi_ff", count_center_ff("NGI"), 
+  "NGI number of fossil fuel ties", 
+  "ngi_share", share_center_ff("NGI"), 
+  "NGI share of fossil fuel ties",
+  "emf_ties", count_center_ties("EMF"), 
+  "EMF total number of ties", 
+  "emf_ff", count_center_ff("EMF"), 
+  "EMF number of fossil fuel ties", 
+  "emf_share", share_center_ff("EMF"), 
+  "EMF share of fossil fuel ties",
+  "path_ties", count_center_ties("PATH"), 
+  "PATH total number of ties", 
+  "path_ff", count_center_ff("PATH"), 
+  "PATH number of fossil fuel ties", 
+  "path_share", share_center_ff("PATH"), 
+  "PATH share of fossil fuel ties",
+  "eihaas_ties", count_center_ties("EI@Haas"), 
+  "EI@Haas total number of ties", 
+  "eihaas_ff", count_center_ff("EI@Haas"), 
+  "EI@Haas number of fossil fuel ties", 
+  "eihaas_share", share_center_ff("EI@Haas"), 
+  "EI@Haas share of fossil fuel ties",
+  "ebi_ties", count_center_ties("EBI"), 
+  "EBI total number of ties", 
+  "ebi_ff", count_center_ff("EBI"), 
+  "EBI number of fossil fuel ties", 
+  "ebi_share", share_center_ff("EBI"), 
+  "EBI share of fossil fuel ties",
+)
+vars <- bind_rows(vars, center_ties)
+center_ties
+```
+
+## 6. Weighted funder fractions
+
+```{r weight}
+source(here("util", "weight_fractions.R"))
+calculate_ff_weight <- function(df, filter_condition) {
+  filter_condition <- enquo(filter_condition)
+  df %>%
+    filter(corp) %>%
+    weight_fractions(centers, rm_no_disclosure = T) %>%
+    group_by(industry, ff) %>%
+    summarize(weighted_fraction = sum(weighted_fraction), .groups = "drop") %>%
+    filter(!!filter_condition) %>%
+    {scales::percent(sum(.$weighted_fraction), accuracy = 1)}
+}
+weight_stats <- tribble(
+  ~var, ~value, 
+  ~description,
+  "across_ff_weight", calculate_ff_weight(funders, ff),
+  "Weighted funder fraction of the Fossil Fuel Sector among industry funders across universities",
+  "harvard_ff_weight", calculate_ff_weight(subset(funders, uni == "Harvard University"), ff),
+  "Weighted funder fraction of the Fossil Fuel Sector among industry funders at Harvard university",
+  "mit_ff_weight", calculate_ff_weight(subset(funders, uni == "MIT"), ff),
+  "Weighted funder fraction of the Fossil Fuel Sector among industry funders at MIT",
+  "stanford_ff_weight", calculate_ff_weight(subset(funders, uni == "Stanford University"), ff),
+  "Weighted funder fraction of the Fossil Fuel Sector among industry funders at Stanford University",
+  "berkeley_ff_weight", calculate_ff_weight(subset(funders, uni == "UC Berkeley"), ff),
+  "Weighted funder fraction of the Fossil Fuel Sector among industry funders at UC Berkeley",
+  "harvard_ff_producers_weight", calculate_ff_weight(
+    subset(funders, uni == "Harvard University"),
+    industry == ff_producers),
+  "Weighted funder fraction of Fossil Fuel Producers among industry funders at Harvard University", 
+  "harvard_ff_utilities_weight", calculate_ff_weight(
+    subset(funders, uni == "Harvard University"),
+    industry == ff_utilities),
+  "Weighted funder fraction of Fossil Fuel Utilities among industry funders at Harvard University", 
+  "mit_ff_producers_weight", calculate_ff_weight(
+    subset(funders, uni == "MIT"),
+    industry == ff_producers),
+  "Weighted funder fraction of Fossil Fuel Producers among industry funders at MIT", 
+  "mit_ff_utilities_weight", calculate_ff_weight(
+    subset(funders, uni == "MIT"),
+    industry == ff_utilities),
+  "Weighted funder fraction of Fossil Fuel Utilities among industry funders at MIT", 
+  "mit_ff_vehicles_weight", calculate_ff_weight(
+    subset(funders, uni == "MIT"),
+    industry == ff_vehicles),
+  "Weighted funder fraction of Fossil Fuel Vehicle Manufacturers among industry funders at MIT", 
+  
+  
+) 
+vars <- bind_rows(vars, weight_stats)
+weight_stats
+```
+
+## 7. Disclosure stats
+
+```{r disclosure}
+count_no_disclosure <- function(specific_uni){
+  uni_df <- filter(funders, str_detect(uni, specific_uni))
+  subset(centers, str_detect(uni, specific_uni) & !abbr %in% uni_df$abbr) |>
+    nrow()
+}
+calc_share_no_disclosure <- function(specific_uni){
+  uni_df <- filter(funders, str_detect(uni, specific_uni))
+  n_no_disclosure <- subset(
+    centers, 
+    str_detect(uni, specific_uni) & !abbr %in% uni_df$abbr
+    ) |>
+    nrow()
+  n_no_disclosure / nrow(subset(centers, str_detect(uni, specific_uni)))
+}
+
+no_disclosure_counts <- tribble(
+  ~var, ~value, 
+  ~description, 
+  "n_no_disclosure", count_no_disclosure(".*"),
+  "Number of centers across all universities that do not disclose any funders",
+  "n_no_disclosure_harvard", count_no_disclosure("Harvard University"), 
+  "Number of centers at Harvard that do not disclose any funders",
+  "n_no_disclosure_mit", count_no_disclosure("MIT"), 
+  "Number of centers at MIT that do not disclose any funders",
+  "n_no_disclosure_stanford", count_no_disclosure("Stanford University"), 
+  "Number of centers at Stanford University that do not disclose any funders",
+  "n_no_disclosure_berkely", count_no_disclosure("UC Berkeley"), 
+  "Number of centers at UC Berkeley that do not disclose any funders",
+  "berkeley_n_disclosure", nrow(subset(centers, uni == "UC Berkeley")) -
+    count_no_disclosure("UC Berkeley"),
+  "Number of centers at UC Berkeley that disclose funders",
+  "mit_n_disclosure", nrow(subset(centers, uni == "MIT")) -
+    count_no_disclosure("MIT"),
+  "Number of centers at MIT that disclose funders"
+) %>%
+  mutate(value = as.character(value))
+
+no_disclosure_shares <- tribble(
+  ~var, ~value, 
+  ~description, 
+  "share_no_disclosure", calc_share_no_disclosure(".*"),
+  "Share of centers across all universities that do not disclose any funders",
+  "share_centers_harvard_no_disclosure", calc_share_no_disclosure(
+    "Harvard University"),
+  "Share of centers at Harvard University that do not disclose any funders",
+  "share_centers_mit_no_disclosure", calc_share_no_disclosure("MIT"),
+  "Share of centers at MIT that do not disclose any funders",
+  "share_centers_stanford_no_disclosure", calc_share_no_disclosure(
+    "Stanford University"),
+  "Share of centers at Stanford University that do not disclose any funders",
+  "share_centers_berkeley_no_disclosure", calc_share_no_disclosure(
+    "UC Berkeley"),
+  "Share of centers at UC Berkeley that do not disclose any funders",
+  "berkeley_share_disclosure", 1 - calc_share_no_disclosure("UC Berkeley"),
+  "Share of centers at UC Berkeley that disclose funders",
+  "mit_share_disclosure", 1 - calc_share_no_disclosure("MIT"),
+  "Share of centers at MIT that disclose funders",
+) %>%
+  mutate(value = scales::percent(value, accuracy = 1))
+vars <- bind_rows(vars, no_disclosure_counts, no_disclosure_shares)
+bind_rows(no_disclosure_counts, no_disclosure_shares)
+```
+
+## 8. Specific Fossil Fuel Sector stats
+
+```{r ff_stats}
+mitei_funder_count <- funders %>%
+  filter(abbr == "MITEI") %>%
+  distinct(funder) %>%
+  {nrow(.)}
+mitei_ff_count <- funders %>%
+  filter(abbr == "MITEI" & ff) %>%
+  distinct(funder) %>%
+  {nrow(.)}
+mitei_ff_producers <- funders %>%
+  filter(abbr == "MITEI" & industry == ff_producers) %>%
+  distinct(funder) %>%
+  {nrow(.)}
+berkeley_funder_count <- funders %>%
+  filter(uni == "UC Berkeley") %>%
+  distinct(funder) %>%
+  {nrow(.)}
+berkeley_tie_count <- funders %>%
+  filter(uni == "UC Berkeley") %>%
+  distinct(funder, abbr) %>%
+  {nrow(.)}
+berkeley_ff_count <- funders %>%
+  filter(uni == "UC Berkeley" & ff) %>%
+  distinct(funder) %>%
+  {nrow(.)}
+berkeley_ff_producers <- funders %>%
+  filter(uni == "UC Berkeley" & industry == ff_producers) %>%
+  distinct(funder) %>%
+  {nrow(.)}
+berkeley_ff_producers_ties <- funders %>%
+  filter(uni == "UC Berkeley" & industry == ff_producers) %>%
+  distinct(funder, abbr) %>%
+  {nrow(.)}
+
+ff_extra_stats <- tribble(
+  ~var, ~value,
+  ~description,
+  "mitei_funder_count", as.character(mitei_funder_count), 
+  "Number of unique funders of MITEI", 
+  "mitei_ff_count", as.character(mitei_ff_count),
+  "Number of Fossil Fuel Sector funders at MITEI", 
+  "mitei_ff_producers", as.character(mitei_ff_producers),
+  "Number of Fossil Fuel Producers funders at MITEI", 
+  "mitei_ff_share", scales::percent(mitei_ff_count / mitei_funder_count, accuracy = 1),
+  "Share of Fossil Fuel Sector funders at MITEI",
+  "mitei_ff_producers_share", scales::percent(mitei_ff_producers / mitei_funder_count, accuracy = 1),
+  "Share of Fossil Fuel Producers funders at MITEI",
+  "berkeley_funder_count", as.character(berkeley_funder_count), 
+  "Number of unique funders of UC Berkeley", 
+  "berkeley_tie_count", as.character(berkeley_tie_count),
+  "Number of ties between centers and funders for UC Berkeley",
+  "berekeley_ff_count", as.character(berkeley_ff_count),
+  "Number of Fossil Fuel Sector funders at UC Berkeley", 
+  "berkeley_ff_producers", as.character(berkeley_ff_producers),
+  "Number of Fossil Fuel Producers funders at UC Berkeley", 
+  "berkeley_ff_producers_ties", as.character(berkeley_ff_producers_ties),
+  "Number of ties between Fossil Fuel Producers and centers at UC Berkeley", 
+  "berekeley_ff_share", scales::percent(berkeley_ff_count / berkeley_funder_count),
+  "Share of Fossil Fuel Sector funders at UC Berkeley",
+  "berekeley_ff_producers_share", scales::percent(berkeley_ff_producers / berkeley_funder_count),
+  "Share of Fossil Fuel Producers funders at UC Berkeley",
+  "berekeley_ff_producers_tie_share", scales::percent(berkeley_ff_producers_ties / berkeley_tie_count),
+  "Share of Fossil Fuel Producers funders of total ties at UC Berkeley"
+)
+vars <- bind_rows(vars, ff_extra_stats)
+ff_extra_stats
+```
+
+## 9. Various
+
+```{r gov_overlap}
+n_gov_centers <- n_unique(subset(funders, industry == "Government/National Lab")$abbr)
+n_gov_ff_centers <- funders %>%
+  filter(industry == "Government/National Lab") %>%
+  distinct(abbr) %>%
+  inner_join(filter(funders, ff), by = "abbr", relationship = "one-to-many") %>%
+  distinct(abbr) %>%
+  {nrow(.)}
+ff_sector_tie_share_all <- nrow(subset(funders, ff)) / nrow(funders)
+
+gov_stat <- tribble(
+  ~var, ~value,
+  ~description,
+  "n_gov_centers", as.character(n_gov_centers), 
+  "Number of centers that receive funding from government agencies or national labs", 
+  "n_gov_ff_centers", as.character(n_gov_ff_centers), 
+  "Number of centers that receive funding from both government agencies/national labs and fossil fuel companies",
+  "gov_ff_share", scales::percent(n_gov_ff_centers / n_gov_centers, accuracy = 1),
+  "Share of centers of government/national lab-funded centers that also receive funding from Fossil Fuel Sector companies",
+  "ff_sector_tie_share_all", scales::percent(ff_sector_tie_share_all, accuracy = 1),
+  "Fossil fuel sector's share of total ties between corporate and non-corporate and centers"
+) 
+vars <- bind_rows(vars, gov_stat)
+gov_stat
+```
+
+## 10. Write
+
+```{r write}
+write_csv(vars, here("out", "vars.csv"))
+```

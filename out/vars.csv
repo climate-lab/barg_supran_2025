@@ -1,0 +1,133 @@
+var,value,description
+n_centers,117,Number of centers in our sample
+n_funders,1305,Number of identified unique funders
+n_companies,526,Number of corporate funders excluding trade associations
+n_trade,19,Number of trade associations in the sample
+n_corp_foundations,5,Number of corporate foundations in the sample
+n_corp_funders,547,Number of identified corporate funders
+n_corp_ties,752,Number of unique ties between corporate funders and centers
+n_trade_assoc,19,Number of identified trade organizations
+n_not_ff_candidates,378,Number of corporate funders in industries that we did not probe for fossil fuel interests
+n_not_ff_candidate_industries,26,Number of industries that we did not probe for fossil fuel interests
+n_ff_candidates,169,Number of corporate funders in the fossil fuel interest candidate industries
+n_ff_companies,124,Number of corporate funders in our sample that are part of the Fossil Fuel Sector
+n_ff_producers,53,Number of Fossil Fuel Producers in our sample
+n_ff_ties,262,Number of unique ties between Fossil Fuel Sector companies and centers
+n_ff_centers,35,Number of research centers with ties to Fossil Fuel Sector companies
+n_ff_utilities,58,Number of Fossil Fuel Utilities in our sample
+n_other_utilities,40,Number of utilities that we did not code as Fossil Fuel Utilities
+n_ff_vehicles,13,Number of Fossil Fuel Vehicle Manufacturers in our sample
+n_non_ff_vehicles,5,Number of car manufacturers that we did not code as Fossil Fuel Vehicle Manufacturers
+n_ff_vehicle_candidates,18,Number of car manufacturers and suppliers in our sample that we probed for fossil fuel interests
+n_ff_utility_candidates,98,Number of utility companies in our sample that we probed for fossil fuel interests
+n_centers_harvard,30,Total number of centers in sample at Harvard
+n_centers_mit,13,Total number of centers in sample at MIT
+n_centers_stanford,53,Total number of centers in sample at Stanford
+n_centers_berkeley,21,Total number of centers in sample at UC Berkeley
+ff_company_share,23%,Fossil Fuel Sector companies' share of total unique corporate funders in our sample
+ff_utility_share,11%,Share of Fossil Fuel Utilities' among total unique identified funders
+consulting_share,14%,Share of consulting companies' among total unique identified funders
+electronics_share,11%,Share of electronics firms among total unique identified funders
+ff_producers_share,10%,Share of Fossil Fuel Producers among total unique identified funders
+consulting_total,76,Number of unique consulting companies in our sample
+electronics_total,58,Number of unique electronics companies in our sample
+indiv_ties,164,Number of unique individuals or families in our sample
+ngo_ties,201,"Number of unique NGOs, foundations etc. in our sample"
+gov_ties,284,Number of unique government entities and national labs in our sample
+exxonmobil_ties,16,Number of ties between ExxonMobil and centers
+shell_ties,15,Number of ties between Shell and centers
+chevron_ties,16,Number of ties between Chevron and centers
+bp_ties,9,Number of ties between BP and centers
+conocophillips_ties,6,Number of ties between ConocoPhillips and centers
+schlumberger_ties,7,Number of ties between Schlumberger and centers
+total_ties,5,Number of ties between TotalEnergies and centers
+pgande_ties,6,Number of ties between PG&E and centers
+duke_ties,5,Number of ties between Duke Energy and centers
+engie_ties,5,Number of ties between ENGIE and centers
+enel_ties,5,Number of ties between Enel and centers
+toyota_ties,6,Number of ties between Toyota and centers
+boa_ties,5,Number of ties between Bank of America and centers
+total_corp_ties,752,Total number of ties between corporations and centers
+ff_sector_tie_total,262,Fossil fuel sector total number of ties to centers
+ff_producers_tie_total,137,Fossil fuel producers' total number of ties to centers
+ff_utility_tie_total,101,Fossil fuel utilities' total number of ties to centers
+ff_vehicle_tie_total,24,Fossil fuel vehicle manufacturers' total number of ties to centers
+ff_sector_tie_share,35%,Fossil fuel sector's share of total ties between corporations and centers
+ff_producers_tie_share,18%,Fossil fuel producers' share of total ties between corporations and centers
+ff_utility_tie_share,13%,Fossil fuel utilities' share of total ties between corporations and centers
+ff_vehicle_tie_share,3%,Fossil fuel vehicle manufacturers' share of total ties between corporations and centers
+consulting_rank,1,Rank of consulting industry when ranking all industries by number of funders
+electronics_rank,2,Rank of electronics industry when ranking all industries by number of funders
+ff_utilities_rank,2,Rank of Fossil Fuel Utilities when ranking all industries by number of funders
+ff_producers_rank,4,Rank of Fossil Fuel Producers when ranking all industries by number of funders
+hepg_ties,73,HEPG total number of ties
+hepg_ff,31,HEPG number of fossil fuel ties
+hepg_share,42%,HEPG share of fossil fuel ties
+heep_ties,7,HEEP total number of ties
+heep_ff,6,HEEP number of fossil fuel ties
+heep_share,86%,HEEP share of fossil fuel ties
+mitei_ties,62,MITEI total number of ties
+mitei_ff,32,MITEI number of fossil fuel ties
+mitei_share,52%,MITEI share of fossil fuel ties
+ceepr_ties,38,CEEPR total number of ties
+ceepr_ff,28,CEEPR number of fossil fuel ties
+ceepr_share,74%,CEEPR share of fossil fuel ties
+jpspgc_ties,35,JPSPGC total number of ties
+jpspgc_ff,20,JPSPGC number of fossil fuel ties
+jpspgc_share,57%,JPSPGC share of fossil fuel ties
+ngi_ties,37,NGI total number of ties
+ngi_ff,25,NGI number of fossil fuel ties
+ngi_share,68%,NGI share of fossil fuel ties
+emf_ties,12,EMF total number of ties
+emf_ff,10,EMF number of fossil fuel ties
+emf_share,83%,EMF share of fossil fuel ties
+path_ties,27,PATH total number of ties
+path_ff,7,PATH number of fossil fuel ties
+path_share,26%,PATH share of fossil fuel ties
+eihaas_ties,19,EI@Haas total number of ties
+eihaas_ff,5,EI@Haas number of fossil fuel ties
+eihaas_share,26%,EI@Haas share of fossil fuel ties
+ebi_ties,2,EBI total number of ties
+ebi_ff,1,EBI number of fossil fuel ties
+ebi_share,50%,EBI share of fossil fuel ties
+across_ff_weight,42%,Weighted funder fraction of the Fossil Fuel Sector among industry funders across universities
+harvard_ff_weight,50%,Weighted funder fraction of the Fossil Fuel Sector among industry funders at Harvard university
+mit_ff_weight,52%,Weighted funder fraction of the Fossil Fuel Sector among industry funders at MIT
+stanford_ff_weight,32%,Weighted funder fraction of the Fossil Fuel Sector among industry funders at Stanford University
+berkeley_ff_weight,22%,Weighted funder fraction of the Fossil Fuel Sector among industry funders at UC Berkeley
+harvard_ff_producers_weight,33%,Weighted funder fraction of Fossil Fuel Producers among industry funders at Harvard University
+harvard_ff_utilities_weight,17%,Weighted funder fraction of Fossil Fuel Utilities among industry funders at Harvard University
+mit_ff_producers_weight,25%,Weighted funder fraction of Fossil Fuel Producers among industry funders at MIT
+mit_ff_utilities_weight,24%,Weighted funder fraction of Fossil Fuel Utilities among industry funders at MIT
+mit_ff_vehicles_weight,3%,Weighted funder fraction of Fossil Fuel Vehicle Manufacturers among industry funders at MIT
+n_no_disclosure,33,Number of centers across all universities that do not disclose any funders
+n_no_disclosure_harvard,13,Number of centers at Harvard that do not disclose any funders
+n_no_disclosure_mit,2,Number of centers at MIT that do not disclose any funders
+n_no_disclosure_stanford,17,Number of centers at Stanford University that do not disclose any funders
+n_no_disclosure_berkely,1,Number of centers at UC Berkeley that do not disclose any funders
+berkeley_n_disclosure,20,Number of centers at UC Berkeley that disclose funders
+mit_n_disclosure,11,Number of centers at MIT that disclose funders
+share_no_disclosure,28%,Share of centers across all universities that do not disclose any funders
+share_centers_harvard_no_disclosure,43%,Share of centers at Harvard University that do not disclose any funders
+share_centers_mit_no_disclosure,15%,Share of centers at MIT that do not disclose any funders
+share_centers_stanford_no_disclosure,32%,Share of centers at Stanford University that do not disclose any funders
+share_centers_berkeley_no_disclosure,5%,Share of centers at UC Berkeley that do not disclose any funders
+berkeley_share_disclosure,95%,Share of centers at UC Berkeley that disclose funders
+mit_share_disclosure,85%,Share of centers at MIT that disclose funders
+mitei_funder_count,69,Number of unique funders of MITEI
+mitei_ff_count,32,Number of Fossil Fuel Sector funders at MITEI
+mitei_ff_producers,16,Number of Fossil Fuel Producers funders at MITEI
+mitei_ff_share,46%,Share of Fossil Fuel Sector funders at MITEI
+mitei_ff_producers_share,23%,Share of Fossil Fuel Producers funders at MITEI
+berkeley_funder_count,383,Number of unique funders of UC Berkeley
+berkeley_tie_count,435,Number of ties between centers and funders for UC Berkeley
+berekeley_ff_count,21,Number of Fossil Fuel Sector funders at UC Berkeley
+berkeley_ff_producers,3,Number of Fossil Fuel Producers funders at UC Berkeley
+berkeley_ff_producers_ties,3,Number of ties between Fossil Fuel Producers and centers at UC Berkeley
+berekeley_ff_share,5%,Share of Fossil Fuel Sector funders at UC Berkeley
+berekeley_ff_producers_share,1%,Share of Fossil Fuel Producers funders at UC Berkeley
+berekeley_ff_producers_tie_share,1%,Share of Fossil Fuel Producers funders of total ties at UC Berkeley
+n_gov_centers,53,Number of centers that receive funding from government agencies or national labs
+n_gov_ff_centers,24,Number of centers that receive funding from both government agencies/national labs and fossil fuel companies
+gov_ff_share,45%,Share of centers of government/national lab-funded centers that also receive funding from Fossil Fuel Sector companies
+ff_sector_tie_share_all,16%,Fossil fuel sector's share of total ties between corporate and non-corporate and centers
